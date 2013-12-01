@@ -19,13 +19,14 @@ task :post do
   end
   `subl #{path}`
 
-  exit 1
+  exit 0
 end
 
-desc "Commit _site/"
-task :commit do
-  puts "\n## Build site"
+desc "Push _site/"
+task :push do
+  puts "\n## Building site"
   status = system("jekyll build")  
+  puts status ? "Success" : "Failed"
   puts "\n## Staging modified files"
   status = system("git add -A")
   puts status ? "Success" : "Failed"
@@ -33,9 +34,6 @@ task :commit do
   message = "Build site at #{Time.now.utc}"
   status = system("git commit -m \"#{message}\"")
   puts status ? "Success" : "Failed"
-  puts "\n## Pushing commits to remote"
-  # status = system("git push origin source")
-  # puts status ? "Success" : "Failed"
   puts "\n## Deleting master branch"
   status = system("git branch -D master")
   puts status ? "Success" : "Failed"
