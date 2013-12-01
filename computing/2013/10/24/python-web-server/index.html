@@ -1,0 +1,226 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>A simple python webserver - RTalks.net</title>
+    
+    <meta name="author" content="Randy Lai">
+
+    <!-- Enable responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>  
+<script>
+  (function() {
+    var cx = '008225976323914720770:ha27dsnxije';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<link href="/assets/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+
+<!-- <link rel="shortcut icon" href="images/favicon.ico">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
+
+<!--     <link href="" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
+    <link href="" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed"> -->
+
+</head>
+
+<body>   
+    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>         
+                <div class="navbar-brand"><span class="glyphicon glyphicon-th-large"></span> <a href="/">RTalks.net</a></div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                             
+                    
+                    
+                    
+                    <li ><a href="/research/">Research</a></li>
+                    
+                    
+                    
+                    <li ><a href="/apps/">Apps</a></li>
+                    
+                    
+                    
+                    <li ><a href="/blog/">Blog</a></li>
+                    
+                    
+                    
+                    <li ><a href="/tags/">Tags</a></li>
+                      
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9" id="page-col">
+                <div id="page">
+                    <div class="jumbotron" id="page-jumbotron">
+                        <h1>
+                        <span class="glyphicon glyphicon-book"></span> A simple python webserver 
+                        </h1>
+                        
+                    </div>
+                    <div id="content">
+                        <div class="date">
+    <span>24 October 2013</span>
+</div>
+<div class="post-content">
+    <p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
+
+<pre><code>python -m SimpleHTTPServer 8000
+</code></pre>
+
+<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.</p>
+
+<p>More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on localhost</a></p>
+
+<pre><code>import sys
+import BaseHTTPServer
+from SimpleHTTPServer import SimpleHTTPRequestHandler
+
+HandlerClass = SimpleHTTPRequestHandler
+ServerClass = BaseHTTPServer.HTTPServer
+Protocol = "HTTP/1.0"
+
+if sys.argv[1:]:
+port = int(sys.argv[1])
+else:
+port = 8000
+server_address = ('127.0.0.1', port)
+
+HandlerClass.protocol_version = Protocol
+httpd = ServerClass(server_address, HandlerClass)
+
+sa = httpd.socket.getsockname()
+print "Serving HTTP on", sa[0], "port", sa[1], "..."
+httpd.serve_forever()
+</code></pre>
+
+<p>and <a href="http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file">Simple Python Webserver to save file</a></p>
+
+<pre><code>from os import curdir
+from os.path import join as pjoin
+
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class StoreHandler(BaseHTTPReque stHandler):
+store_path = pjoin(curdir, 'store.json')
+
+def do_GET(self):
+if self.path == '/store.json':
+with open(self.store_path) as fh:
+self.send_response(200)
+self.send_header('Content-type', 'text/json')
+self.end_headers()
+self.wfile.write(fh.read().encode())
+
+def do_POST(self):
+if self.path == '/store.json':
+length = self.headers['content-length']
+data = self.rfile.read(int(length))
+
+with open(self.store_path, 'w') as fh:
+fh.write(data.decode())
+
+self.send_response(200)
+
+server = HTTPServer(('', 8080), StoreHandler)
+server.serve_forever()
+</code></pre>
+
+</div>
+
+
+
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+
+  
+     
+    	<li><a class="btn btn-default btn-xs" href="/tags/#python-ref">python <span class="tag-size">1</span></a></li>
+    
+  
+
+
+</ul>
+  
+
+
+<hr>
+<div>
+    <ul class="pagination">
+        
+        <li class="prev"><a href="/computing/2013/10/24/open-mpi/" title="Installating open-mpi on Mac">&larr; Previous</a></li>
+        
+        <li><a href="/blog/">Archive</a></li>
+        
+        <li class="next"><a href="/computing/2013/10/27/wordpress-category-filter/" title="Wordpress Categories Filter">Next &rarr;</a></li>
+        
+    </ul>
+</div>
+<hr>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'randy3k'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
+                <div id="sider">
+                <div class="reset-box-sizing">
+                    <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
+                </div>
+                </div>
+            </div>            
+        </div>
+        <hr>
+        <footer>
+            <p>&copy; 2013 Randy Lai. Powered by <a href="http:///github.com/randy3k", target="_blank"><img width="20" style="vertical-align:text-bottom" src="https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png"></a>. 
+            </p>
+        </footer>                  
+   </div>     
+
+</body>
+</html>
