@@ -7,7 +7,7 @@ tagline: Randy Talks Dot Net
 
 ###About
 
-I am Randy Lai, a PhD student in the Department of Statistics, University of California, Davis. Previously, I obtained by Master and Undergraduate degrees from CUHK, The Chinese University of Hong Kong. I was born in Hong Kong and I spent my childhood and teenage years in this prosperous city.
+I am Randy Lai, a PhD student in the Department of Statistics, University of California, Davis. Previously, I obtained my Master and Undergraduate degrees from CUHK, The Chinese University of Hong Kong. I was born in Hong Kong and I spent my childhood and teenage years in this prosperous city.
 
 You can contact me via
 
