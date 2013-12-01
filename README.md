@@ -1,1 +1,1 @@
-It is the source repo of rtalks.net. Any files in `_posts` are copyrighted.
+It is the source repo of rtalks.net. All post and page files are copyrighted.
