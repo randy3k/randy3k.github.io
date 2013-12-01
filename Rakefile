@@ -24,6 +24,8 @@ end
 
 desc "Commit _site/"
 task :commit do
+  puts "\n## Build site"
+  status = system("jekyll build")  
   puts "\n## Staging modified files"
   status = system("git add -A")
   puts status ? "Success" : "Failed"
@@ -47,6 +49,6 @@ task :commit do
   status = system("git checkout source")
   puts status ? "Success" : "Failed"
   puts "\n## Pushing all branches to origin"
-  status = system("git push --all origin")
+  status = system("git push -f --all origin")
   puts status ? "Success" : "Failed"  
 end
