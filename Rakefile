@@ -32,12 +32,8 @@ task :commit do
   status = system("git commit -m \"#{message}\"")
   puts status ? "Success" : "Failed"
   puts "\n## Pushing commits to remote"
-  status = system("git push origin source")
-  puts status ? "Success" : "Failed"
-end
-
-desc "Deploy _site/ to master branch"
-task :deploy do
+  # status = system("git push origin source")
+  # puts status ? "Success" : "Failed"
   puts "\n## Deleting master branch"
   status = system("git branch -D master")
   puts status ? "Success" : "Failed"
@@ -52,5 +48,5 @@ task :deploy do
   puts status ? "Success" : "Failed"
   puts "\n## Pushing all branches to origin"
   status = system("git push --all origin")
-  puts status ? "Success" : "Failed"
+  puts status ? "Success" : "Failed"  
 end

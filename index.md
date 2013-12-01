@@ -22,7 +22,7 @@ I taught myself HTML, PHP, MYSQL, Flash and Visual Basic in secondary school.  L
 ### Recent Posts
 
 <div class="list-group">
-  {% for post in site.posts limit:3  %}
+  {% for post in site.posts limit:5  %}
     {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
     {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
     {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
