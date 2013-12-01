@@ -27,6 +27,7 @@ task :push do
   puts "\n## Building site"
   status = system("jekyll build")  
   puts status ? "Success" : "Failed"
+  if status == "Failed" then exit 1 end
   puts "\n## Staging modified files"
   status = system("git add -A")
   puts status ? "Success" : "Failed"
