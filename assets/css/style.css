@@ -65,9 +65,12 @@ hr {
         padding-right: 0px;
         padding-left: 0px;
     }
+    #sider-col{
+        padding-left: 0px;
+    }
 }
 
-@media(min-width:973px){
+@media(min-width:992px){
     #sider-col{
         padding-left: 0px;
     }
