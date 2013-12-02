@@ -8,7 +8,7 @@ task :post do
   title = ARGV.join(' ')
 
   path = "_posts/#{Date.today}-#{title.downcase.gsub(/[^[:alnum:]]+/, '-')}.md"
-  
+
   if File.exist?(path)
     puts "[WARN] File exists - skipping create"
   else
@@ -22,10 +22,10 @@ task :post do
   exit 0
 end
 
-desc "Push _site/"
-task :push do
+desc "Deploy _site/"
+task :deploy do
   puts "\n## Building site"
-  status = system("jekyll build")  
+  status = system("jekyll build")
   if status == false then exit 1 end
   puts "\n## Staging modified files"
   status = system("git add -A")

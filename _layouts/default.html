@@ -79,17 +79,19 @@
                         </h1>
                         {% if page.tagline %}{{page.tagline}}{% endif %}
                     </div>
-                    <div id="content">
+                    <div class="content">
                         {{ content }}
                     </div>
                 </div>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
                 <div id="sider">
-                <div class="reset-box-sizing">
-                    <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
-                </div>
-                </div>
+                    <div class="reset-box-sizing sider-item">
+                        <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
+                    </div>
+                    
+                    <div class="sider-item"><a href="{{ site.baseurl }}archive">Blog Archive</a></div>
+                </div>                
             </div>            
         </div>
         <hr>

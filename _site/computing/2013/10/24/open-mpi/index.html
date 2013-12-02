@@ -89,12 +89,9 @@
                         </h1>
                         
                     </div>
-                    <div id="content">
-                        <div class="date">
-    <span>24 October 2013</span>
-</div>
-<div class="post-content">
-    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
+                    <div class="content">
+                        <p><span class="date">October 24 2013</span>  </p>
+<p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
 <code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code>
 &lt;pre class="lang:sh decode:true"&gt;brew install gfortran
 brew install open-mpi&lt;/pre&gt;
@@ -120,7 +117,7 @@ mpi.spawn.Rslaves(nslaves=3)
 mpi.iparReplicate(100, mean(rnorm(1000000)))
 mpi.close.Rslaves()</pre>
 
-</div>
+
 
 
 
@@ -142,18 +139,16 @@ mpi.close.Rslaves()</pre>
   
 
 
-<hr>
-<div>
-    <ul class="pagination">
-        
-        <li class="prev"><a href="/computing/2013/10/23/configuring-complier/" title="Configuring complier for R 3.0.x on OSX 10.9 Mavericks">&larr; Previous</a></li>
-        
-        <li><a href="/blog/">Blog Archive</a></li>
-        
-        <li class="next"><a href="/computing/2013/10/24/python-web-server/" title="A simple python webserver">Next &rarr;</a></li>
-        
-    </ul>
-</div>
+<ul class="pagination">
+    
+    <li class="prev"><a href="/computing/2013/10/23/configuring-complier/" title="Configuring complier for R 3.0.x on OSX 10.9 Mavericks">&larr; Previous</a></li>
+    
+    <li><a href="/archive/">Archive</a></li>
+    
+    <li class="next"><a href="/computing/2013/10/24/python-web-server/" title="A simple python webserver">Next &rarr;</a></li>
+    
+</ul>
+
 <hr>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -176,10 +171,12 @@ mpi.close.Rslaves()</pre>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
                 <div id="sider">
-                <div class="reset-box-sizing">
-                    <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
-                </div>
-                </div>
+                    <div class="reset-box-sizing sider-item">
+                        <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
+                    </div>
+                    
+                    <div class="sider-item"><a href="/archive">Blog Archive</a></div>
+                </div>                
             </div>            
         </div>
         <hr>

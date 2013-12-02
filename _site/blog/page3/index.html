@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Categories - RTalks.net</title>
+    <title>Blog - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -85,79 +85,78 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Categories 
+                        <span class="glyphicon glyphicon-book"></span> Blog 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        
+                        <!-- This loops through the paginated posts -->
 
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-folder-open"></span></li>
+  <h1><a href="/computing/2013/10/23/configuring-complier/">Configuring complier for R 3.0.x on OSX 10.9 Mavericks</a></h1>
+  <div class="content">
+    <p><span class="date">October 23 2013</span>  </p>
+    <p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
+<ol>
+    <li>change the complier to GNU gcc complier.</li>
+    <li>an easier solution, but it doesn't work for all packages</li>
+</ol>
+<h2>1. GNC gcc complier</h2>
+<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
+
+<pre><code>brew install gcc47
+brew install gfortran
+</code></pre>
+
+<p>Then edit <code>~/.R/Makevars</code></p>
+
+<pre><code>CC=/usr/local/bin/gcc-4.7
+CXX=/usr/local/bin/g++-4.7
+FC=/usr/local/bin/gfortran
+</code></pre>
+
+<h2>2. An easier solution</h2>
+<p>Edit <code>~/.R/Makevars</code> and add</p>
+
+<pre><code>CXXFLAGS=-stdlib=libstdc++
+</code></pre>
+
+<p>But it doesn’t fix all problems.</p>
+<h2>Test if it works</h2>
+<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
+
+<pre><code>install.packages("SuppDists", type="source")
+</code></pre>
+
+<p>Happy R coding~</p>
+
+  </div>
+
+
+<!-- Pagination links -->
+
+<ul class="pagination">
+  
+    <li><a href="/blog/page2">Prev</a></li>
+  
 
   
-     
-    	<li><a class="btn btn-default btn-xs" href="/categories/#computing-ref">
-    		computing <span class="tag-size">5</span>
-    	</a></li>
+    
+      <li><a href="/blog/">1</a></li>
+    
+  
+    
+      <li><a href="/blog/page2">2</a></li>
+    
+  
+    
+      <li class="active"><a href="#" >3</a></li>
     
   
 
-
+  
+    <li class="disabled"><a>Next</a></li>
+  
 </ul>
-  
-
-
- 
-<h2 id="computing-ref">computing</h2>
-  
-<ul class="list-group">
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/computing/2013/11/27/rprofile-customization/">.Rprofile Customization</a> - Nov 27, 2013</li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/computing/2013/10/27/wordpress-category-filter/">Wordpress Categories Filter</a> - Oct 27, 2013</li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/computing/2013/10/24/python-web-server/">A simple python webserver</a> - Oct 24, 2013</li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/computing/2013/10/24/open-mpi/">Installating open-mpi on Mac</a> - Oct 24, 2013</li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/computing/2013/10/23/configuring-complier/">Configuring complier for R 3.0.x on OSX 10.9 Mavericks</a> - Oct 23, 2013</li>
-    	
-    
-  
-
-</ul>
-
-
-
-
 
                     </div>
                 </div>

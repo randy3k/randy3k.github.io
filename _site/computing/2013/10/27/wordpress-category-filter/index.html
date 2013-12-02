@@ -89,12 +89,9 @@
                         </h1>
                         
                     </div>
-                    <div id="content">
-                        <div class="date">
-    <span>27 October 2013</span>
-</div>
-<div class="post-content">
-    <p>You probably need change our category number, but this is how the filtering works.</p>
+                    <div class="content">
+                        <p><span class="date">October 27 2013</span>  </p>
+<p>You probably need change our category number, but this is how the filtering works.</p>
 
 <pre><code>&lt;?php
 /*
@@ -154,7 +151,7 @@ return $x . " AND $wpdb-&gt;term_taxonomy.taxonomy = 'category' AND $wpdb-&gt;te
 ?&gt;
 </code></pre>
 
-</div>
+
 
 
 
@@ -174,18 +171,16 @@ return $x . " AND $wpdb-&gt;term_taxonomy.taxonomy = 'category' AND $wpdb-&gt;te
   
 
 
-<hr>
-<div>
-    <ul class="pagination">
-        
-        <li class="prev"><a href="/computing/2013/10/24/python-web-server/" title="A simple python webserver">&larr; Previous</a></li>
-        
-        <li><a href="/blog/">Blog Archive</a></li>
-        
-        <li class="next"><a href="/computing/2013/11/27/rprofile-customization/" title=".Rprofile Customization">Next &rarr;</a></li>
-        
-    </ul>
-</div>
+<ul class="pagination">
+    
+    <li class="prev"><a href="/computing/2013/10/24/python-web-server/" title="A simple python webserver">&larr; Previous</a></li>
+    
+    <li><a href="/archive/">Archive</a></li>
+    
+    <li class="next"><a href="/computing/2013/11/27/rprofile-customization/" title=".Rprofile Customization">Next &rarr;</a></li>
+    
+</ul>
+
 <hr>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
@@ -208,10 +203,12 @@ return $x . " AND $wpdb-&gt;term_taxonomy.taxonomy = 'category' AND $wpdb-&gt;te
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
                 <div id="sider">
-                <div class="reset-box-sizing">
-                    <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
-                </div>
-                </div>
+                    <div class="reset-box-sizing sider-item">
+                        <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
+                    </div>
+                    
+                    <div class="sider-item"><a href="/archive">Blog Archive</a></div>
+                </div>                
             </div>            
         </div>
         <hr>
