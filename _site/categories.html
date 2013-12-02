@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Installating open-mpi on Mac - RTalks.net</title>
+    <title>Categories - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -85,52 +85,21 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Installating open-mpi on Mac 
+                        <span class="glyphicon glyphicon-book"></span> Categories 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">October 24 2013</span>  </p>
-<p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
-<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code>
-&lt;pre class="lang:sh decode:true"&gt;brew install gfortran
-brew install open-mpi&lt;/pre&gt;
-You will need a C complier. For OSX 10.9, see <a href="index?p=210">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine.</p>
-
-<p>Final step, either open R in terminal or R GUI, and run</p>
-
-<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
-
-<p>This should install <code>Rmpi</code>.</p>
-
-<p>To test <code>Rmpi</code></p>
-
-<pre class="lang:r decode:true ">library(Rmpi)
-mpi.spawn.Rslaves()
-mpi.iparReplicate(100, mean(rnorm(1000000)))
-mpi.close.Rslaves()</pre>
-
-<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
-
-<pre class="lang:r decode:true ">library(Rmpi)
-mpi.spawn.Rslaves(nslaves=3)
-mpi.iparReplicate(100, mean(rnorm(1000000)))
-mpi.close.Rslaves()</pre>
-
-
-
-
+                        
 
 <ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+  <li class="tag-icon"><span class="glyphicon glyphicon-folder-open"></span></li>
 
   
      
-    	<li><a class="btn btn-default btn-xs" href="/tags/#r-ref">r <span class="tag-size">3</span></a></li>
-     
-    	<li><a class="btn btn-default btn-xs" href="/tags/#osx-ref">osx <span class="tag-size">2</span></a></li>
-     
-    	<li><a class="btn btn-default btn-xs" href="/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
+    	<li><a class="btn btn-default btn-xs" href="/categories/#computing-ref">
+    		computing <span class="tag-size">5</span>
+    	</a></li>
     
   
 
@@ -139,31 +108,55 @@ mpi.close.Rslaves()</pre>
   
 
 
-<ul class="pagination">
+ 
+<h2 id="computing-ref">computing</h2>
+  
+<ul class="list-group">
+
+  
     
-    <li class="prev"><a href="/computing/2013/10/23/configuring-complier/" title="Configuring complier for R 3.0.x on OSX 10.9 Mavericks">&larr; Previous</a></li>
+    	
+    	<li class="list-group-item "><a href="/2013/11/27/rprofile-customization">.Rprofile Customization</a> - Nov 27, 2013</li>
+    	
     
-    <li><a href="/archive/">Archive</a></li>
+  
+
+  
     
-    <li class="next"><a href="/computing/2013/10/24/python-web-server/" title="A simple python webserver">Next &rarr;</a></li>
+    	
+    	<li class="list-group-item "><a href="/2013/10/27/wordpress-category-filter">Wordpress Categories Filter</a> - Oct 27, 2013</li>
+    	
     
+  
+
+  
+    
+    	
+    	<li class="list-group-item "><a href="/2013/10/24/python-web-server">A simple python webserver</a> - Oct 24, 2013</li>
+    	
+    
+  
+
+  
+    
+    	
+    	<li class="list-group-item "><a href="/2013/10/24/open-mpi">Installating open-mpi on Mac</a> - Oct 24, 2013</li>
+    	
+    
+  
+
+  
+    
+    	
+    	<li class="list-group-item "><a href="/2013/10/23/configuring-complier">Configuring complier for R 3.0.x on OSX 10.9 Mavericks</a> - Oct 23, 2013</li>
+    	
+    
+  
+
 </ul>
 
-<hr>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_developer = 1;
-    var disqus_shortname = 'randy3k'; // required: replace example with your forum shortname
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 
 
                     </div>
