@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>.Rprofile Customization - RTalks.net</title>
+    <title>Configuring complier for R 3.0.x on OSX 10.9 Mavericks - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -85,30 +85,45 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> .Rprofile Customization 
+                        <span class="glyphicon glyphicon-book"></span> Configuring complier for R 3.0.x on OSX 10.9 Mavericks 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">November 27 2013</span>  </p>
-<p>In case you want to specific your CRAN repo and change installed package type. Edit the file in <code>~/.Rprofile</code></p>
+                        <p><span class="date">October 23 2013</span>  </p>
+<p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
+<ol>
+    <li>change the complier to GNU gcc complier.</li>
+    <li>an easier solution, but it doesn't work for all packages</li>
+</ol>
+<h2>1. GNC gcc complier</h2>
+<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
 
-<div class="highlight"><pre><code class="r">local<span class="p">({</span>
-r <span class="o">&lt;-</span> getOption<span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
-r<span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;http://cran.us.r-project.org&quot;</span>
-options<span class="p">(</span>repos <span class="o">=</span> r<span class="p">)</span>
-<span class="p">})</span>
+<pre><code>brew install gcc47
+brew install gfortran
+</code></pre>
 
-local<span class="p">({</span>
-platform <span class="o">=</span> .Platform
-platform<span class="o">$</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span>
-unlockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
-assign<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> platform<span class="p">,</span> inherits<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-lockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
-options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span><span class="p">)</span>
-<span class="p">})</span>
-</code></pre></div>
+<p>Then edit <code>~/.R/Makevars</code></p>
 
+<pre><code>CC=/usr/local/bin/gcc-4.7
+CXX=/usr/local/bin/g++-4.7
+FC=/usr/local/bin/gfortran
+</code></pre>
+
+<h2>2. An easier solution</h2>
+<p>Edit <code>~/.R/Makevars</code> and add</p>
+
+<pre><code>CXXFLAGS=-stdlib=libstdc++
+</code></pre>
+
+<p>But it doesn’t fix all problems.</p>
+<h2>Test if it works</h2>
+<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
+
+<pre><code>install.packages("SuppDists", type="source")
+</code></pre>
+
+<p>Happy R coding~</p>
 
 
 
@@ -120,6 +135,10 @@ options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">
   
      
     	<li><a class="btn btn-default btn-xs" href="/tags/#r-ref">r <span class="tag-size">3</span></a></li>
+     
+    	<li><a class="btn btn-default btn-xs" href="/tags/#osx-ref">osx <span class="tag-size">2</span></a></li>
+     
+    	<li><a class="btn btn-default btn-xs" href="/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
     
   
 
@@ -130,11 +149,11 @@ options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">
 
 <ul class="pagination">
     
-    <li class="prev"><a href="/computing/2013/10/27/wordpress-category-filter/" title="Wordpress Categories Filter">&larr; Previous</a></li>
+    <li class="prev disabled"><a>&larr; Previous</a></li>
     
     <li><a href="/archive/">Archive</a></li>
     
-    <li class="next disabled"><a>Next &rarr;</a>
+    <li class="next"><a href="/2013/10/24/open-mpi" title="Installating open-mpi on Mac">Next &rarr;</a></li>
     
 </ul>
 

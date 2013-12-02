@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Configuring complier for R 3.0.x on OSX 10.9 Mavericks - RTalks.net</title>
+    <title>Pages - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -85,93 +85,82 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Configuring complier for R 3.0.x on OSX 10.9 Mavericks 
+                        <span class="glyphicon glyphicon-book"></span> Pages 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">October 23 2013</span>  </p>
-<p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
-<ol>
-    <li>change the complier to GNU gcc complier.</li>
-    <li>an easier solution, but it doesn't work for all packages</li>
-</ol>
-<h2>1. GNC gcc complier</h2>
-<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
-
-<pre><code>brew install gcc47
-brew install gfortran
-</code></pre>
-
-<p>Then edit <code>~/.R/Makevars</code></p>
-
-<pre><code>CC=/usr/local/bin/gcc-4.7
-CXX=/usr/local/bin/g++-4.7
-FC=/usr/local/bin/gfortran
-</code></pre>
-
-<h2>2. An easier solution</h2>
-<p>Edit <code>~/.R/Makevars</code> and add</p>
-
-<pre><code>CXXFLAGS=-stdlib=libstdc++
-</code></pre>
-
-<p>But it doesn’t fix all problems.</p>
-<h2>Test if it works</h2>
-<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
-
-<pre><code>install.packages("SuppDists", type="source")
-</code></pre>
-
-<p>Happy R coding~</p>
-
-
-
-
-
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+                        
+<ul class="list-group">
 
   
-     
-    	<li><a class="btn btn-default btn-xs" href="/tags/#r-ref">r <span class="tag-size">3</span></a></li>
-     
-    	<li><a class="btn btn-default btn-xs" href="/tags/#osx-ref">osx <span class="tag-size">2</span></a></li>
-     
-    	<li><a class="btn btn-default btn-xs" href="/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
+    
+    	
+    	<li class="list-group-item "><a href="/apps/index.html">Apps</a></li>
+    	
     
   
 
+  
+    
+    	
+    	<li class="list-group-item "><a href="/archive/index.html">Archive</a></li>
+    	
+    
+  
+
+  
+    
+    	
+    	<li class="list-group-item "><a href="/blog/index.html">Blog</a></li>
+    	
+    
+  
+
+  
+    
+    	
+    	<li class="list-group-item "><a href="/categories.html">Categories</a></li>
+    	
+    
+  
+
+  
+
+  
+    
+    	
+    	<li class="list-group-item active"><a href="/pages.html" class="active">Pages</a></li>
+    	
+    
+  
+
+  
+    
+    	
+    	<li class="list-group-item "><a href="/research/index.html">Research</a></li>
+    	
+    
+  
+
+  
+    
+    	
+    	<li class="list-group-item "><a href="/research/publications/index.html">Publications</a></li>
+    	
+    
+  
+
+  
+    
+    	
+    	<li class="list-group-item "><a href="/tags/index.html">Tags</a></li>
+    	
+    
+  
 
 </ul>
-  
 
-
-<ul class="pagination">
-    
-    <li class="prev disabled"><a>&larr; Previous</a></li>
-    
-    <li><a href="/archive/">Archive</a></li>
-    
-    <li class="next"><a href="/computing/2013/10/24/open-mpi/" title="Installating open-mpi on Mac">Next &rarr;</a></li>
-    
-</ul>
-
-<hr>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_developer = 1;
-    var disqus_shortname = 'randy3k'; // required: replace example with your forum shortname
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
                     </div>

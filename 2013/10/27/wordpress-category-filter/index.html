@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Categories - RTalks.net</title>
+    <title>Wordpress Categories Filter - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -85,21 +85,84 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Categories 
+                        <span class="glyphicon glyphicon-book"></span> Wordpress Categories Filter 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        
+                        <p><span class="date">October 27 2013</span>  </p>
+<p>You probably need change our category number, but this is how the filtering works.</p>
+
+<pre><code>&lt;?php
+/*
+Plugin Name: My Filter
+*/
+
+// Exit if accessed directly
+if ( !defined('ABSPATH')) exit;
+
+# to exclude the category testing
+function exclude_category($query) {
+if ($query-&gt;is_search) {
+$query-&gt;set('cat', '-3');
+}
+return $query;
+}
+add_filter('pre_get_posts', 'exclude_category');
+
+function exclude_widget_categories($args) {
+$exclude = "3"; // The IDs of the excluding categories
+$args["exclude"] = $exclude;
+return $args;
+}
+
+add_filter("widget_categories_args","exclude_widget_categories");
+
+function myFilter($query) {
+if ($query-&gt;is_home) {
+$query-&gt;set('cat','-3');
+}
+return $query;
+}
+add_filter('pre_get_posts','myFilter');
+
+function exclude_stuff($query) {
+if ( $query-&gt;is_date) {
+$query-&gt;set('cat', '-3');
+}
+return $query;
+}
+add_filter('pre_get_posts', 'exclude_stuff');
+
+add_filter( 'getarchives_where', 'customarchives_where' );
+add_filter( 'getarchives_join', 'customarchives_join' );
+
+function customarchives_join( $x ) {
+global $wpdb;
+return $x . " INNER JOIN $wpdb-&gt;term_relationships ON ($wpdb-&gt;posts.ID = $wpdb-&gt;term_relationships.object_id) INNER JOIN $wpdb-&gt;term_taxonomy ON ($wpdb-&gt;term_relationships.term_taxonomy_id = $wpdb-&gt;term_taxonomy.term_taxonomy_id)";
+}
+
+function customarchives_where( $x ) {
+global $wpdb;
+$exclude = '3'; // category id to exclude
+return $x . " AND $wpdb-&gt;term_taxonomy.taxonomy = 'category' AND $wpdb-&gt;term_taxonomy.term_id NOT IN ($exclude)";
+}
+
+?&gt;
+</code></pre>
+
+
+
+
 
 <ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-folder-open"></span></li>
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
   
      
-    	<li><a class="btn btn-default btn-xs" href="/categories/#computing-ref">
-    		computing <span class="tag-size">5</span>
-    	</a></li>
+    	<li><a class="btn btn-default btn-xs" href="/tags/#wordpress-ref">wordpress <span class="tag-size">1</span></a></li>
+     
+    	<li><a class="btn btn-default btn-xs" href="/tags/#php-ref">php <span class="tag-size">1</span></a></li>
     
   
 
@@ -108,55 +171,31 @@
   
 
 
- 
-<h2 id="computing-ref">computing</h2>
-  
-<ul class="list-group">
-
-  
+<ul class="pagination">
     
-    	
-    	<li class="list-group-item "><a href="/computing/2013/11/27/rprofile-customization/">.Rprofile Customization</a> - Nov 27, 2013</li>
-    	
+    <li class="prev"><a href="/2013/10/24/python-web-server" title="A simple python webserver">&larr; Previous</a></li>
     
-  
-
-  
+    <li><a href="/archive/">Archive</a></li>
     
-    	
-    	<li class="list-group-item "><a href="/computing/2013/10/27/wordpress-category-filter/">Wordpress Categories Filter</a> - Oct 27, 2013</li>
-    	
+    <li class="next"><a href="/2013/11/27/rprofile-customization" title=".Rprofile Customization">Next &rarr;</a></li>
     
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/computing/2013/10/24/python-web-server/">A simple python webserver</a> - Oct 24, 2013</li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/computing/2013/10/24/open-mpi/">Installating open-mpi on Mac</a> - Oct 24, 2013</li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/computing/2013/10/23/configuring-complier/">Configuring complier for R 3.0.x on OSX 10.9 Mavericks</a> - Oct 23, 2013</li>
-    	
-    
-  
-
 </ul>
 
-
-
+<hr>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'randy3k'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
                     </div>

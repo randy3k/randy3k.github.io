@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Pages - RTalks.net</title>
+    <title>.Rprofile Customization - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -85,82 +85,74 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Pages 
+                        <span class="glyphicon glyphicon-book"></span> .Rprofile Customization 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        
-<ul class="list-group">
+                        <p><span class="date">November 27 2013</span>  </p>
+<p>In case you want to specific your CRAN repo and change installed package type. Edit the file in <code>~/.Rprofile</code></p>
+
+<div class="highlight"><pre><code class="r">local<span class="p">({</span>
+r <span class="o">&lt;-</span> getOption<span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
+r<span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;http://cran.us.r-project.org&quot;</span>
+options<span class="p">(</span>repos <span class="o">=</span> r<span class="p">)</span>
+<span class="p">})</span>
+
+local<span class="p">({</span>
+platform <span class="o">=</span> .Platform
+platform<span class="o">$</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span>
+unlockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
+assign<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> platform<span class="p">,</span> inherits<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+lockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
+options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div>
+
+
+
+
+
+
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
   
-    
-    	
-    	<li class="list-group-item "><a href="/apps/">Apps</a></li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/archive/">Archive</a></li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/blog/">Blog</a></li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/categories/">Categories</a></li>
-    	
+     
+    	<li><a class="btn btn-default btn-xs" href="/tags/#r-ref">r <span class="tag-size">3</span></a></li>
     
   
 
-  
-
-  
-    
-    	
-    	<li class="list-group-item active"><a href="/pages/" class="active">Pages</a></li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/research/">Research</a></li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/research/publications/">Publications</a></li>
-    	
-    
-  
-
-  
-    
-    	
-    	<li class="list-group-item "><a href="/tags/">Tags</a></li>
-    	
-    
-  
 
 </ul>
+  
 
+
+<ul class="pagination">
+    
+    <li class="prev"><a href="/2013/10/27/wordpress-category-filter" title="Wordpress Categories Filter">&larr; Previous</a></li>
+    
+    <li><a href="/archive/">Archive</a></li>
+    
+    <li class="next disabled"><a>Next &rarr;</a>
+    
+</ul>
+
+<hr>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'randy3k'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
 
 
                     </div>
