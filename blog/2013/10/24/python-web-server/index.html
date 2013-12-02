@@ -62,10 +62,6 @@
                     
                     
                     <li ><a href="/blog/">Blog</a></li>
-                    
-                    
-                    
-                    <li ><a href="/tags/">Tags</a></li>
                       
                 </ul>
             </div>
@@ -88,9 +84,9 @@
 <pre><code>python -m SimpleHTTPServer 8000
 </code></pre>
 
-<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.</p>
-
-<p>More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on localhost</a></p>
+<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.
+<!--more-->
+More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on localhost</a></p>
 
 <pre><code>import sys
 import BaseHTTPServer
@@ -196,11 +192,14 @@ server.serve_forever()
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
                 <div id="sider">
-                    <div class="reset-box-sizing sider-item">
+                    <div class="reset-box-sizing sider-item search">
                         <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
                     </div>
                     
-                    <div class="sider-item"><a href="/blog/archive/">Blog Archive</a></div>
+                    <div class="sider-item">
+                    <p><a href="/blog/archive/">Blog Archive</a></p>
+                    <p><a href="/tags/">Tags</a></p>
+                    </div>                    
                 </div>                
             </div>            
         </div>
