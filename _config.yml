@@ -45,7 +45,7 @@ JB :
   BASE_PATH : false
   ASSET_PATH : false
 
-  archive_path: /archive/
+  archive_path: /blog/archive/
   categories_path : /categories/
   tags_path : /tags/
 
