@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Wordpress Categories Filter - RTalks.net</title>
+    <title>Installating open-mpi on Mac - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -85,71 +85,37 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Wordpress Categories Filter 
+                        <span class="glyphicon glyphicon-book"></span> Installating open-mpi on Mac 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">October 27 2013</span>  </p>
-<p>You probably need change our category number, but this is how the filtering works.</p>
+                        <p><span class="date">October 24 2013</span>  </p>
+<p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
+<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code>
+&lt;pre class="lang:sh decode:true"&gt;brew install gfortran
+brew install open-mpi&lt;/pre&gt;
+You will need a C complier. For OSX 10.9, see <a href="index?p=210">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine.</p>
 
-<pre><code>&lt;?php
-/*
-Plugin Name: My Filter
-*/
+<p>Final step, either open R in terminal or R GUI, and run</p>
 
-// Exit if accessed directly
-if ( !defined('ABSPATH')) exit;
+<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
 
-# to exclude the category testing
-function exclude_category($query) {
-if ($query-&gt;is_search) {
-$query-&gt;set('cat', '-3');
-}
-return $query;
-}
-add_filter('pre_get_posts', 'exclude_category');
+<p>This should install <code>Rmpi</code>.</p>
 
-function exclude_widget_categories($args) {
-$exclude = "3"; // The IDs of the excluding categories
-$args["exclude"] = $exclude;
-return $args;
-}
+<p>To test <code>Rmpi</code></p>
 
-add_filter("widget_categories_args","exclude_widget_categories");
+<pre class="lang:r decode:true ">library(Rmpi)
+mpi.spawn.Rslaves()
+mpi.iparReplicate(100, mean(rnorm(1000000)))
+mpi.close.Rslaves()</pre>
 
-function myFilter($query) {
-if ($query-&gt;is_home) {
-$query-&gt;set('cat','-3');
-}
-return $query;
-}
-add_filter('pre_get_posts','myFilter');
+<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
 
-function exclude_stuff($query) {
-if ( $query-&gt;is_date) {
-$query-&gt;set('cat', '-3');
-}
-return $query;
-}
-add_filter('pre_get_posts', 'exclude_stuff');
-
-add_filter( 'getarchives_where', 'customarchives_where' );
-add_filter( 'getarchives_join', 'customarchives_join' );
-
-function customarchives_join( $x ) {
-global $wpdb;
-return $x . " INNER JOIN $wpdb-&gt;term_relationships ON ($wpdb-&gt;posts.ID = $wpdb-&gt;term_relationships.object_id) INNER JOIN $wpdb-&gt;term_taxonomy ON ($wpdb-&gt;term_relationships.term_taxonomy_id = $wpdb-&gt;term_taxonomy.term_taxonomy_id)";
-}
-
-function customarchives_where( $x ) {
-global $wpdb;
-$exclude = '3'; // category id to exclude
-return $x . " AND $wpdb-&gt;term_taxonomy.taxonomy = 'category' AND $wpdb-&gt;term_taxonomy.term_id NOT IN ($exclude)";
-}
-
-?&gt;
-</code></pre>
+<pre class="lang:r decode:true ">library(Rmpi)
+mpi.spawn.Rslaves(nslaves=3)
+mpi.iparReplicate(100, mean(rnorm(1000000)))
+mpi.close.Rslaves()</pre>
 
 
 
@@ -160,9 +126,11 @@ return $x . " AND $wpdb-&gt;term_taxonomy.taxonomy = 'category' AND $wpdb-&gt;te
 
   
      
-    	<li><a class="btn btn-default btn-xs" href="/tags/#wordpress-ref">wordpress <span class="tag-size">1</span></a></li>
+    	<li><a class="btn btn-default btn-xs" href="/tags/#r-ref">r <span class="tag-size">3</span></a></li>
      
-    	<li><a class="btn btn-default btn-xs" href="/tags/#php-ref">php <span class="tag-size">1</span></a></li>
+    	<li><a class="btn btn-default btn-xs" href="/tags/#osx-ref">osx <span class="tag-size">2</span></a></li>
+     
+    	<li><a class="btn btn-default btn-xs" href="/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
     
   
 
@@ -173,11 +141,11 @@ return $x . " AND $wpdb-&gt;term_taxonomy.taxonomy = 'category' AND $wpdb-&gt;te
 
 <ul class="pagination">
     
-    <li class="prev"><a href="/2013/10/24/python-web-server" title="A simple python webserver">&larr; Previous</a></li>
+    <li class="prev"><a href="/blog/2013/10/23/configuring-complier" title="Configuring complier for R 3.0.x on OSX 10.9 Mavericks">&larr; Previous</a></li>
     
     <li><a href="/archive/">Archive</a></li>
     
-    <li class="next"><a href="/2013/11/27/rprofile-customization" title=".Rprofile Customization">Next &rarr;</a></li>
+    <li class="next"><a href="/blog/2013/10/24/python-web-server" title="A simple python webserver">Next &rarr;</a></li>
     
 </ul>
 
