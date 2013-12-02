@@ -3,9 +3,9 @@
   {% if post.title != null %}
     {% if group == null or group == post.group %}
     	{% if page.url == post.url %}
-    	<li class="list-group-item active"><a href="{{ BASE_PATH }}{{post.url}}" class="active">{{post.title}}</a></li>
+    	<li class="list-group-item active"><a href="{{post.url}}" class="active">{{post.title}}</a></li>
     	{% else %}
-    	<li class="list-group-item "><a href="{{ BASE_PATH }}{{post.url}}">{{post.title}}</a>{% if post.date %} - {{ post.date | date: "%b %e, %Y" }}{% endif %}</li>
+    	<li class="list-group-item "><a href="{{post.url}}">{{post.title}}</a>{% if post.date %} - {{ post.date | date: "%b %e, %Y" }}{% endif %}</li>
     	{% endif %}
     {% endif %}
   {% endif %}

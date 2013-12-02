@@ -1,4 +1,3 @@
-{% include setup %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,6 +15,9 @@
 
 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="{{ site.baseurl }}assets/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{ site.baseurl }}assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+
 <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>  
 <script>
@@ -30,16 +32,6 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-<link href="{{ site.baseurl }}assets/css/pygments.css" rel="stylesheet" type="text/css" media="all">
-<link href="{{ site.baseurl }}assets/css/style.css" rel="stylesheet" type="text/css" media="all">
-
-<!-- <link rel="shortcut icon" href="images/favicon.ico">
-<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"> -->
-
-<!--     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
-    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed"> -->
 
 </head>
 
@@ -53,7 +45,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>         
-                <div class="navbar-brand"><span class="glyphicon glyphicon-th-large"></span> <a href="{{ HOME_PATH }}">{{ site.title }}</a></div>
+                <div class="navbar-brand"><span class="glyphicon glyphicon-th-large"></span> <a href="/">{{ site.title }}</a></div>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
@@ -90,7 +82,7 @@
                         <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
                     </div>
                     
-                    <div class="sider-item"><a href="{{ site.baseurl }}{{ site.JB.archive_path }}">Blog Archive</a></div>
+                    <div class="sider-item"><a href="{{ site.JB.archive_path }}">Blog Archive</a></div>
                 </div>                
             </div>            
         </div>
