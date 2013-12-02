@@ -9,7 +9,9 @@ title : Blog
   <div class="content">
     <p><span class="date">{{ post.date | date: "%B %-d %Y" }}</span>  </p>
     {{ post.excerpt }}
-    <p><a href="{{ post.url }}" class="btn btn-default btn-xs">More</a></p>
+    {% if post.content contains site.excerpt_separator %}
+    <p><a href="{{ post.url }}">Read More... </a></p>
+    {% endif %}
   </div>
 {% endfor %}
 

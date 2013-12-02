@@ -12,7 +12,7 @@ Python has a very simple web server which allows you to share a particular direc
     python -m SimpleHTTPServer 8000
     
 Index directory can be then accessed by http://&lt;ip address&gt;:8000.
-
+<!--more-->
 More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on localhost</a>
 
     import sys

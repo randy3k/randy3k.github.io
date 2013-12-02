@@ -185,3 +185,7 @@ hr {
 .gsc-input-box{
     height: 26px!important;
 }
+
+.search{
+    height: 60px;
+}

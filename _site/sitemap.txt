@@ -1,0 +1,17 @@
+
+http://rtalks.net/apps/index.html
+http://rtalks.net/blog/archive/index.html
+http://rtalks.net/blog/index.html
+http://rtalks.net/categories.html
+http://rtalks.net/index.html
+http://rtalks.net/pages.html
+http://rtalks.net/research/index.html
+http://rtalks.net/research/publications/index.html
+http://rtalks.net/sitemap.txt
+http://rtalks.net/tags/index.html
+
+http://rtalks.net/blog/2013/11/27/rprofile-customization
+http://rtalks.net/blog/2013/10/27/wordpress-category-filter
+http://rtalks.net/blog/2013/10/24/python-web-server
+http://rtalks.net/blog/2013/10/24/open-mpi
+http://rtalks.net/blog/2013/10/23/configuring-complier

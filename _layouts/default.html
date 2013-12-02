@@ -78,17 +78,20 @@
             </div>
             <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
                 <div id="sider">
-                    <div class="reset-box-sizing sider-item">
+                    <div class="reset-box-sizing sider-item search">
                         <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
                     </div>
                     
-                    <div class="sider-item"><a href="{{ site.JB.archive_path }}">Blog Archive</a></div>
+                    <div class="sider-item">
+                    <p><a href="{{ site.archive_path }}">Blog Archive</a></p>
+                    <p><a href="{{ site.tags_path }}">Tags</a></p>
+                    </div>                    
                 </div>                
             </div>            
         </div>
         <hr>
         <footer>
-            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http:///github.com/randy3k", target="_blank"><img width="20" style="vertical-align:text-bottom" src="https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png"></a>. 
+            <p>&copy; {{ site.time | date: '%Y' }} {{ site.author.name }}. Powered by <a href="http:///github.com/{{ site.author.github }}", target="_blank"><img width="20" style="vertical-align:text-bottom" src="https://github.global.ssl.fastly.net/images/modules/logos_page/GitHub-Mark.png"></a>. 
             </p>
         </footer>                  
    </div>     

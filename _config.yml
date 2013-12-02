@@ -1,15 +1,11 @@
-# This is the default format.
-# For more see: http://jekyllrb.com/docs/permalinks/
 permalink: /blog/:year/:month/:day/:title
 markdown: kramdown
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
 paginate: 5
 paginate_path: "blog/page:num"
+excerpt_separator: <!--more-->
 
-# Themes are encouraged to use these universal variables
-# so be sure to set them if your theme uses them.
-#
 title : RTalks.net
 tagline: Site Tagline
 author :
@@ -19,15 +15,7 @@ author :
   # twitter : username
   # feedburner : feedname
 
-# The production_url is only used when full-domain names are needed
-# such as sitemap.txt
-# Most places will/should use BASE_PATH to make the urls
-#
-# If you have set a CNAME (pages.github.com) set your custom domain here.
-# Else if you are pushing to username.github.io, replace with your username.
-# Finally if you are pushing to a GitHub project page, include the project name at the end.
-#
-production_url : http://rtalks.net
+url : http://rtalks.net
 
 nav:
   - text: Research
@@ -36,17 +24,10 @@ nav:
     url: /apps/
   - text: Blog
     url: /blog/
-  - text: Tags
-    url: /tags/
 
-# All Jekyll-Bootstrap specific configurations are namespaced into this hash
+archive_path: /blog/archive/
+categories_path : /categories/
+tags_path : /tags/
 
-JB :
-  archive_path: /blog/archive/
-  categories_path : /categories/
-  tags_path : /tags/
-
-  comments :
-    provider : disqus
-    disqus :
-      short_name : randy3k
+disqus :
+  short_name : randy3k
