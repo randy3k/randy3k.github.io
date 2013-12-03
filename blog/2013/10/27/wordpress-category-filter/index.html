@@ -78,66 +78,69 @@
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">October 27 2013</span>  </p>
-<p>You probably need change our category number, but this is how the filtering works.</p>
+                        <p><span class="date">October 27 2013</span>
 
-<pre><code>&lt;?php
-/*
-Plugin Name: My Filter
-*/
+</p>
+<p>You probably need change our category number, but this is how the filtering works.
+<!--more--></p>
 
-// Exit if accessed directly
-if ( !defined('ABSPATH')) exit;
+<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
+<span class="cm">/*</span>
+<span class="cm">Plugin Name: My Filter</span>
+<span class="cm">*/</span>
 
-# to exclude the category testing
-function exclude_category($query) {
-if ($query-&gt;is_search) {
-$query-&gt;set('cat', '-3');
-}
-return $query;
-}
-add_filter('pre_get_posts', 'exclude_category');
+<span class="c1">// Exit if accessed directly</span>
+<span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;ABSPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">;</span>
 
-function exclude_widget_categories($args) {
-$exclude = "3"; // The IDs of the excluding categories
-$args["exclude"] = $exclude;
-return $args;
-}
+<span class="c1"># to exclude the category testing</span>
+<span class="k">function</span> <span class="nf">exclude_category</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">is_search</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;-3&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nv">$query</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;pre_get_posts&#39;</span><span class="p">,</span> <span class="s1">&#39;exclude_category&#39;</span><span class="p">);</span>
 
-add_filter("widget_categories_args","exclude_widget_categories");
+<span class="k">function</span> <span class="nf">exclude_widget_categories</span><span class="p">(</span><span class="nv">$args</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$exclude</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span><span class="p">;</span> <span class="c1">// The IDs of the excluding categories</span>
+<span class="nv">$args</span><span class="p">[</span><span class="s2">&quot;exclude&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$exclude</span><span class="p">;</span>
+<span class="k">return</span> <span class="nv">$args</span><span class="p">;</span>
+<span class="p">}</span>
 
-function myFilter($query) {
-if ($query-&gt;is_home) {
-$query-&gt;set('cat','-3');
-}
-return $query;
-}
-add_filter('pre_get_posts','myFilter');
+<span class="nx">add_filter</span><span class="p">(</span><span class="s2">&quot;widget_categories_args&quot;</span><span class="p">,</span><span class="s2">&quot;exclude_widget_categories&quot;</span><span class="p">);</span>
 
-function exclude_stuff($query) {
-if ( $query-&gt;is_date) {
-$query-&gt;set('cat', '-3');
-}
-return $query;
-}
-add_filter('pre_get_posts', 'exclude_stuff');
+<span class="k">function</span> <span class="nf">myFilter</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">is_home</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;-3&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nv">$query</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;pre_get_posts&#39;</span><span class="p">,</span><span class="s1">&#39;myFilter&#39;</span><span class="p">);</span>
 
-add_filter( 'getarchives_where', 'customarchives_where' );
-add_filter( 'getarchives_join', 'customarchives_join' );
+<span class="k">function</span> <span class="nf">exclude_stuff</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">if</span> <span class="p">(</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">is_date</span><span class="p">)</span> <span class="p">{</span>
+<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;-3&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="nv">$query</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;pre_get_posts&#39;</span><span class="p">,</span> <span class="s1">&#39;exclude_stuff&#39;</span><span class="p">);</span>
 
-function customarchives_join( $x ) {
-global $wpdb;
-return $x . " INNER JOIN $wpdb-&gt;term_relationships ON ($wpdb-&gt;posts.ID = $wpdb-&gt;term_relationships.object_id) INNER JOIN $wpdb-&gt;term_taxonomy ON ($wpdb-&gt;term_relationships.term_taxonomy_id = $wpdb-&gt;term_taxonomy.term_taxonomy_id)";
-}
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;getarchives_where&#39;</span><span class="p">,</span> <span class="s1">&#39;customarchives_where&#39;</span> <span class="p">);</span>
+<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;getarchives_join&#39;</span><span class="p">,</span> <span class="s1">&#39;customarchives_join&#39;</span> <span class="p">);</span>
 
-function customarchives_where( $x ) {
-global $wpdb;
-$exclude = '3'; // category id to exclude
-return $x . " AND $wpdb-&gt;term_taxonomy.taxonomy = 'category' AND $wpdb-&gt;term_taxonomy.term_id NOT IN ($exclude)";
-}
+<span class="k">function</span> <span class="nf">customarchives_join</span><span class="p">(</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
+<span class="k">global</span> <span class="nv">$wpdb</span><span class="p">;</span>
+<span class="k">return</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s2">&quot; INNER JOIN </span><span class="si">$wpdb-&gt;term_relationships</span><span class="s2"> ON (</span><span class="si">$wpdb-&gt;posts</span><span class="s2">.ID = </span><span class="si">$wpdb-&gt;term_relationships</span><span class="s2">.object_id) INNER JOIN </span><span class="si">$wpdb-&gt;term_taxonomy</span><span class="s2"> ON (</span><span class="si">$wpdb-&gt;term_relationships</span><span class="s2">.term_taxonomy_id = </span><span class="si">$wpdb-&gt;term_taxonomy</span><span class="s2">.term_taxonomy_id)&quot;</span><span class="p">;</span>
+<span class="p">}</span>
 
-?&gt;
-</code></pre>
+<span class="k">function</span> <span class="nf">customarchives_where</span><span class="p">(</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
+<span class="k">global</span> <span class="nv">$wpdb</span><span class="p">;</span>
+<span class="nv">$exclude</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span><span class="p">;</span> <span class="c1">// category id to exclude</span>
+<span class="k">return</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s2">&quot; AND </span><span class="si">$wpdb-&gt;term_taxonomy</span><span class="s2">.taxonomy = &#39;category&#39; AND </span><span class="si">$wpdb-&gt;term_taxonomy</span><span class="s2">.term_id NOT IN (</span><span class="si">$exclude</span><span class="s2">)&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cp">?&gt;</span><span class="x"></span>
+</code></pre></div>
 
 
 
