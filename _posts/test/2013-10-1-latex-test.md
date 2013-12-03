@@ -2,8 +2,8 @@
 layout: post
 category : latex
 title: Latex Testing
-published: false
-tags : []
+published: 1
+tags : [latex, testing]
 ---
 
 {% include mathjax %}

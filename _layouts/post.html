@@ -2,7 +2,11 @@
 layout: default
 ---
 
-<p><span class="date">{{ page.date | date: "%B %-d %Y" }}</span>  </p>
+<p><span class="date">{{ page.date | date: "%B %-d %Y" }}</span>
+{% if page.last_modified %}
+<small>Last modified: {{ page.last_modified | date: "%B %-d %Y" }}</small>
+    {% endif %}
+</p>
 {{ content }}
 
 {% comment %}

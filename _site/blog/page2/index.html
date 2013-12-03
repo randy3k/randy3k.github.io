@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Configuring complier for R 3.0.x on OSX 10.9 Mavericks - RTalks.net</title>
+    <title>Blog - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -73,96 +73,67 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Configuring complier for R 3.0.x on OSX 10.9 Mavericks 
+                        <span class="glyphicon glyphicon-book"></span> Blog 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">October 23 2013</span>
+                        <!-- This loops through the paginated posts -->
 
-</p>
-<p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
-<ol>
-    <li>change the complier to GNU gcc complier.</li>
-    <li>an easier solution, but it doesn't work for all packages</li>
-</ol>
-<h2>1. GNC gcc complier</h2>
-<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
+  <h1><a href="/blog/2013/10/01/latex-test">Latex Testing</a></h1>
+  <div class="content">
+    <p><span class="date">October 1 2013</span>  </p>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-<pre><code>brew install gcc47
-brew install gfortran
-</code></pre>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });  
+</script>
 
-<p>Then edit <code>~/.R/Makevars</code></p>
+<p>\begin{equation}
+a+b=2
+\end{equation}</p>
 
-<pre><code>CC=/usr/local/bin/gcc-4.7
-CXX=/usr/local/bin/g++-4.7
-FC=/usr/local/bin/gfortran
-</code></pre>
+<p>$\alpha_3 + [\beta_1^2 = 1$ </p>
 
-<h2>2. An easier solution</h2>
-<p>Edit <code>~/.R/Makevars</code> and add</p>
+<script type="math/tex; mode=display">
+\alpha + \beta_1 = 2
+</script>
 
-<pre><code>CXXFLAGS=-stdlib=libstdc++
-</code></pre>
-
-<p>But it doesn’t fix all problems.</p>
-<h2>Test if it works</h2>
-<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
-
-<pre><code>install.packages("SuppDists", type="source")
-</code></pre>
-
-<p>Happy R coding~</p>
+<script type="math/tex; mode=display">\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}</script>
 
 
-
-
-
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-  
-     
-    	<li><a class="btn btn-default btn-xs" href="/tags/#r-ref">r <span class="tag-size">3</span></a></li>
-     
-    	<li><a class="btn btn-default btn-xs" href="/tags/#osx-ref">osx <span class="tag-size">2</span></a></li>
-     
-    	<li><a class="btn btn-default btn-xs" href="/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
     
-  
+  </div>
 
 
-</ul>
-  
-
+<!-- Pagination links -->
 
 <ul class="pagination">
+  
+    <li><a href="/blog/index.html">Prev</a></li>
+  
+
+  
     
-    <li class="prev"><a href="/blog/2013/10/01/latex-test" title="Latex Testing">&larr; Previous</a></li>
+      <li><a href="/blog/">1</a></li>
     
-    <li><a href="/blog/archive/">Archive</a></li>
+  
     
-    <li class="next"><a href="/blog/2013/10/24/open-mpi" title="Installating open-mpi on Mac">Next &rarr;</a></li>
+      <li class="active"><a href="#" >2</a></li>
     
+  
+
+  
+    <li class="disabled"><a>Next</a></li>
+  
 </ul>
-
-<hr>
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    var disqus_developer = 1;
-    var disqus_shortname = 'randy3k'; // required: replace example with your forum shortname
-    
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
-
 
                     </div>
                 </div>
