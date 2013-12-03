@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>.Rprofile Customization - RTalks.net</title>
+    <title>Latex Testing - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -73,58 +73,52 @@
                 <div id="page">
                     <div class="jumbotron" id="page-jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> .Rprofile Customization 
+                        <span class="glyphicon glyphicon-book"></span> Latex Testing 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">November 27 2013</span>
+                        <p><span class="date">October 1 2012</span>
 
 </p>
-<p>In case you want to specific your CRAN repo and change installed package type. Edit the file in <code>~/.Rprofile</code></p>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
-<div class="highlight"><pre><code class="r">local<span class="p">({</span>
-r <span class="o">&lt;-</span> getOption<span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
-r<span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;http://cran.us.r-project.org&quot;</span>
-options<span class="p">(</span>repos <span class="o">=</span> r<span class="p">)</span>
-<span class="p">})</span>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });  
+</script>
 
-local<span class="p">({</span>
-platform <span class="o">=</span> .Platform
-platform<span class="o">$</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span>
-unlockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
-assign<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> platform<span class="p">,</span> inherits<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-lockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
-options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span><span class="p">)</span>
-<span class="p">})</span>
-</code></pre></div>
+<p>\begin{equation}
+a+b=2
+\end{equation}</p>
 
+<p>$\alpha_3 + [\beta_1^2 = 1$ </p>
 
+<script type="math/tex; mode=display">
+\alpha + \beta_1 = 2
+</script>
 
-
-
-
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-  
-     
-    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
-    
-  
+<script type="math/tex; mode=display">\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}</script>
 
 
-</ul>
+
+
   
 
 
 <ul class="pagination">
     
-    <li class="prev"><a href="/blog/2013/10/27/wordpress-category-filter/" title="Wordpress Categories Filter">&larr; Previous</a></li>
+    <li class="prev disabled"><a>&larr; Previous</a></li>
     
     <li><a href="/blog/archive/">Archive</a></li>
     
-    <li class="next"><a href="/blog/2013/12/03/shortcuts-in-osx-terminal/" title="Shortcuts in OSX-Terminal">Next &rarr;</a></li>
+    <li class="next"><a href="/blog/2013/10/23/configuring-complier/" title="Configuring complier for R 3.0.x on OSX 10.9 Mavericks">Next &rarr;</a></li>
     
 </ul>
 

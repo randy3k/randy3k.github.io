@@ -82,6 +82,110 @@
                     <div class="content">
                         <!-- This loops through the paginated posts -->
 
+  <h1><a href="/blog/2013/12/03/shortcuts-in-osx-terminal/">Shortcuts in OSX-Terminal</a></h1>
+  <div class="content">
+    <p><span class="date">December 3 2013</span>  </p>
+    <p>There are many useful shortcuts in OSX terminal. You may already know some of
+them, but I bet you don’t know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think useful, more can be found in <a href="http://ss64.com/osx/syntax-bashkeyboard.html">here</a>. First of all, you may want to enable the meta key.</p>
+
+<p><img src="/assets/images/osx-terminal.png" alt="terminal" /></p>
+
+<h4 id="movement">Movement</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Descriptions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl + a</td>
+      <td>Go to the beginning of the line (Home)</td>
+    </tr>
+    <tr>
+      <td>Ctrl + e</td>
+      <td>Go to the End of the line (End)</td>
+    </tr>
+    <tr>
+      <td>Alt + b</td>
+      <td>Back (left) one word</td>
+    </tr>
+    <tr>
+      <td>Alt + f</td>
+      <td>Forward (right) one word</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="text">Text</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Descriptions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Alt + Del</td>
+      <td>Delete the Word before the cursor.</td>
+    </tr>
+    <tr>
+      <td>Alt + d</td>
+      <td>Delete the Word after the cursor.</td>
+    </tr>
+    <tr>
+      <td>Ctrl + u</td>
+      <td>Cut/delete the line before the cursor position.</td>
+    </tr>
+    <tr>
+      <td>Ctrl + k</td>
+      <td>Cut the Line after the cursor to the clipboard.</td>
+    </tr>
+    <tr>
+      <td>Ctrl + w</td>
+      <td>Cut the Word before the cursor to the clipboard.</td>
+    </tr>
+    <tr>
+      <td>Ctrl + y</td>
+      <td>Paste the last thing to be cut (yank)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="misc">Misc.</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Descriptions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Ctrl + l</td>
+      <td>Clear the Screen, similar to the clear command</td>
+    </tr>
+    <tr>
+      <td>Alt + r</td>
+      <td>Cancel the changes and put back the line as it was in the history (revert).</td>
+    </tr>
+    <tr>
+      <td>Ctrl + _</td>
+      <td>Undo</td>
+    </tr>
+  </tbody>
+</table>
+
+
+    
+  </div>
+  
+
   <h1><a href="/blog/2013/11/27/rprofile-customization/">.Rprofile Customization</a></h1>
   <div class="content">
     <p><span class="date">November 27 2013</span>  </p>
@@ -215,68 +319,6 @@ mpi.close.Rslaves()</pre>
 mpi.spawn.Rslaves(nslaves=3)
 mpi.iparReplicate(100, mean(rnorm(1000000)))
 mpi.close.Rslaves()</pre>
-
-
-    
-  </div>
-  
-  
-  
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-  
-     
-    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
-     
-    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">2</span></a></li>
-     
-    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
-    
-  
-
-
-</ul>
-  
-
-  
-
-  <h1><a href="/blog/2013/10/23/configuring-complier/">Configuring complier for R 3.0.x on OSX 10.9 Mavericks</a></h1>
-  <div class="content">
-    <p><span class="date">October 23 2013</span>  </p>
-    <p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
-<ol>
-    <li>change the complier to GNU gcc complier.</li>
-    <li>an easier solution, but it doesn't work for all packages</li>
-</ol>
-<h2>1. GNC gcc complier</h2>
-<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
-
-<pre><code>brew install gcc47
-brew install gfortran
-</code></pre>
-
-<p>Then edit <code>~/.R/Makevars</code></p>
-
-<pre><code>CC=/usr/local/bin/gcc-4.7
-CXX=/usr/local/bin/g++-4.7
-FC=/usr/local/bin/gfortran
-</code></pre>
-
-<h2>2. An easier solution</h2>
-<p>Edit <code>~/.R/Makevars</code> and add</p>
-
-<pre><code>CXXFLAGS=-stdlib=libstdc++
-</code></pre>
-
-<p>But it doesn’t fix all problems.</p>
-<h2>Test if it works</h2>
-<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
-
-<pre><code>install.packages("SuppDists", type="source")
-</code></pre>
-
-<p>Happy R coding~</p>
 
 
     

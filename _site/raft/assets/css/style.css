@@ -190,29 +190,3 @@ hr {
     height: 65px;
     padding: 5px;
 }
-
-/* table */
-
-.content > table {
-    width: 100%;
-    overflow: auto;
-    display: block
-}
-
-.content > table th {
-    font-weight: bold
-}
-
-.content > table th, .content > table td {
-    border: 1px solid #ddd;
-    padding: 6px 13px
-}
-
-.content > table tr {
-    border-top: 1px solid #ccc;
-    background-color: #fff
-}
-
-.content > table tr:nth-child(2n) {
-    background-color: #f8f8f8
-}

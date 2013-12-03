@@ -61,7 +61,9 @@
                     
                     
                     
-                    <li ><a href="/blog/">Blog</a></li>
+                    
+                    
+                    <li class="active"><a href="/blog/">Blog</a></li>
                       
                 </ul>
             </div>
@@ -79,6 +81,165 @@
                     </div>
                     <div class="content">
                         <!-- This loops through the paginated posts -->
+
+  <h1><a href="/blog/2013/11/27/rprofile-customization/">.Rprofile Customization</a></h1>
+  <div class="content">
+    <p><span class="date">November 27 2013</span>  </p>
+    <p>In case you want to specific your CRAN repo and change installed package type. Edit the file in <code>~/.Rprofile</code></p>
+
+<div class="highlight"><pre><code class="r">local<span class="p">({</span>
+r <span class="o">&lt;-</span> getOption<span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
+r<span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;http://cran.us.r-project.org&quot;</span>
+options<span class="p">(</span>repos <span class="o">=</span> r<span class="p">)</span>
+<span class="p">})</span>
+
+local<span class="p">({</span>
+platform <span class="o">=</span> .Platform
+platform<span class="o">$</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span>
+unlockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
+assign<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> platform<span class="p">,</span> inherits<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+lockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
+options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span><span class="p">)</span>
+<span class="p">})</span>
+</code></pre></div>
+
+
+    
+  </div>
+  
+  
+  
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+
+  
+     
+    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
+    
+  
+
+
+</ul>
+  
+
+  
+
+  <h1><a href="/blog/2013/10/27/wordpress-category-filter/">Wordpress Categories Filter</a></h1>
+  <div class="content">
+    <p><span class="date">October 27 2013</span>  </p>
+    <p>This is how wordpress filters out some specific categories. We will need to change the category id.</p>
+
+
+    
+    <p><a href="/blog/2013/10/27/wordpress-category-filter/">Read More... </a></p>
+    
+  </div>
+  
+  
+  
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+
+  
+     
+    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#wordpress-ref">wordpress <span class="tag-size">1</span></a></li>
+     
+    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#php-ref">php <span class="tag-size">1</span></a></li>
+    
+  
+
+
+</ul>
+  
+
+  
+
+  <h1><a href="/blog/2013/10/24/python-web-server/">A simple python webserver</a></h1>
+  <div class="content">
+    <p><span class="date">October 24 2013</span>  </p>
+    <p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
+
+<pre><code>python -m SimpleHTTPServer 8000
+</code></pre>
+
+<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.</p>
+
+
+    
+    <p><a href="/blog/2013/10/24/python-web-server/">Read More... </a></p>
+    
+  </div>
+  
+  
+  
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+
+  
+     
+    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#python-ref">python <span class="tag-size">1</span></a></li>
+    
+  
+
+
+</ul>
+  
+
+  
+
+  <h1><a href="/blog/2013/10/24/open-mpi/">Installating open-mpi on Mac</a></h1>
+  <div class="content">
+    <p><span class="date">October 24 2013</span>  </p>
+    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
+<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code>
+&lt;pre class="lang:sh decode:true"&gt;brew install gfortran
+brew install open-mpi&lt;/pre&gt;
+You will need a C complier. For OSX 10.9, see <a href="index?p=210">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine.</p>
+
+<p>Final step, either open R in terminal or R GUI, and run</p>
+
+<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
+
+<p>This should install <code>Rmpi</code>.</p>
+
+<p>To test <code>Rmpi</code></p>
+
+<pre class="lang:r decode:true ">library(Rmpi)
+mpi.spawn.Rslaves()
+mpi.iparReplicate(100, mean(rnorm(1000000)))
+mpi.close.Rslaves()</pre>
+
+<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
+
+<pre class="lang:r decode:true ">library(Rmpi)
+mpi.spawn.Rslaves(nslaves=3)
+mpi.iparReplicate(100, mean(rnorm(1000000)))
+mpi.close.Rslaves()</pre>
+
+
+    
+  </div>
+  
+  
+  
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+
+  
+     
+    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
+     
+    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">2</span></a></li>
+     
+    	<li><a class="btn btn-default btn-xs" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
+    
+  
+
+
+</ul>
+  
+
+  
 
   <h1><a href="/blog/2013/10/23/configuring-complier/">Configuring complier for R 3.0.x on OSX 10.9 Mavericks</a></h1>
   <div class="content">
@@ -142,59 +303,26 @@ FC=/usr/local/bin/gfortran
 
   
 
-  <h1><a href="/blog/2012/10/01/latex-test/">Latex Testing</a></h1>
-  <div class="content">
-    <p><span class="date">October 1 2012</span>  </p>
-    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [['$','$'], ['\\(','\\)']],
-      processEscapes: true
-    }
-  });  
-</script>
-
-<p>\begin{equation}
-a+b=2
-\end{equation}</p>
-
-<p>$\alpha_3 + [\beta_1^2 = 1$ </p>
-
-<script type="math/tex; mode=display">
-\alpha + \beta_1 = 2
-</script>
-
-<script type="math/tex; mode=display">\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}</script>
-
-
-    
-  </div>
-  
-
 
 <!-- Pagination links -->
 
 <ul class="pagination">
   
-    <li><a href="/blog/index.html">Prev</a></li>
+    <li class="disabled"><a>Prev</a></li>
   
 
   
     
-      <li><a href="/blog/">1</a></li>
+      <li class="active"><a href="#" >1</a></li>
     
   
     
-      <li class="active"><a href="#" >2</a></li>
+      <li><a href="/blog/2/">2</a></li>
     
   
 
   
-    <li class="disabled"><a>Next</a></li>
+    <li><a href="/blog/2/">Next</a></li>
   
 </ul>
 
