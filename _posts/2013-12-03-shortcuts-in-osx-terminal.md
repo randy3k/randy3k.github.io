@@ -9,8 +9,8 @@ last_modified:
 ---
 
 There are many useful shortcuts in OSX terminal. You may already know some of
-them, but I bet you don't know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think useful, more can be found in [here](http://ss64.com/osx/syntax-bashkeyboard.html). First of all, you may want to enable the meta key.
-
+them, but I bet you don't know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think are useful, more can be found [here](http://ss64.com/osx/syntax-bashkeyboard.html). First of all, you may want to enable the meta key.
+<!--more-->
 ![terminal](/assets/images/osx-terminal.png)
 
 ####Movement
@@ -18,7 +18,7 @@ them, but I bet you don't know all of them. I am providing a cheat sheet of thos
   | Command     | Descriptions                                                                | 
   | ----------- | ------------                                                                | 
   | Ctrl + a    | Go to the beginning of the line (Home)                                      | 
-  | Ctrl + e    | Go to the End of the line (End)                                             | 
+  | Ctrl + e    | Go to the end of the line (End)                                             | 
   | Alt + b     | Back (left) one word                                                        | 
   | Alt + f     | Forward (right) one word                                                    | 
 
@@ -26,17 +26,17 @@ them, but I bet you don't know all of them. I am providing a cheat sheet of thos
 
   | Command     | Descriptions                                                                | 
   | ----------- | ------------                                                                | 
-  | Alt + Del   | Delete the Word before the cursor.                                          | 
-  | Alt + d     | Delete the Word after the cursor.                                           |   
+  | Alt + del   | Delete the word before the cursor.                                          | 
+  | Alt + d     | Delete the word after the cursor.                                           |   
   | Ctrl + u    | Cut/delete the line before the cursor position.                             | 
-  | Ctrl + k    | Cut the Line after the cursor to the clipboard.                             | 
-  | Ctrl + w    | Cut the Word before the cursor to the clipboard.                            | 
+  | Ctrl + k    | Cut the line after the cursor to the clipboard.                             | 
+  | Ctrl + w    | Cut the word before the cursor to the clipboard.                            | 
   | Ctrl + y    | Paste the last thing to be cut (yank)                                       | 
 
 ####Misc.
 
   | Command     | Descriptions                                                                | 
   | ----------- | ------------                                                                | 
-  | Ctrl + l    | Clear the Screen, similar to the clear command                              | 
+  | Ctrl + l    | Clear the screen, similar to the clear command                              | 
   | Alt + r     | Cancel the changes and put back the line as it was in the history (revert). | 
   | Ctrl + _    | Undo                                                                        | 
