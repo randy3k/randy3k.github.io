@@ -9,7 +9,7 @@ http://rtalks.net/pages.html
 http://rtalks.net/research/index.html
 http://rtalks.net/research/publications/index.html
 http://rtalks.net/sitemap.txt
-http://rtalks.net/blog/2/index.html
+http://rtalks.net/blog/page/2/index.html
 
 http://rtalks.net/blog/2013/12/03/shortcuts-in-osx-terminal/
 http://rtalks.net/blog/2013/11/27/rprofile-customization/
