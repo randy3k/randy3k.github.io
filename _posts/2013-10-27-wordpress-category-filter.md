@@ -7,7 +7,7 @@ category: 'computing'
 tags: [wordpress, php]
 ---
 
-You probably need change our category number, but this is how the filtering works.
+This is how wordpress filters out some specific categories. We will need to change the category id.
 <!--more-->
 {% highlight php %}
 <?php
