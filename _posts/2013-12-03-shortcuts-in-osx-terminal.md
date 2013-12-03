@@ -3,8 +3,8 @@ layout: post
 published: true
 title: 'Shortcuts in OSX-Terminal'
 tagline: 
-category: 
-tags: []
+category: computing
+tags: [osx]
 last_modified: 
 ---
 
