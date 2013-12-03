@@ -2,23 +2,33 @@ require 'rubygems'
 require 'optparse'
 require 'yaml'
 
-task :post do
+desc "Draft a post"
+task :draft do
   OptionParser.new.parse!
   ARGV.shift
   title = ARGV.join(' ')
 
-  path = "_posts/#{Date.today}-#{title.downcase.gsub(/[^[:alnum:]]+/, '-')}.md"
+  path = "_drafts/#{Date.today}-#{title.downcase.gsub(/[^[:alnum:]]+/, '-')}.md"
 
   if File.exist?(path)
     puts "[WARN] File exists - skipping create"
   else
     File.open(path, "w") do |file|
-      file.puts YAML.dump({'layout' => 'post', 'published' => false, 'title' => title, 'tagline'=> "", 'category' => "", 'tags' => [ ]})
+      file.puts YAML.dump({'layout' => 'post', 'published' => true, 'title' => title, 'tagline'=> nil, 'category' => nil, 'tags' => [ ], 'last_modified' => nil})
       file.puts "---"
     end
   end
   `subl #{path}`
+  exit 0
+end
 
+desc "Move files from _drafts to _posts"
+task :post do
+  drafts = Dir.glob(File.join('_drafts', '*'))
+  drafts.each do |filename|
+    name = File.basename(filename)
+    FileUtils.move filename, "_posts/#{name}"
+  end
   exit 0
 end
 

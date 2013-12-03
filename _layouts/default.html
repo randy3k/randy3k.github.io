@@ -83,8 +83,10 @@
                     </div>
                     
                     <div class="sider-item">
-                    <p><a href="{{ site.archive_path }}">Blog Archive</a></p>
-                    <p><a href="{{ site.tags_path }}">Tags</a></p>
+                    <div class="list-group">
+                      <a href="{{ site.archive_path }}" class="list-group-item {{ active }}">Archive</a>
+                      <a href="{{ site.tags_path }}" class="list-group-item {{ active }}">Tags</a>
+                    </div>                   
                     </div>                    
                 </div>                
             </div>            
