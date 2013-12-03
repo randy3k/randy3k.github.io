@@ -23,11 +23,6 @@ I taught myself HTML, PHP, MYSQL, Flash and Visual Basic in secondary school.  L
 
 <div class="list-group">
   {% for post in site.posts limit:5  %}
-    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
-    {% capture this_month %}{{ post.date | date: "%B" }}{% endcapture %}
-    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
-    {% capture next_month %}{{ post.previous.date | date: "%B" }}{% endcapture %}
-    <!-- <li class="list-group-item"><span>{{ post.date | date: "%b %e, %Y" }}</span>  <a href="{{ post.url }}">{{ post.title }}</a></li> -->
     <div class="list-group-item">
         <h5 class="list-group-item-heading"><a href="{{ post.url }}">{{ post.title }}</a></h5>
         {{ post.date | date: "%b %e, %Y" }}{% for tag in post.tags %}

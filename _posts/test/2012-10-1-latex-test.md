@@ -3,7 +3,7 @@ layout: post
 category : latex
 title: Latex Testing
 published: 1
-tags : [latex, testing]
+tags : 
 ---
 
 {% include mathjax %}

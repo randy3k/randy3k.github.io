@@ -1,9 +1,9 @@
-permalink: /blog/:year/:month/:day/:title
+permalink: /blog/:year/:month/:day/:title/
 markdown: kramdown
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 pygments: true
 paginate: 5
-paginate_path: "blog/page:num"
+paginate_path: "/blog/:num/"
 excerpt_separator: <!--more-->
 
 title : RTalks.net
@@ -26,8 +26,8 @@ nav:
     url: /blog/
 
 archive_path: /blog/archive/
-categories_path : /categories/
-tags_path : /tags/
+categories_path : /blog/categories/
+tags_path : /blog/tags/
 
 disqus :
   short_name : randy3k

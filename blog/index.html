@@ -13,6 +13,10 @@ title : Blog
     <p><a href="{{ post.url }}">Read More... </a></p>
     {% endif %}
   </div>
+  {% if post.tags != empty %}
+  {% assign tags_list = post.tags %}
+  {% include tags_list %}
+  {% endif %}
 {% endfor %}
 
 <!-- Pagination links -->

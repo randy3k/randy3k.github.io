@@ -1,5 +1,5 @@
 body{
-    background-color: #fcfcff;
+    background-color: #fafaff;
 }
 
 hr {
@@ -187,5 +187,6 @@ hr {
 }
 
 .search{
-    height: 60px;
+    height: 65px;
+    padding: 5px;
 }
