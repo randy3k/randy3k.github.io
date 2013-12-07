@@ -16,7 +16,7 @@ You can contact me via
 
 ###Computing
 
-I taught myself HTML, PHP, MYSQL, Flash and Visual Basic in secondary school.  Later, I developed skill in C/C++ and R. Now, being a heavy R user, I also learning Python, CUDA and Obj-C. Moreover, I have great interests in web development such as jQuery, ajax, Node.js and CSS.
+I taught myself HTML, PHP, MYSQL, Flash and Visual Basic in secondary school.  Later, I developed skill in C/C++ and R. Now, being a heavy R user, I also learning Python, CUDA and Obj-C. Moreover, I have great interests in web development such as jQuery, AJAX, Node.js and Rails.
 
 
 ### Recent Posts
