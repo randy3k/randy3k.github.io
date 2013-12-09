@@ -23,7 +23,7 @@ hr {
 }
 
 .navbar-brand{
-    padding-left: 15px;
+    /*padding-left: 15px;*/
     padding-top: 8px;
     padding-bottom: 12px;
 }
@@ -60,7 +60,18 @@ hr {
 
 /* Custom grid padding */
 
+@media (min-width: 1200px) {
+  .container {
+    width: 970px;
+  }
+}
+
 @media(max-width:767px){
+    #page{
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
     #page-col{
         padding-right: 0px;
         padding-left: 0px;
@@ -70,10 +81,8 @@ hr {
     }
 }
 
-@media(min-width:992px){
-    #sider-col{
-        padding-left: 0px;
-    }
+.container-low{
+    margin-top: 60px;
 }
 
 
@@ -111,8 +120,7 @@ hr {
 /* sider */
 
 #sider {
-    max-width: 300px;
-    padding: 10px 15px;
+    max-width: 280px;
 }
 
 #sider .sider-item{
