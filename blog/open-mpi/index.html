@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>.Rprofile Customization - RTalks.net</title>
+    <title>Installating open-mpi on Mac - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -50,58 +50,31 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                             
-                    
-                    
-                    
+                       
                     <li ><a href="/research/">Research</a></li>
-                    
-                    
-                    
+                      
                     <li ><a href="/apps/">Apps</a></li>
-                    
-                    
-                    
+                      
                     <li ><a href="/blog/">Blog</a></li>
                       
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container container-low">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-9" id="page-col">
-                <div id="page">
-                    <div class="jumbotron" id="page-jumbotron">
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <div>
+                    <div class="jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> .Rprofile Customization 
+                        <span class="glyphicon glyphicon-book"></span> Installating open-mpi on Mac 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">November 27 2013</span>
+                        <p><span class="date">October 24 2013</span>
 
 </p>
-<p>In case you want to specific your CRAN repo and change installed package type. Edit the file in <code>~/.Rprofile</code></p>
-
-<div class="highlight"><pre><code class="r">local<span class="p">({</span>
-r <span class="o">&lt;-</span> getOption<span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
-r<span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;http://cran.us.r-project.org&quot;</span>
-options<span class="p">(</span>repos <span class="o">=</span> r<span class="p">)</span>
-<span class="p">})</span>
-
-local<span class="p">({</span>
-platform <span class="o">=</span> .Platform
-platform<span class="o">$</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span>
-unlockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
-assign<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> platform<span class="p">,</span> inherits<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-lockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
-options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">&quot;mac.binary&quot;</span><span class="p">)</span>
-<span class="p">})</span>
-</code></pre></div>
-
-
-
 
 
 
@@ -110,19 +83,55 @@ options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">
 
    
   	<li><a class="btn btn-default btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
+   
+  	<li><a class="btn btn-default btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
+   
+  	<li><a class="btn btn-default btn-xs" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
   
 
 </ul>
   
 
 
+<p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
+<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
+
+<pre><code>brew install gfortran
+brew install open-mpi
+</code></pre>
+
+<p>You will need a C complier. For OSX 10.9, see <a href="http://rtalks.net/blog/2013/10/23/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
+
+<p>Final step, either open R in terminal or R GUI, and run</p>
+
+<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
+
+<p>This should install <code>Rmpi</code>.</p>
+
+<p>To test <code>Rmpi</code></p>
+
+<pre><code>library(Rmpi)
+mpi.spawn.Rslaves()
+mpi.iparReplicate(100, mean(rnorm(1000000)))
+mpi.close.Rslaves()
+</code></pre>
+
+<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
+
+<pre><code>library(Rmpi)
+mpi.spawn.Rslaves(nslaves=3)
+mpi.iparReplicate(100, mean(rnorm(1000000)))
+mpi.close.Rslaves()
+</code></pre>
+
+
 <ul class="pagination">
     
-    <li class="prev"><a href="/blog/2013/10/27/wordpress-category-filter/" title="Wordpress Categories Filter">&larr; Previous</a></li>
+    <li class="prev"><a href="/blog/configuring-complier/" title="Configuring complier for R 3.0.x on OSX 10.9 Mavericks">&larr; Previous</a></li>
     
     <li><a href="/blog/archive/">Archive</a></li>
     
-    <li class="next"><a href="/blog/2013/12/03/shortcuts-in-osx-terminal/" title="Shortcuts in OSX-Terminal">Next &rarr;</a></li>
+    <li class="next"><a href="/blog/python-web-server/" title="A simple python webserver">Next &rarr;</a></li>
     
 </ul>
 
@@ -146,19 +155,17 @@ options<span class="p">(</span>pkgType <span class="o">=</span> <span class="s">
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
-                <div id="sider">
-                    <div class="reset-box-sizing sider-item search">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div>
+                    <div class="reset-box-sizing search">
                         <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
                     </div>
                     
-                    <div class="sider-item">
                     <div class="list-group">
                       <a href="/blog/archive/" class="list-group-item">Archive</a>
                       <a href="/blog/categories/" class="list-group-item">Categories</a>
                       <a href="/blog/tags/" class="list-group-item">Tags</a>
-                    </div>                   
-                    </div>                    
+                    </div>                                      
                 </div>                
             </div>            
         </div>
