@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'optparse'
 require 'yaml'
+require 'less'
 
 desc "Draft a post"
 task :draft do
@@ -23,7 +24,7 @@ task :draft do
 end
 
 desc "Move files from _drafts to _posts"
-task :post do
+task :mdrafts do
   drafts = Dir.glob(File.join('_drafts', '*'))
   drafts.each do |filename|
     name = File.basename(filename)
@@ -52,4 +53,26 @@ task :deploy do
   status = system("git checkout source")
   puts "\n## Pushing all branches to origin"
   status = system("git push --all origin")
+end
+
+CONFIG = Hash.new
+CONFIG['less'] = "less"
+CONFIG['css'] = File.join("assets", "css")
+CONFIG['input'] = "bootstrap.less"
+CONFIG['output'] = "bootstrap.css"
+
+desc "Compile Less"
+task :lessc do
+  less   = CONFIG['less']
+
+  input  = File.join( less, CONFIG['input'] )
+  output = File.join( CONFIG['css'], CONFIG['output'] )
+
+  source = File.open( input, "r" ).read
+  parser = Less::Parser.new( :paths => [less] )
+  tree = parser.parse( source )
+
+  File.open( output, "w+" ) do |f|
+    f.puts tree.to_css( :compress => true )
+  end
 end

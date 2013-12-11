@@ -11,10 +11,10 @@ layout: default
 
 {% comment %}
 {% assign categories_list = page.categories %}
-{% include categories_list %}
+{% include categories.html %}
 {% endcomment %}
 {% assign tags_list = page.tags %}
-{% include tags_list %}
+{% include tags.html %}
 
 <ul class="pagination">
     {% if page.previous %}
@@ -31,4 +31,4 @@ layout: default
 </ul>
 
 <hr>
-{% include disqus %}
+{% include disqus.html %}

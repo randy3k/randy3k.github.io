@@ -31,3 +31,5 @@ tags_path : /blog/tags/
 
 disqus :
   short_name : randy3k
+
+exclude: ['less', 'Rakefile', "Gemfile"]

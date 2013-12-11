@@ -15,7 +15,7 @@ title : Blog
   </div>
   {% if post.tags != empty %}
   {% assign tags_list = post.tags %}
-  {% include tags_list %}
+  {% include tags.html %}
   {% endif %}
 {% endfor %}
 
