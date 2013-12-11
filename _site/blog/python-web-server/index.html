@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Installating open-mpi on Mac - RTalks.net</title>
+    <title>A simple python webserver - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -50,31 +50,24 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                             
-                    
-                    
-                    
+                       
                     <li ><a href="/research/">Research</a></li>
-                    
-                    
-                    
+                      
                     <li ><a href="/apps/">Apps</a></li>
-                    
-                    
-                    
+                      
                     <li ><a href="/blog/">Blog</a></li>
                       
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container container-low">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-9" id="page-col">
-                <div id="page">
-                    <div class="jumbotron" id="page-jumbotron">
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <div>
+                    <div class="jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Installating open-mpi on Mac 
+                        <span class="glyphicon glyphicon-book"></span> A simple python webserver 
                         </h1>
                         
                     </div>
@@ -82,38 +75,6 @@
                         <p><span class="date">October 24 2013</span>
 
 </p>
-<p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
-<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
-
-<pre><code>brew install gfortran
-brew install open-mpi
-</code></pre>
-
-<p>You will need a C complier. For OSX 10.9, see <a href="http://rtalks.net/blog/2013/10/23/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
-
-<p>Final step, either open R in terminal or R GUI, and run</p>
-
-<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
-
-<p>This should install <code>Rmpi</code>.</p>
-
-<p>To test <code>Rmpi</code></p>
-
-<pre><code>library(Rmpi)
-mpi.spawn.Rslaves()
-mpi.iparReplicate(100, mean(rnorm(1000000)))
-mpi.close.Rslaves()
-</code></pre>
-
-<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
-
-<pre><code>library(Rmpi)
-mpi.spawn.Rslaves(nslaves=3)
-mpi.iparReplicate(100, mean(rnorm(1000000)))
-mpi.close.Rslaves()
-</code></pre>
-
-
 
 
 
@@ -121,24 +82,84 @@ mpi.close.Rslaves()
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-default btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
-   
-  	<li><a class="btn btn-default btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
-   
-  	<li><a class="btn btn-default btn-xs" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
+  	<li><a class="btn btn-default btn-xs" href="/blog/tags/#python-ref">python <span class="tag-size">1</span></a></li>
   
 
 </ul>
   
 
 
+<p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
+
+<pre><code>python -m SimpleHTTPServer 8000
+</code></pre>
+
+<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.
+<!--more-->
+More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on localhost</a></p>
+
+<pre><code>import sys
+import BaseHTTPServer
+from SimpleHTTPServer import SimpleHTTPRequestHandler
+
+HandlerClass = SimpleHTTPRequestHandler
+ServerClass = BaseHTTPServer.HTTPServer
+Protocol = "HTTP/1.0"
+
+if sys.argv[1:]:
+port = int(sys.argv[1])
+else:
+port = 8000
+server_address = ('127.0.0.1', port)
+
+HandlerClass.protocol_version = Protocol
+httpd = ServerClass(server_address, HandlerClass)
+
+sa = httpd.socket.getsockname()
+print "Serving HTTP on", sa[0], "port", sa[1], "..."
+httpd.serve_forever()
+</code></pre>
+
+<p>and <a href="http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file">Simple Python Webserver to save file</a></p>
+
+<pre><code>from os import curdir
+from os.path import join as pjoin
+
+from http.server import BaseHTTPRequestHandler, HTTPServer
+
+class StoreHandler(BaseHTTPReque stHandler):
+store_path = pjoin(curdir, 'store.json')
+
+def do_GET(self):
+if self.path == '/store.json':
+with open(self.store_path) as fh:
+self.send_response(200)
+self.send_header('Content-type', 'text/json')
+self.end_headers()
+self.wfile.write(fh.read().encode())
+
+def do_POST(self):
+if self.path == '/store.json':
+length = self.headers['content-length']
+data = self.rfile.read(int(length))
+
+with open(self.store_path, 'w') as fh:
+fh.write(data.decode())
+
+self.send_response(200)
+
+server = HTTPServer(('', 8080), StoreHandler)
+server.serve_forever()
+</code></pre>
+
+
 <ul class="pagination">
     
-    <li class="prev"><a href="/blog/2013/10/23/configuring-complier/" title="Configuring complier for R 3.0.x on OSX 10.9 Mavericks">&larr; Previous</a></li>
+    <li class="prev"><a href="/blog/open-mpi/" title="Installating open-mpi on Mac">&larr; Previous</a></li>
     
     <li><a href="/blog/archive/">Archive</a></li>
     
-    <li class="next"><a href="/blog/2013/10/24/python-web-server/" title="A simple python webserver">Next &rarr;</a></li>
+    <li class="next"><a href="/blog/wordpress-category-filter/" title="Wordpress Categories Filter">Next &rarr;</a></li>
     
 </ul>
 
@@ -162,19 +183,17 @@ mpi.close.Rslaves()
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
-                <div id="sider">
-                    <div class="reset-box-sizing sider-item search">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div>
+                    <div class="reset-box-sizing search">
                         <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
                     </div>
                     
-                    <div class="sider-item">
                     <div class="list-group">
                       <a href="/blog/archive/" class="list-group-item">Archive</a>
                       <a href="/blog/categories/" class="list-group-item">Categories</a>
                       <a href="/blog/tags/" class="list-group-item">Tags</a>
-                    </div>                   
-                    </div>                    
+                    </div>                                      
                 </div>                
             </div>            
         </div>

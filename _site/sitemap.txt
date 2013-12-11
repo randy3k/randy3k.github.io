@@ -11,10 +11,10 @@ http://rtalks.net/research/publications/index.html
 http://rtalks.net/sitemap.txt
 http://rtalks.net/blog/page/2/index.html
 
-http://rtalks.net/blog/2013/12/03/shortcuts-in-osx-terminal/
-http://rtalks.net/blog/2013/11/27/rprofile-customization/
-http://rtalks.net/blog/2013/10/27/wordpress-category-filter/
-http://rtalks.net/blog/2013/10/24/python-web-server/
-http://rtalks.net/blog/2013/10/24/open-mpi/
-http://rtalks.net/blog/2013/10/23/configuring-complier/
-http://rtalks.net/blog/2012/10/01/latex-test/
+http://rtalks.net/blog/shortcuts-in-osx-terminal/
+http://rtalks.net/blog/rprofile-customization/
+http://rtalks.net/blog/wordpress-category-filter/
+http://rtalks.net/blog/python-web-server/
+http://rtalks.net/blog/open-mpi/
+http://rtalks.net/blog/configuring-complier/
+http://rtalks.net/blog/latex-test/

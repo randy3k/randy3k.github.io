@@ -1,6 +1,5 @@
 ---
 layout: post
-published: true
 title: 'Shortcuts in OSX-Terminal'
 tagline: 
 category: computing
@@ -11,6 +10,7 @@ last_modified:
 There are many useful shortcuts in OSX terminal. You may already know some of
 them, but I bet you don't know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think are useful, more can be found [here](http://ss64.com/osx/syntax-bashkeyboard.html). First of all, you may want to enable the meta key.
 <!--more-->
+
 ![terminal](/assets/images/osx-terminal.png)
 
 ####Movement

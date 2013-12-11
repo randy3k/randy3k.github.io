@@ -2,19 +2,20 @@
 layout: default
 ---
 
+
 <p><span class="date">{{ page.date | date: "%B %-d %Y" }}</span>
 {% if page.last_modified %}
 <small>Last modified: {{ page.last_modified | date: "%B %-d %Y" }}</small>
     {% endif %}
 </p>
-{{ content }}
-
 {% comment %}
 {% assign categories_list = page.categories %}
 {% include categories.html %}
 {% endcomment %}
 {% assign tags_list = page.tags %}
 {% include tags.html %}
+
+{{ content }}
 
 <ul class="pagination">
     {% if page.previous %}

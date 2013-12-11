@@ -15,7 +15,7 @@ task :draft do
     puts "[WARN] File exists - skipping create"
   else
     File.open(path, "w") do |file|
-      file.puts YAML.dump({'layout' => 'post', 'published' => true, 'title' => title, 'tagline'=> nil, 'category' => nil, 'tags' => [ ], 'last_modified' => nil})
+      file.puts YAML.dump({'layout' => 'post', 'title' => title, 'tagline'=> nil, 'category' => nil, 'tags' => [ ], 'last_modified' => nil})
       file.puts "---"
     end
   end

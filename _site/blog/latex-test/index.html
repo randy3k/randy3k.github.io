@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Shortcuts in OSX-Terminal - RTalks.net</title>
+    <title>Latex Testing - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -50,156 +50,69 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                             
-                    
-                    
-                    
+                       
                     <li ><a href="/research/">Research</a></li>
-                    
-                    
-                    
+                      
                     <li ><a href="/apps/">Apps</a></li>
-                    
-                    
-                    
+                      
                     <li ><a href="/blog/">Blog</a></li>
                       
                 </ul>
             </div>
         </div>
     </div>
-    <div class="container container-low">
+    <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-9" id="page-col">
-                <div id="page">
-                    <div class="jumbotron" id="page-jumbotron">
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <div>
+                    <div class="jumbotron">
                         <h1>
-                        <span class="glyphicon glyphicon-book"></span> Shortcuts in OSX-Terminal 
+                        <span class="glyphicon glyphicon-book"></span> Latex Testing 
                         </h1>
                         
                     </div>
                     <div class="content">
-                        <p><span class="date">December 3 2013</span>
+                        <p><span class="date">October 1 2012</span>
 
 </p>
-<p>There are many useful shortcuts in OSX terminal. You may already know some of
-them, but I bet you don’t know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think are useful, more can be found <a href="http://ss64.com/osx/syntax-bashkeyboard.html">here</a>. First of all, you may want to enable the meta key.
-<!--more-->
-<img src="/assets/images/osx-terminal.png" alt="terminal" /></p>
-
-<h4 id="movement">Movement</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Descriptions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ctrl + a</td>
-      <td>Go to the beginning of the line (Home)</td>
-    </tr>
-    <tr>
-      <td>Ctrl + e</td>
-      <td>Go to the end of the line (End)</td>
-    </tr>
-    <tr>
-      <td>Alt + b</td>
-      <td>Back (left) one word</td>
-    </tr>
-    <tr>
-      <td>Alt + f</td>
-      <td>Forward (right) one word</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="text">Text</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Descriptions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Alt + del</td>
-      <td>Delete the word before the cursor.</td>
-    </tr>
-    <tr>
-      <td>Alt + d</td>
-      <td>Delete the word after the cursor.</td>
-    </tr>
-    <tr>
-      <td>Ctrl + u</td>
-      <td>Cut/delete the line before the cursor position.</td>
-    </tr>
-    <tr>
-      <td>Ctrl + k</td>
-      <td>Cut the line after the cursor to the clipboard.</td>
-    </tr>
-    <tr>
-      <td>Ctrl + w</td>
-      <td>Cut the word before the cursor to the clipboard.</td>
-    </tr>
-    <tr>
-      <td>Ctrl + y</td>
-      <td>Paste the last thing to be cut (yank)</td>
-    </tr>
-  </tbody>
-</table>
-
-<h4 id="misc">Misc.</h4>
-
-<table>
-  <thead>
-    <tr>
-      <th>Command</th>
-      <th>Descriptions</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Ctrl + l</td>
-      <td>Clear the screen, similar to the clear command</td>
-    </tr>
-    <tr>
-      <td>Alt + r</td>
-      <td>Cancel the changes and put back the line as it was in the history (revert).</td>
-    </tr>
-    <tr>
-      <td>Ctrl + _</td>
-      <td>Undo</td>
-    </tr>
-  </tbody>
-</table>
 
 
-
-
-
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="btn btn-default btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
   
 
-</ul>
-  
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });  
+</script>
+
+<p>\begin{equation}
+a+b=2
+\end{equation}</p>
+
+<p>$\alpha_3 + [\beta_1^2 = 1$ </p>
+
+<script type="math/tex; mode=display">
+\alpha + \beta_1 = 2
+</script>
+
+<script type="math/tex; mode=display">\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}</script>
 
 
 <ul class="pagination">
     
-    <li class="prev"><a href="/blog/2013/11/27/rprofile-customization/" title=".Rprofile Customization">&larr; Previous</a></li>
+    <li class="prev disabled"><a>&larr; Previous</a></li>
     
     <li><a href="/blog/archive/">Archive</a></li>
     
-    <li class="next disabled"><a>Next &rarr;</a>
+    <li class="next"><a href="/blog/configuring-complier/" title="Configuring complier for R 3.0.x on OSX 10.9 Mavericks">Next &rarr;</a></li>
     
 </ul>
 
@@ -223,19 +136,17 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 col-sm-6 col-md-3" id="sider-col">
-                <div id="sider">
-                    <div class="reset-box-sizing sider-item search">
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div>
+                    <div class="reset-box-sizing search">
                         <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
                     </div>
                     
-                    <div class="sider-item">
                     <div class="list-group">
                       <a href="/blog/archive/" class="list-group-item">Archive</a>
                       <a href="/blog/categories/" class="list-group-item">Categories</a>
                       <a href="/blog/tags/" class="list-group-item">Tags</a>
-                    </div>                   
-                    </div>                    
+                    </div>                                      
                 </div>                
             </div>            
         </div>
