@@ -4,7 +4,7 @@ title : Blog
 ---
 <a class="btn btn-danger" href="{{ site.categories_path }}">By Categories</a>
 &nbsp;&nbsp;
-<a class="btn btn-success" href="/{{ site.tags_path }}">By Tags</a>
+<a class="btn btn-success" href="{{ site.tags_path }}">By Tags</a>
 
 <!-- This loops through the paginated posts -->
 {% for post in paginator.posts %}
