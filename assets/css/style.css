@@ -45,10 +45,10 @@ footer {
     outline: 0;
 }
 
-#accordion .ui-accordion-header-icon{
+/*#accordion .ui-accordion-header-icon{
     font-size:18px;
     margin-right: 5px;
-}
+}*/
 
 /* publication list */
 .pub {
@@ -87,6 +87,7 @@ footer {
 .search{
     height: 65px;
     padding: 5px;
+    max-width: 200px;
 }
 
 /* table */
