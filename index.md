@@ -26,7 +26,7 @@ I learned HTML, PHP, MYSQL and Visual Basic in secondary school.  Now, being a h
     <div class="list-group-item">
         <h5 class="list-group-item-heading"><a href="{{ post.url }}">{{ post.title }}</a></h5>
         {{ post.date | date: "%b %e, %Y" }}{% for tag in post.tags %}
-        <a class="btn btn-default btn-xs" href="{{ site.tags_path }}#{{ tag }}-ref">{{ tag }}</a>
+        <a class="btn btn-success btn-xs" href="{{ site.tags_path }}#{{ tag }}-ref">{{ tag }}</a>
         {% endfor %}
     </div>  
   {% endfor %}

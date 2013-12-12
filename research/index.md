@@ -17,8 +17,8 @@ $( "#accordion" ).accordion({
 <script>
   $(function() {
     var icons = {
-      header: "glyphicon glyphicon-expand",
-      activeHeader: "glyphicon glyphicon-collapse-down"
+      header: "fa fa-angle-double-right",
+      activeHeader: "fa fa-angle-down"
     };
     $( "#accordion" ).accordion({
       icons: icons,
