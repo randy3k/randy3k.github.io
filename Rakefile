@@ -56,7 +56,7 @@ task :deploy do
 end
 
 CONFIG = Hash.new
-CONFIG['less'] = "less"
+CONFIG['less'] = "bootstrap/less"
 CONFIG['css'] = File.join("assets", "css")
 CONFIG['input'] = "bootstrap.less"
 CONFIG['output'] = "bootstrap.css"

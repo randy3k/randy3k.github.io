@@ -1,6 +1,6 @@
 permalink: /blog/:title/
 markdown: kramdown
-exclude: ["README.md", "Rakefile", 'less', 'Rakefile', "Gemfile"]
+exclude: ["README.md", "Rakefile", 'bootstrap', 'Rakefile', "Gemfile"]
 pygments: true
 paginate: 5
 paginate_path: "/blog/page/:num/"
