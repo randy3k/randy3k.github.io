@@ -77,6 +77,82 @@
 
 <!-- This loops through the paginated posts -->
 
+  <h1><a href="/blog/">Git aware prompt</a></h1>
+  <div class="content">
+    <p><span class="date">February 12 2014</span>  </p>
+    
+    
+    
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+
+   
+  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#git-ref">git <span class="tag-size">1</span></a></li>
+  
+
+</ul>
+  
+
+      
+    <p>I love using Git via commands. And it is very often that I have to run <code>git status</code> or <code>git branch</code> to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.</p>
+
+<p>The code was originated from <a href="http://bytebaker.com/2012/01/09/show-git-information-in-your-prompt/">here</a> but I have made significant amount of changes, for example, adding color support and some bugs fixing.</p>
+
+<p><img src="/assets/images/git.png" style="border:1px solid grey" /></p>
+
+<p>To use this, add the following to your <code>.bashrc</code> and restart your terminal!</p>
+
+<div class="highlight"><pre><code class="bash"><span class="k">function </span>git-branch-name
+<span class="o">{</span>
+    <span class="nb">echo</span> <span class="k">$(</span>git symbolic-ref HEAD 2&gt;/dev/null <span class="p">|</span> awk -F/ <span class="o">{</span><span class="s1">&#39;print $NF&#39;</span><span class="o">}</span><span class="k">)</span>
+<span class="o">}</span>
+<span class="k">function </span>git-dirty <span class="o">{</span>
+    <span class="nv">st</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> tail -n 1<span class="k">)</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$st</span> !<span class="o">=</span> <span class="s2">&quot;nothing to commit, working directory clean&quot;</span> <span class="o">]]</span>
+    <span class="k">then</span>
+<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;*&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+<span class="k">function </span>git-unpushed <span class="o">{</span>
+    <span class="nv">brinfo</span><span class="o">=</span><span class="sb">`</span>git branch -v <span class="p">|</span> grep <span class="k">$(</span>git-branch-name<span class="k">)</span><span class="sb">`</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$brinfo</span> <span class="o">=</span>~ <span class="o">(</span><span class="s2">&quot;[ahead &quot;</span><span class="o">([[</span>:digit:<span class="o">]]</span>*<span class="o">)])</span> <span class="o">]]</span>
+    <span class="k">then</span>
+<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;+${BASH_REMATCH[2]}&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+<span class="k">function </span>gitcolor <span class="o">{</span>
+    <span class="nv">status</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> head -n 1<span class="k">)</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$status</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]]</span>
+    <span class="k">then</span>
+<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">else</span>
+<span class="k">        if</span> <span class="o">[[</span> <span class="k">$(</span>git-dirty<span class="k">)</span> <span class="o">==</span> <span class="s2">&quot;*&quot;</span> <span class="o">]]</span><span class="p">;</span>
+        <span class="k">then</span>
+<span class="k">            </span><span class="nv">color</span><span class="o">=</span><span class="s2">&quot;\033[31m&quot;</span>
+        <span class="k">else</span>
+<span class="k">            </span><span class="nv">color</span><span class="o">=</span><span class="s2">&quot;\033[32m&quot;</span>
+        <span class="k">fi</span>
+<span class="k">        </span><span class="nb">echo</span> -e <span class="s2">&quot;${color}&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="k">function </span>gitify <span class="o">{</span>
+    <span class="nv">status</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> head -n 1<span class="k">)</span>
+    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$status</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]]</span>
+    <span class="k">then</span>
+<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
+    <span class="k">else</span>
+<span class="k">        </span><span class="nb">echo</span> -e <span class="s2">&quot; ($(git-branch-name)$(git-dirty)$(git-unpushed))&quot;</span>
+    <span class="k">fi</span>
+<span class="o">}</span>
+
+<span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;(\h)-\W\[\$(gitcolor)\]\$(gitify)\[\033[00m\]\$ &quot;</span>
+</code></pre></div>
+
+
+    
+  </div>
+
   <h1><a href="/blog/shortcuts-in-osx-terminal/">Shortcuts in OSX-Terminal</a></h1>
   <div class="content">
     <p><span class="date">December 3 2013</span>  </p>
@@ -197,62 +273,6 @@ local<span class="p">({</span>
 
     
     <p><a href="/blog/python-web-server/">Read More... </a></p>
-    
-  </div>
-
-  <h1><a href="/blog/open-mpi/">Installating open-mpi on Mac</a></h1>
-  <div class="content">
-    <p><span class="date">October 24 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
-   
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
-   
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
-<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
-
-<pre><code>brew install gfortran
-brew install open-mpi
-</code></pre>
-
-<p>You will need a C complier. For OSX 10.9, see <a href="http://rtalks.net/blog/2013/10/23/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
-
-<p>Final step, either open R in terminal or R GUI, and run</p>
-
-<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
-
-<p>This should install <code>Rmpi</code>.</p>
-
-<p>To test <code>Rmpi</code></p>
-
-<pre><code>library(Rmpi)
-mpi.spawn.Rslaves()
-mpi.iparReplicate(100, mean(rnorm(1000000)))
-mpi.close.Rslaves()
-</code></pre>
-
-<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
-
-<pre><code>library(Rmpi)
-mpi.spawn.Rslaves(nslaves=3)
-mpi.iparReplicate(100, mean(rnorm(1000000)))
-mpi.close.Rslaves()
-</code></pre>
-
-
     
   </div>
 

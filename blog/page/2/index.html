@@ -77,6 +77,62 @@
 
 <!-- This loops through the paginated posts -->
 
+  <h1><a href="/blog/open-mpi/">Installating open-mpi on Mac</a></h1>
+  <div class="content">
+    <p><span class="date">October 24 2013</span>  </p>
+    
+    
+    
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+
+   
+  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
+   
+  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
+   
+  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
+  
+
+</ul>
+  
+
+      
+    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
+<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
+
+<pre><code>brew install gfortran
+brew install open-mpi
+</code></pre>
+
+<p>You will need a C complier. For OSX 10.9, see <a href="http://rtalks.net/blog/2013/10/23/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
+
+<p>Final step, either open R in terminal or R GUI, and run</p>
+
+<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
+
+<p>This should install <code>Rmpi</code>.</p>
+
+<p>To test <code>Rmpi</code></p>
+
+<pre><code>library(Rmpi)
+mpi.spawn.Rslaves()
+mpi.iparReplicate(100, mean(rnorm(1000000)))
+mpi.close.Rslaves()
+</code></pre>
+
+<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
+
+<pre><code>library(Rmpi)
+mpi.spawn.Rslaves(nslaves=3)
+mpi.iparReplicate(100, mean(rnorm(1000000)))
+mpi.close.Rslaves()
+</code></pre>
+
+
+    
+  </div>
+
   <h1><a href="/blog/configuring-complier/">Configuring complier for R 3.0.x on OSX 10.9 Mavericks</a></h1>
   <div class="content">
     <p><span class="date">October 23 2013</span>  </p>
