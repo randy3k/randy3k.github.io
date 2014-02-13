@@ -4,8 +4,11 @@ category : computing
 title: Configuring complier for R 3.0.x on OSX 10.9 Mavericks
 tagline: ""
 tags : [r, osx, mavericks]
-# last_modified: 2013-12-1
+last_modified: 2014-2-12
 ---
+
+<font color='red'>
+Warning [2014-2-12]: Most packages are now compatible with `libc++`, changing to `libstdc++` may cause problems for some packages.</font>
 
 On 10.9, the default complier is `clang` with `libc++` library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.
 <ol>
