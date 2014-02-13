@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Blog - RTalks.net</title>
+    <title>Git aware prompt - RTalks.net</title>
     
     <meta name="author" content="Randy Lai">
 
@@ -54,8 +54,8 @@
                     <li ><a href="/research/">Research</a></li>
                       
                     <li ><a href="/apps/">Apps</a></li>
-                        
-                    <li class="active"><a href="/blog/">Blog</a></li>
+                      
+                    <li ><a href="/blog/">Blog</a></li>
                       
                 </ul>
             </div>
@@ -66,23 +66,17 @@
             <div class="col-xs-12 col-sm-12 col-md-9">
                 <div class="jumbotron">
                     <h1>
-                    <span class="fa fa-sign-in"></span> Blog 
+                    <span class="fa fa-sign-in"></span> Git aware prompt 
                     </h1>
                     
                 </div>
                 <div class="content">
-                    <a class="btn btn-danger" href="/blog/categories/">By Categories</a>
-&nbsp;&nbsp;
-<a class="btn btn-success" href="/blog/tags/">By Tags</a>
+                    <p><span class="date">February 12 2014</span>
 
-<!-- This loops through the paginated posts -->
+</p>
 
-  <h1><a href="/blog/git-aware-prompt/">Git aware prompt</a></h1>
-  <div class="content">
-    <p><span class="date">February 12 2014</span>  </p>
-    
-    
-    
+
+
 <ul class="tag-box inline list-unstyled">
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
@@ -93,8 +87,8 @@
 </ul>
   
 
-      
-    <p>I love using Git via commands. And it is very often that I have to run <code>git status</code> or <code>git branch</code> to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.</p>
+
+<p>I love using Git via commands. And it is very often that I have to run <code>git status</code> or <code>git branch</code> to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.</p>
 
 <p>The code was originated from <a href="http://bytebaker.com/2012/01/09/show-git-information-in-your-prompt/">here</a> but I have made significant amount of changes, for example, adding color support and some bugs fixing.</p>
 
@@ -150,154 +144,32 @@
 </code></pre></div>
 
 
-    
-  </div>
-
-  <h1><a href="/blog/shortcuts-in-osx-terminal/">Shortcuts in OSX-Terminal</a></h1>
-  <div class="content">
-    <p><span class="date">December 3 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>There are many useful shortcuts in OSX terminal. You may already know some of
-them, but I bet you don’t know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think are useful, more can be found <a href="http://ss64.com/osx/syntax-bashkeyboard.html">here</a>. First of all, you may want to enable the meta key.</p>
-
-
-    
-    <p><a href="/blog/shortcuts-in-osx-terminal/">Read More... </a></p>
-    
-  </div>
-
-  <h1><a href="/blog/rprofile-customization/">.Rprofile Customization</a></h1>
-  <div class="content">
-    <p><span class="date">November 27 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>This is my .Rprofile.</p>
-
-<div class="highlight"><pre><code class="r"><span class="c1"># hard code the US repo for CRAN</span>
-local<span class="p">({</span>
-    r <span class="o">&lt;-</span> getOption<span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
-    r<span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;http://cran.us.r-project.org&quot;</span>
-    options<span class="p">(</span>repos <span class="o">=</span> r<span class="p">)</span>
-    options<span class="p">(</span>help_type<span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">)</span>
-<span class="p">})</span>
-
-<span class="c1"># for color in vanilla R</span>
-<span class="kr">if</span> <span class="p">(</span>Sys.getenv<span class="p">(</span><span class="s">&#39;TERM&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="s">&quot;xterm-256color&quot;</span><span class="p">){</span>
-    library<span class="p">(</span>colorout<span class="p">)</span>
-    setOutputColors256<span class="p">(</span>normal <span class="o">=</span> <span class="m">20</span><span class="p">,</span> number <span class="o">=</span> <span class="m">20</span><span class="p">,</span> negnum<span class="o">=</span><span class="m">27</span><span class="p">,</span>
-                       string <span class="o">=</span> <span class="m">34</span><span class="p">,</span> const <span class="o">=</span> <span class="m">214</span><span class="p">,</span>
-                       stderror <span class="o">=</span> <span class="m">1</span><span class="p">,</span> warn<span class="o">=</span><span class="m">9</span><span class="p">,</span> error<span class="o">=</span><span class="m">1</span><span class="p">,</span> verbose<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-<span class="p">}</span>
-</code></pre></div>
-
-
-    
-  </div>
-
-  <h1><a href="/blog/wordpress-category-filter/">Wordpress Categories Filter</a></h1>
-  <div class="content">
-    <p><span class="date">October 27 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#wordpress-ref">wordpress <span class="tag-size">1</span></a></li>
-   
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#php-ref">php <span class="tag-size">1</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>This is how wordpress filters out some specific categories. We will need to change the category id.</p>
-
-
-    
-    <p><a href="/blog/wordpress-category-filter/">Read More... </a></p>
-    
-  </div>
-
-  <h1><a href="/blog/python-web-server/">A simple python webserver</a></h1>
-  <div class="content">
-    <p><span class="date">October 24 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#python-ref">python <span class="tag-size">1</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
-
-<pre><code>python -m SimpleHTTPServer 8000
-</code></pre>
-
-<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.</p>
-
-
-    
-    <p><a href="/blog/python-web-server/">Read More... </a></p>
-    
-  </div>
-
-
-<!-- Pagination links -->
-
 <ul class="pagination">
-  
-    <li class="disabled"><a>Prev</a></li>
-  
-
-  
     
-      <li class="active"><a href="#" >1</a></li>
+    <li class="prev"><a href="/blog/shortcuts-in-osx-terminal/" title="Shortcuts in OSX-Terminal">&larr; Previous</a></li>
     
-  
+    <li><a href="/blog/archive/">Archive</a></li>
     
-      <li><a href="/blog/page/2/">2</a></li>
+    <li class="next disabled"><a>Next &rarr;</a>
     
-  
-
-  
-    <li><a href="/blog/page/2/">Next</a></li>
-  
 </ul>
+
+<hr>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'randy3k'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
 
                 </div>
             </div>         
