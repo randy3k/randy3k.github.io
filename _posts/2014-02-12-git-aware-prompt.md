@@ -21,7 +21,7 @@ To use this, add the following to your `.bashrc` and restart your terminal!
 {% highlight bash %}
 function git-branch-name
 {
-    echo $(git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+    echo $(git symbolic-ref HEAD --short)
 }
 function git-dirty {
     st=$(git status 2>/dev/null | tail -n 1)

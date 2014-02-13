@@ -104,7 +104,7 @@
 
 <div class="highlight"><pre><code class="bash"><span class="k">function </span>git-branch-name
 <span class="o">{</span>
-    <span class="nb">echo</span> <span class="k">$(</span>git symbolic-ref HEAD 2&gt;/dev/null <span class="p">|</span> awk -F/ <span class="o">{</span><span class="s1">&#39;print $NF&#39;</span><span class="o">}</span><span class="k">)</span>
+    <span class="nb">echo</span> <span class="k">$(</span>git symbolic-ref HEAD --short<span class="k">)</span>
 <span class="o">}</span>
 <span class="k">function </span>git-dirty <span class="o">{</span>
     <span class="nv">st</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> tail -n 1<span class="k">)</span>
