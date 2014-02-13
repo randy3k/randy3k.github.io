@@ -11,6 +11,7 @@ http://rtalks.net/research/publications/index.html
 http://rtalks.net/sitemap.txt
 http://rtalks.net/blog/page/2/index.html
 
+http://rtalks.net/blog/
 http://rtalks.net/blog/shortcuts-in-osx-terminal/
 http://rtalks.net/blog/rprofile-customization/
 http://rtalks.net/blog/wordpress-category-filter/
