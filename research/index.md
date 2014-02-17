@@ -41,7 +41,6 @@ $( "#accordion" ).accordion({
 <p></p>
 My research interests span a number of fields in Statistics. Loosely speaking, they can be divided into three categories: generalized fiducial inference, analysis of high dimensional and massive data, and signal and image processing.
 
-<div id="accordion">
 <h3>Generalized Fiducial Inference</h3>
 <div>
 <p>The origin of Fiducial inference can be traced back to R.A. Fisher (Fisher, 1935), who introduced the concept of a fiducial distribution of a parameter and proposed the use of this fiducial distribution, in place of the Bayesian posterior distribution, for interval estimation of the parameter. Since then, it has been a subject of many discussions and controversies for its non-exactness and non-uniqueness properties. Consequently, the fiducial approach fell into disfavor and became a topic of historical interest only. In 1990s, Tsui and Weerahandi (1989) and Weerahandi (1993) have presented a series of papers on generalized confidence intervals. Later, Hannig et al. (2006) pointed out that there was a connection between fiducial arguments and generalized confidence intervals. Evolving through a series of works in 2000s (e.g., Hannig, 2009; Hannig and Lee, 2009), the idea is now known as generalized fiducial inference (GFI), which is a general methodology for constructing a distribution on model parameter(s) without the use of any prior distribution. The resulting distribution is called the generalized fiducial distribution, which can be applied to form estimates and confidence intervals for the model parameter(s). Previous studies have shown that such estimates and confidence intervals possess excellent frequentist properties (e.g., Hannig, 2009; Hannig and Lee, 2009; Hannig et al., 2006).</p>
@@ -90,8 +89,6 @@ I and my collaborators (Wong et al., 2010) considered the problem of partitionin
 <strong> Further research: Functional data analysis of brain images</strong>
 <p>
 Functional magnetic resonance imaging (fMRI) is a well established technique for studying the brain. However, in many situations, such as when the data are acquired in a resting state, it is difficult to know whether the data are truly stationary or if structural breaks are present. In this project, I aim to develop an automatic procedure to detect those breaks by using functional principal component analysis. Due to the computational complexities for estimating the full covariance structure of the three dimensional images, suitable assumptions are required to make computations feasible. Parallel computing technique such as MPI is expected in the implementation of estimating the covariance structure.</p>
-</div>
-
 </div>
 ----
 
