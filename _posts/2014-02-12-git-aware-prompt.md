@@ -4,7 +4,7 @@ title: 'Git aware prompt'
 tagline: 
 category: computing
 tags: [git]
-last_modified: 
+last_modified: 2014-3-29
 ---
 
 I love using git via commands. And it is very often that I have to run `git status` or `git branch` to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.
