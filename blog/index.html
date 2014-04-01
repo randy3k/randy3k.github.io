@@ -102,52 +102,7 @@
 
 <p>To use this, add the following to your <code>.bashrc</code> and restart your terminal!</p>
 
-<div class="highlight"><pre><code class="bash"><span class="k">function </span>git-branch-name
-<span class="o">{</span>
-    <span class="nb">echo</span> <span class="k">$(</span>git symbolic-ref HEAD --short<span class="k">)</span>
-<span class="o">}</span>
-<span class="k">function </span>git-dirty <span class="o">{</span>
-    <span class="nv">st</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> tail -n 1<span class="k">)</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$st</span> !<span class="o">=</span> <span class="s2">&quot;nothing to commit, working directory clean&quot;</span> <span class="o">]]</span>
-    <span class="k">then</span>
-<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;*&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-<span class="k">function </span>git-unpushed <span class="o">{</span>
-    <span class="nv">brinfo</span><span class="o">=</span><span class="sb">`</span>git branch -v <span class="p">|</span> grep <span class="k">$(</span>git-branch-name<span class="k">)</span><span class="sb">`</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$brinfo</span> <span class="o">=</span>~ <span class="o">(</span><span class="s2">&quot;[ahead &quot;</span><span class="o">([[</span>:digit:<span class="o">]]</span>*<span class="o">)])</span> <span class="o">]]</span>
-    <span class="k">then</span>
-<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;+${BASH_REMATCH[2]}&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-<span class="k">function </span>gitcolor <span class="o">{</span>
-    <span class="nv">status</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> head -n 1<span class="k">)</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$status</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]]</span>
-    <span class="k">then</span>
-<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">else</span>
-<span class="k">        if</span> <span class="o">[[</span> <span class="k">$(</span>git-dirty<span class="k">)</span> <span class="o">==</span> <span class="s2">&quot;*&quot;</span> <span class="o">]]</span><span class="p">;</span>
-        <span class="k">then</span>
-<span class="k">            </span><span class="nv">color</span><span class="o">=</span><span class="s2">&quot;\033[31m&quot;</span>
-        <span class="k">else</span>
-<span class="k">            </span><span class="nv">color</span><span class="o">=</span><span class="s2">&quot;\033[32m&quot;</span>
-        <span class="k">fi</span>
-<span class="k">        </span><span class="nb">echo</span> -e <span class="s2">&quot;${color}&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-
-<span class="k">function </span>gitify <span class="o">{</span>
-    <span class="nv">status</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> head -n 1<span class="k">)</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$status</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]]</span>
-    <span class="k">then</span>
-<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">else</span>
-<span class="k">        </span><span class="nb">echo</span> -e <span class="s2">&quot; ($(git-branch-name)$(git-dirty)$(git-unpushed))&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-
-<span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;(\h)-\W\[\$(gitcolor)\]\$(gitify)\[\033[00m\]\$ &quot;</span>
-</code></pre></div>
+<script src="https://gist.github.com/9869949.js"> </script>
 
 
     
@@ -198,46 +153,7 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
       
     <p>This is my .Rprofile.</p>
 
-<div class="highlight"><pre><code class="r"><span class="c1"># not using user library</span>
-<span class="c1"># .libPaths(&quot;&quot;)</span>
-
-<span class="c1"># hard code the US repo for CRAN and use HTML to help</span>
-local<span class="p">({</span>
-    r <span class="o">&lt;-</span> getOption<span class="p">(</span><span class="s">&quot;repos&quot;</span><span class="p">)</span>
-    r<span class="p">[</span><span class="s">&quot;CRAN&quot;</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="s">&quot;http://cran.rstudio.com/&quot;</span>
-    options<span class="p">(</span>repos <span class="o">=</span> r<span class="p">)</span>
-    options<span class="p">(</span>help_type<span class="o">=</span><span class="s">&quot;html&quot;</span><span class="p">)</span>
-<span class="p">})</span>
-
-
-<span class="c1"># using browser for help in R gui</span>
-<span class="kr">if</span> <span class="p">(</span>.Platform<span class="o">$</span>GUI <span class="o">==</span> <span class="s">&quot;AQUA&quot;</span><span class="p">){</span>
-    local<span class="p">({</span>
-        platform <span class="o">=</span> .Platform
-        platform<span class="o">$</span>GUI <span class="o">=</span> <span class="s">&quot;&quot;</span>
-        unlockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
-        assign<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> platform<span class="p">,</span> inherits<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-        lockBinding<span class="p">(</span><span class="s">&quot;.Platform&quot;</span><span class="p">,</span> asNamespace<span class="p">(</span><span class="s">&quot;base&quot;</span><span class="p">))</span>
-    <span class="p">})</span>
-<span class="p">}</span>
-
-.First <span class="o">=</span> <span class="kr">function</span><span class="p">(){</span>
-    <span class="kr">if</span> <span class="p">(</span>.Platform<span class="o">$</span>GUI <span class="o">==</span> <span class="s">&quot;X11&quot;</span> <span class="o">&amp;</span> Sys.getenv<span class="p">(</span><span class="s">&quot;RSTUDIO&quot;</span><span class="p">)</span><span class="o">==</span><span class="s">&quot;&quot;</span><span class="p">){</span>
-        <span class="kr">if</span> <span class="p">(</span><span class="s">&quot;colorout&quot;</span> <span class="o">%in%</span> rownames<span class="p">(</span>utils<span class="o">::</span>installed.packages<span class="p">())){</span>
-            colorout<span class="o">::</span>setOutputColors256<span class="p">(</span>normal <span class="o">=</span> <span class="m">20</span><span class="p">,</span> number <span class="o">=</span> <span class="m">20</span><span class="p">,</span> negnum<span class="o">=</span><span class="m">27</span><span class="p">,</span>
-                               string <span class="o">=</span> <span class="m">34</span><span class="p">,</span> const <span class="o">=</span> <span class="m">214</span><span class="p">,</span>
-                               stderror <span class="o">=</span> <span class="m">1</span><span class="p">,</span> warn<span class="o">=</span><span class="m">9</span><span class="p">,</span> error<span class="o">=</span><span class="m">1</span><span class="p">,</span> verbose<span class="o">=</span><span class="kc">FALSE</span><span class="p">)</span>
-        <span class="p">}</span><span class="kr">else</span> <span class="kr">if</span> <span class="p">(</span>Sys.getenv<span class="p">(</span><span class="s">&quot;R_colorout&quot;</span><span class="p">)</span><span class="o">==</span><span class="s">&quot;&quot;</span><span class="p">){</span>
-            Sys.setenv<span class="p">(</span>R_colorout<span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
-            library<span class="p">(</span>stats<span class="p">)</span>
-            library<span class="p">(</span>utils<span class="p">)</span>
-            install.packages<span class="p">(</span><span class="s">&quot;devtools&quot;</span><span class="p">)</span>
-            devtools<span class="o">::</span>install_github<span class="p">(</span><span class="s">&quot;randy3k/colorout&quot;</span><span class="p">)</span>
-            Sys.setenv<span class="p">(</span>unset<span class="o">=</span><span class="s">&quot;R_colorout&quot;</span><span class="p">)</span>
-        <span class="p">}</span>
-    <span class="p">}</span>
-<span class="p">}</span>
-</code></pre></div>
+<script src="https://gist.github.com/9869879.js"> </script>
 
 
     
