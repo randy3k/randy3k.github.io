@@ -1,6 +1,7 @@
 permalink: /blog/:title/
 markdown: kramdown
-exclude: ["README.md", "Rakefile", 'bootstrap', 'Rakefile', "Gemfile", "knitpages.R"]
+exclude: ["README.md", "Rakefile", 'bootstrap', 'Rakefile',
+          "Gemfile", "rtalks.sublime-workspace", "rtalks.sublime-project"]
 # highligher: pygments
 paginate: 5
 paginate_path: "/blog/page/:num/"
