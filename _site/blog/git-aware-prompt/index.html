@@ -98,52 +98,8 @@
 
 <p>To use this, add the following to your <code>.bashrc</code> and restart your terminal!</p>
 
-<div class="highlight"><pre><code class="bash"><span class="k">function </span>git-branch-name
-<span class="o">{</span>
-    <span class="nb">echo</span> <span class="k">$(</span>git symbolic-ref HEAD --short<span class="k">)</span>
-<span class="o">}</span>
-<span class="k">function </span>git-dirty <span class="o">{</span>
-    <span class="nv">st</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> tail -n 1<span class="k">)</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$st</span> !<span class="o">=</span> <span class="s2">&quot;nothing to commit, working directory clean&quot;</span> <span class="o">]]</span>
-    <span class="k">then</span>
-<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;*&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-<span class="k">function </span>git-unpushed <span class="o">{</span>
-    <span class="nv">brinfo</span><span class="o">=</span><span class="sb">`</span>git branch -v <span class="p">|</span> grep <span class="k">$(</span>git-branch-name<span class="k">)</span><span class="sb">`</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$brinfo</span> <span class="o">=</span>~ <span class="o">(</span><span class="s2">&quot;[ahead &quot;</span><span class="o">([[</span>:digit:<span class="o">]]</span>*<span class="o">)])</span> <span class="o">]]</span>
-    <span class="k">then</span>
-<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;+${BASH_REMATCH[2]}&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-<span class="k">function </span>gitcolor <span class="o">{</span>
-    <span class="nv">status</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> head -n 1<span class="k">)</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$status</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]]</span>
-    <span class="k">then</span>
-<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">else</span>
-<span class="k">        if</span> <span class="o">[[</span> <span class="k">$(</span>git-dirty<span class="k">)</span> <span class="o">==</span> <span class="s2">&quot;*&quot;</span> <span class="o">]]</span><span class="p">;</span>
-        <span class="k">then</span>
-<span class="k">            </span><span class="nv">color</span><span class="o">=</span><span class="s2">&quot;\033[31m&quot;</span>
-        <span class="k">else</span>
-<span class="k">            </span><span class="nv">color</span><span class="o">=</span><span class="s2">&quot;\033[32m&quot;</span>
-        <span class="k">fi</span>
-<span class="k">        </span><span class="nb">echo</span> -e <span class="s2">&quot;${color}&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
+<script src="https://gist.github.com/9869949.js"> </script>
 
-<span class="k">function </span>gitify <span class="o">{</span>
-    <span class="nv">status</span><span class="o">=</span><span class="k">$(</span>git status 2&gt;/dev/null <span class="p">|</span> head -n 1<span class="k">)</span>
-    <span class="k">if</span> <span class="o">[[</span> <span class="nv">$status</span> <span class="o">==</span> <span class="s2">&quot;&quot;</span> <span class="o">]]</span>
-    <span class="k">then</span>
-<span class="k">        </span><span class="nb">echo</span> <span class="s2">&quot;&quot;</span>
-    <span class="k">else</span>
-<span class="k">        </span><span class="nb">echo</span> -e <span class="s2">&quot; ($(git-branch-name)$(git-dirty)$(git-unpushed))&quot;</span>
-    <span class="k">fi</span>
-<span class="o">}</span>
-
-<span class="nb">export </span><span class="nv">PS1</span><span class="o">=</span><span class="s2">&quot;(\h)-\W\[\$(gitcolor)\]\$(gitify)\[\033[00m\]\$ &quot;</span>
-</code></pre></div>
 
 
 <ul class="pagination">

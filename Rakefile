@@ -8,14 +8,18 @@ task :draft do
   OptionParser.new.parse!
   ARGV.shift
   title = ARGV.join(' ')
-
-  path = "_drafts/#{Date.today}-#{title.downcase.gsub(/[^[:alnum:]]+/, '-')}.md"
+  if title.empty?
+    print "title: "
+    title = $stdin.gets
+  end
+  path = "_posts/#{Date.today}-#{title.downcase.gsub(/[^[:alnum:]]+/, '-')}.md"
 
   if File.exist?(path)
     puts "[WARN] File exists - skipping create"
   else
     File.open(path, "w") do |file|
-      file.puts YAML.dump({'layout' => 'post', 'title' => title, 'tagline'=> nil, 'category' => nil, 'tags' => [ ], 'last_modified' => nil})
+      file.puts YAML.dump({'layout' => 'post', 'title' => title, 'tagline'=> nil,
+                          'category' => nil, 'tags' => [ ], 'last_modified' => nil})
       file.puts "---"
     end
   end
@@ -23,37 +27,59 @@ task :draft do
   exit 0
 end
 
-desc "Move files from _drafts to _posts"
-task :mdrafts do
-  drafts = Dir.glob(File.join('_drafts', '*'))
-  drafts.each do |filename|
-    name = File.basename(filename)
-    FileUtils.move filename, "_posts/#{name}"
+desc "Draft a post"
+task :draftr do
+  OptionParser.new.parse!
+  ARGV.shift
+  title = ARGV.join(' ')
+  if title.empty?
+    print "title: "
+    title = $stdin.gets
   end
+
+  path = "_R/#{Date.today}-#{title.downcase.gsub(/[^[:alnum:]]+/, '-')}.md"
+
+  if File.exist?(path)
+    puts "[WARN] File exists - skipping create"
+  else
+    File.open(path, "w") do |file|
+      file.puts YAML.dump({'layout' => 'post', 'title' => title, 'tagline'=> nil,
+                          'category' => nil, 'tags' => [ ], 'last_modified' => nil})
+      file.puts "---"
+    end
+  end
+  `subl #{path}`
   exit 0
 end
 
 desc "Deploy _site/"
+task :deploy => [:build]
 task :deploy do
-  puts "\n## Building site"
-  status = system("jekyll build")
-  if status == false then exit 1 end
-  puts "\n## Staging modified files"
+  puts "## Staging modified files\n"
   status = system("git add -A")
-  puts "\n## Committing a site build at #{Time.now.utc}"
+  puts "## Committing a site build at #{Time.now.utc}\n"
   message = "Build site at #{Time.now.utc}"
   status = system("git commit -m \"#{message}\"")
-  puts "\n## Deleting master branch"
+  puts "## Deleting master branch\n"
   status = system("git branch -D master")
-  puts "\n## Creating new master branch and switching to it"
+  puts "## Creating new master branch and switching to it\n"
   status = system("git checkout -b master")
-  puts "\n## Forcing the _site subdirectory to be project root"
+  puts "## Forcing the _site subdirectory to be project root\n"
   status = system("git filter-branch --subdirectory-filter _site/ -f")
-  puts "\n## Switching back to source branch"
+  puts "## Switching back to source branch\n"
   status = system("git checkout source")
-  puts "\n## Pushing all branches to origin"
+  puts "## Pushing all branches to origin\n"
   status = system("git push --all origin")
 end
+
+desc "Build site"
+task :build => [:knit]
+task :build do
+  puts "## Building site\n"
+  status = system("jekyll build")
+  if status == false then exit 1 end
+end
+
 
 CONFIG = Hash.new
 CONFIG['less'] = "bootstrap/less"
@@ -75,4 +101,11 @@ task :lessc do
   File.open( output, "w+" ) do |f|
     f.puts tree.to_css( :compress => true )
   end
+end
+
+desc "Knit Rmd"
+task :knit do
+  puts "## Knitting Rmd\n"
+  status = system("R --slave -f _plugins/knitpages.R")
+  if status == false then exit 1 end
 end
