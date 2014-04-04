@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Blog - RTalks.net</title>
-    
-    <meta name="author" content="Randy Lai">
+<meta charset="utf-8">
+<title>Blog - RTalks.net</title>
 
-    <!-- Enable responsive viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Randy Lai">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,11 +33,9 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-
 </head>
-
 <body>   
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -61,15 +59,17 @@
             </div>
         </div>
     </div>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+            <span class="fa fa-sign-in"></span> Blog 
+            </h1>
+            
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-9">
-                <div class="jumbotron">
-                    <h1>
-                    <span class="fa fa-sign-in"></span> Blog 
-                    </h1>
-                    
-                </div>
                 <div class="content">
                     <a class="btn btn-danger" href="/blog/categories/">By Categories</a>
 &nbsp;&nbsp;
@@ -87,11 +87,11 @@
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
   
 
 </ul>
@@ -143,26 +143,27 @@ mpi.close.Rslaves<span class="p">()</span>
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
   
 
 </ul>
   
 
       
-    <font color="red">
-Warning [2014-2-12]: Most packages are now compatible with `libc++`, changing to `libstdc++` may cause problems for some packages.</font>
+    <p class="alert alert-warning"><strong>Warning [2014-2-12]</strong>: Most packages are now compatible with <code>libc++</code>, changing to <code>libstdc++</code> may cause problems for some packages.</p>
 
 <p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
-<ol>
-    <li>change the complier to GNU gcc complier.</li>
-    <li>an easier solution, but it doesn't work for all packages</li>
-</ol>
-<h2>1. GNC gcc complier</h2>
+
+<pre><code>1. change the complier to GNU gcc complier.
+2. an easier solution, but it doesn't work for all packages
+</code></pre>
+
+<h3 id="gnc-gcc-complier">1. GNC gcc complier</h3>
+
 <p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
 
 <pre><code>brew install gcc47
@@ -176,14 +177,16 @@ CXX=/usr/local/bin/g++-4.7
 FC=/usr/local/bin/gfortran
 </code></pre>
 
-<h2>2. An easier solution</h2>
+<h3 id="an-easier-solution">2. An easier solution</h3>
 <p>Edit <code>~/.R/Makevars</code> and add</p>
 
 <pre><code>CXXFLAGS=-stdlib=libstdc++
 </code></pre>
 
 <p>But it doesn’t fix all problems.</p>
-<h2>Test if it works</h2>
+
+<h3 id="test-if-it-works">Test if it works&lt;</h3>
+
 <p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
 
 <pre><code>install.packages("SuppDists", type="source")
@@ -216,7 +219,7 @@ FC=/usr/local/bin/gfortran
 a+b=2
 \end{equation}</p>
 
-<p>$\alpha_3 + [\beta_1^2 = 1$ </p>
+<p>$\alpha_3 + \beta_1^2 = 1$ </p>
 
 <script type="math/tex; mode=display">
 \alpha + \beta_1 = 2
@@ -253,18 +256,20 @@ a+b=2
 
                 </div>
             </div>         
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-3">
                     <div class="reset-box-sizing search">
-                        <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
-                    </div>              
+    <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
+</div>
+        
             </div> 
         </div>        
-        <hr>
-        <footer>
-            <p>&copy; 2014 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
-            </p>
-        </footer>                  
-   </div>     
-
+        <hr>               
+   </div>
+   <div class="container"> 
+       <footer>
+           <p>&copy; 2014 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
+</p>
+       </footer>   
+   </div>
 </body>
 </html>

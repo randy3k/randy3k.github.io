@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Wordpress Categories Filter - RTalks.net</title>
-    
-    <meta name="author" content="Randy Lai">
+<meta charset="utf-8">
+<title>Wordpress Categories Filter - RTalks.net</title>
 
-    <!-- Enable responsive viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Randy Lai">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,11 +33,9 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-
 </head>
-
 <body>   
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -61,15 +59,17 @@
             </div>
         </div>
     </div>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+            <span class="fa fa-sign-in"></span> Wordpress Categories Filter 
+            </h1>
+            
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-9">
-                <div class="jumbotron">
-                    <h1>
-                    <span class="fa fa-sign-in"></span> Wordpress Categories Filter 
-                    </h1>
-                    
-                </div>
                 <div class="content">
                     <p><span class="date">October 27 2013</span>
 
@@ -81,9 +81,9 @@
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#wordpress-ref">wordpress <span class="tag-size">1</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#wordpress-ref">wordpress <span class="tag-size">1</span></a></li>
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#php-ref">php <span class="tag-size">1</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#php-ref">php <span class="tag-size">1</span></a></li>
   
 
 </ul>
@@ -93,63 +93,8 @@
 <p>This is how wordpress filters out some specific categories. You may need to change the category id.
 <!--more--></p>
 
-<div class="highlight"><pre><code class="php"><span class="cp">&lt;?php</span>
-<span class="cm">/*</span>
-<span class="cm">Plugin Name: My Filter</span>
-<span class="cm">*/</span>
+<script src="https://gist.github.com/9970786.js"> </script>
 
-<span class="c1">// Exit if accessed directly</span>
-<span class="k">if</span> <span class="p">(</span> <span class="o">!</span><span class="nb">defined</span><span class="p">(</span><span class="s1">&#39;ABSPATH&#39;</span><span class="p">))</span> <span class="k">exit</span><span class="p">;</span>
-
-<span class="c1"># to exclude the category testing</span>
-<span class="k">function</span> <span class="nf">exclude_category</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">is_search</span><span class="p">)</span> <span class="p">{</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;-3&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">return</span> <span class="nv">$query</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;pre_get_posts&#39;</span><span class="p">,</span> <span class="s1">&#39;exclude_category&#39;</span><span class="p">);</span>
-
-<span class="k">function</span> <span class="nf">exclude_widget_categories</span><span class="p">(</span><span class="nv">$args</span><span class="p">)</span> <span class="p">{</span>
-<span class="nv">$exclude</span> <span class="o">=</span> <span class="s2">&quot;3&quot;</span><span class="p">;</span> <span class="c1">// The IDs of the excluding categories</span>
-<span class="nv">$args</span><span class="p">[</span><span class="s2">&quot;exclude&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$exclude</span><span class="p">;</span>
-<span class="k">return</span> <span class="nv">$args</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="nx">add_filter</span><span class="p">(</span><span class="s2">&quot;widget_categories_args&quot;</span><span class="p">,</span><span class="s2">&quot;exclude_widget_categories&quot;</span><span class="p">);</span>
-
-<span class="k">function</span> <span class="nf">myFilter</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
-<span class="k">if</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">is_home</span><span class="p">)</span> <span class="p">{</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span><span class="s1">&#39;-3&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">return</span> <span class="nv">$query</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;pre_get_posts&#39;</span><span class="p">,</span><span class="s1">&#39;myFilter&#39;</span><span class="p">);</span>
-
-<span class="k">function</span> <span class="nf">exclude_stuff</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
-<span class="k">if</span> <span class="p">(</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">is_date</span><span class="p">)</span> <span class="p">{</span>
-<span class="nv">$query</span><span class="o">-&gt;</span><span class="na">set</span><span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="s1">&#39;-3&#39;</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="k">return</span> <span class="nv">$query</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="nx">add_filter</span><span class="p">(</span><span class="s1">&#39;pre_get_posts&#39;</span><span class="p">,</span> <span class="s1">&#39;exclude_stuff&#39;</span><span class="p">);</span>
-
-<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;getarchives_where&#39;</span><span class="p">,</span> <span class="s1">&#39;customarchives_where&#39;</span> <span class="p">);</span>
-<span class="nx">add_filter</span><span class="p">(</span> <span class="s1">&#39;getarchives_join&#39;</span><span class="p">,</span> <span class="s1">&#39;customarchives_join&#39;</span> <span class="p">);</span>
-
-<span class="k">function</span> <span class="nf">customarchives_join</span><span class="p">(</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
-<span class="k">global</span> <span class="nv">$wpdb</span><span class="p">;</span>
-<span class="k">return</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s2">&quot; INNER JOIN </span><span class="si">$wpdb-&gt;term_relationships</span><span class="s2"> ON (</span><span class="si">$wpdb-&gt;posts</span><span class="s2">.ID = </span><span class="si">$wpdb-&gt;term_relationships</span><span class="s2">.object_id) INNER JOIN </span><span class="si">$wpdb-&gt;term_taxonomy</span><span class="s2"> ON (</span><span class="si">$wpdb-&gt;term_relationships</span><span class="s2">.term_taxonomy_id = </span><span class="si">$wpdb-&gt;term_taxonomy</span><span class="s2">.term_taxonomy_id)&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="k">function</span> <span class="nf">customarchives_where</span><span class="p">(</span> <span class="nv">$x</span> <span class="p">)</span> <span class="p">{</span>
-<span class="k">global</span> <span class="nv">$wpdb</span><span class="p">;</span>
-<span class="nv">$exclude</span> <span class="o">=</span> <span class="s1">&#39;3&#39;</span><span class="p">;</span> <span class="c1">// category id to exclude</span>
-<span class="k">return</span> <span class="nv">$x</span> <span class="o">.</span> <span class="s2">&quot; AND </span><span class="si">$wpdb-&gt;term_taxonomy</span><span class="s2">.taxonomy = &#39;category&#39; AND </span><span class="si">$wpdb-&gt;term_taxonomy</span><span class="s2">.term_id NOT IN (</span><span class="si">$exclude</span><span class="s2">)&quot;</span><span class="p">;</span>
-<span class="p">}</span>
-
-<span class="cp">?&gt;</span><span class="x"></span>
-</code></pre></div>
 
 
 <ul class="pagination">
@@ -181,18 +126,20 @@
 
                 </div>
             </div>         
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-3">
                     <div class="reset-box-sizing search">
-                        <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
-                    </div>              
+    <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
+</div>
+        
             </div> 
         </div>        
-        <hr>
-        <footer>
-            <p>&copy; 2014 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
-            </p>
-        </footer>                  
-   </div>     
-
+        <hr>               
+   </div>
+   <div class="container"> 
+       <footer>
+           <p>&copy; 2014 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
+</p>
+       </footer>   
+   </div>
 </body>
 </html>
