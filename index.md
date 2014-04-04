@@ -8,7 +8,7 @@ tagline: Randy Talks Dot Net
 
 ###About
 
-> I am Randy Lai, a PhD student in the Department of Statistics, University of California, Davis. Previously, I obtained my Master and Undergraduate degrees from CUHK, The Chinese University of Hong Kong. I was born in Hong Kong and I spent my childhood and teenage years in this prosperous city.
+> I am Randy Lai, a PhD student in the Department of Statistics, University of California, Davis. Previously, I obtained my Master and Undergraduate degrees from CUHK, The Chinese University of Hong Kong. I was born in Hong Kong and I love my city.
 
 You can contact me via
 
@@ -17,10 +17,11 @@ You can contact me via
 
 ###Computing
 
-> I learned HTML, PHP, MYSQL and Visual Basic in secondary school.  Now, being a heavy R user, I am also learning Python, CUDA and Obj-C. Moreover, I have great interests in web development such as jQuery, AJAX, Node.js and Rails.
-
+> I learned `html`, `php`, `mysql` in secondary school.  While I am using `R` everyday, I also write python, `cuda` and `obj-c` codes. Moreover, I have great interests in web development such as `javascript` and `jquery`. 
+Currently, I fall in love with the amazing editor [Sublime Text](http://www.sublimetext.com). If I have more time, I would also like to learn `ruby`, `julia`, `java`, `go` and many others... 
 
 ### Recent Posts
+
 
 <div class="list-group">
   {% for post in site.posts limit:5  %}
