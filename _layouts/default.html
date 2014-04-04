@@ -8,19 +8,17 @@
     <div class="jumbotron">
         <div class="container">
             <h1>
-            <span class="fa fa-sign-in"></span> {% if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %} 
+            <span class="fa fa-code"></span> {% if page.header %}{{ page.header }}{% else %}{{ page.title }}{% endif %} 
             </h1>
             {% if page.tagline %}{{page.tagline}}{% endif %}
         </div>
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-9">
-                <div class="content">
+            <div class="col-xs-12 col-sm-12 col-md-9 maincontent">
                     {{ content }}
-                </div>
             </div>         
-            <div class="col-xs-12 col-sm-12 col-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
                     {% include sidebar.html %}        
             </div> 
         </div>        
