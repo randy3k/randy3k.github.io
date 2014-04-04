@@ -5,9 +5,10 @@ header: Welcome!
 tagline: Randy Talks Dot Net
 ---
 
+
 ###About
 
-I am Randy Lai, a PhD student in the Department of Statistics, University of California, Davis. Previously, I obtained my Master and Undergraduate degrees from CUHK, The Chinese University of Hong Kong. I was born in Hong Kong and I spent my childhood and teenage years in this prosperous city.
+> I am Randy Lai, a PhD student in the Department of Statistics, University of California, Davis. Previously, I obtained my Master and Undergraduate degrees from CUHK, The Chinese University of Hong Kong. I was born in Hong Kong and I spent my childhood and teenage years in this prosperous city.
 
 You can contact me via
 
@@ -16,7 +17,7 @@ You can contact me via
 
 ###Computing
 
-I learned HTML, PHP, MYSQL and Visual Basic in secondary school.  Now, being a heavy R user, I am also learning Python, CUDA and Obj-C. Moreover, I have great interests in web development such as jQuery, AJAX, Node.js and Rails.
+> I learned HTML, PHP, MYSQL and Visual Basic in secondary school.  Now, being a heavy R user, I am also learning Python, CUDA and Obj-C. Moreover, I have great interests in web development such as jQuery, AJAX, Node.js and Rails.
 
 
 ### Recent Posts
@@ -26,7 +27,7 @@ I learned HTML, PHP, MYSQL and Visual Basic in secondary school.  Now, being a h
     <div class="list-group-item">
         <h5 class="list-group-item-heading"><a href="{{ post.url }}">{{ post.title }}</a></h5>
         {{ post.date | date: "%b %e, %Y" }}{% for tag in post.tags %}
-        <a class="btn btn-success btn-xs" href="{{ site.tags_path }}#{{ tag }}-ref">{{ tag }}</a>
+        <a class="label label-success" href="{{ site.tags_path }}#{{ tag }}-ref">{{ tag }}</a>
         {% endfor %}
     </div>  
   {% endfor %}

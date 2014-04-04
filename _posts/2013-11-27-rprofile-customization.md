@@ -11,4 +11,4 @@ last_modified: 2014-3-29
 
 This is my .Rprofile.
 
-{% gist 9869879 %}
+{% gist 9948514 %}

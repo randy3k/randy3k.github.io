@@ -12,7 +12,7 @@ I love using git via commands. And it is very often that I have to run `git stat
 The code was originated from [here](http://bytebaker.com/2012/01/09/show-git-information-in-your-prompt/) but I have made significant amount of changes, for example, adding color support and some bugs fixing.
 
 
-<img src="/assets/images/git.png" style="border:1px solid grey">
+![](/assets/images/git.png)
 
 
 To use this, add the following to your `.bashrc` and restart your terminal!

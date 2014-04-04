@@ -1,19 +1,39 @@
 /* container size */
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
   .container {
     width: 970px;
   }
+}*/
+
+/* font related */
+body {
+    font-family: 'PT Serif', 'Gentium Book Basic', Georgia, 'Times New Roman', serif;
+    font-size: 16px;
 }
+
+.navbar-brand{ font-size: 20px; }
+
+.content {
+    color: #333;
+}
+
+h1, h2, h3{
+    font-weight: 500;
+}
+
+h4, h5{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.label{ font-weight: 400; }
+
+.gist{ font-size: 13px; }
 
 /* date */
 .date {
     font-weight: 600;
-}
-
-/* footer */
-
-footer {
-    margin-bottom: 30px;
+    font-size: 17px;
 }
 
 /* tag-box */
@@ -39,16 +59,6 @@ footer {
     font-size: 0.8em;
 }
 
-/* accordion */
-#accordion > h3{
-    cursor: pointer;
-    outline: 0;
-}
-
-/*#accordion .ui-accordion-header-icon{
-    font-size:18px;
-    margin-right: 5px;
-}*/
 
 /* publication list */
 .pub {
@@ -88,30 +98,4 @@ footer {
     height: 65px;
     padding: 5px;
     max-width: 200px;
-}
-
-/* table */
-
-.content > table {
-    width: 100%;
-    overflow: auto;
-    display: block
-}
-
-.content > table th {
-    font-weight: bold
-}
-
-.content > table th, .content > table td {
-    border: 1px solid #ddd;
-    padding: 6px 13px
-}
-
-.content > table tr {
-    border-top: 1px solid #ccc;
-    background-color: #fff
-}
-
-.content > table tr:nth-child(2n) {
-    background-color: #f8f8f8
 }

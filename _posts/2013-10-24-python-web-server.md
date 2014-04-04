@@ -11,60 +11,62 @@ Python has a very simple web server which allows you to share a particular direc
     
     python -m SimpleHTTPServer 8000
     
-Index directory can be then accessed by http://&lt;ip address&gt;:8000.
+Index directory can be then accessed by http://\<ip address\>:8000.
 <!--more-->
-More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on localhost</a>
+More complicated usages: [Only serve on localhost](http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python)
 
-    import sys
-    import BaseHTTPServer
-    from SimpleHTTPServer import SimpleHTTPRequestHandler
+{% highlight python %}
+import sys
+import BaseHTTPServer
+from SimpleHTTPServer import SimpleHTTPRequestHandler
 
-    HandlerClass = SimpleHTTPRequestHandler
-    ServerClass = BaseHTTPServer.HTTPServer
-    Protocol = "HTTP/1.0"
+HandlerClass = SimpleHTTPRequestHandler
+ServerClass = BaseHTTPServer.HTTPServer
+Protocol = "HTTP/1.0"
 
-    if sys.argv[1:]:
-    port = int(sys.argv[1])
-    else:
-    port = 8000
-    server_address = ('127.0.0.1', port)
+if sys.argv[1:]:
+port = int(sys.argv[1])
+else:
+port = 8000
+server_address = ('127.0.0.1', port)
 
-    HandlerClass.protocol_version = Protocol
-    httpd = ServerClass(server_address, HandlerClass)
+HandlerClass.protocol_version = Protocol
+httpd = ServerClass(server_address, HandlerClass)
 
-    sa = httpd.socket.getsockname()
-    print "Serving HTTP on", sa[0], "port", sa[1], "..."
-    httpd.serve_forever()
+sa = httpd.socket.getsockname()
+print "Serving HTTP on", sa[0], "port", sa[1], "..."
+httpd.serve_forever()
+{% endhighlight %}    
 
-and <a href="http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file">Simple Python Webserver to save file</a>
+and [Simple Python Webserver to save file](http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file)
 
- 
+{% highlight python %}
+from os import curdir
+from os.path import join as pjoin
 
-    from os import curdir
-    from os.path import join as pjoin
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
-    from http.server import BaseHTTPRequestHandler, HTTPServer
+class StoreHandler(BaseHTTPReque stHandler):
+store_path = pjoin(curdir, 'store.json')
 
-    class StoreHandler(BaseHTTPReque stHandler):
-    store_path = pjoin(curdir, 'store.json')
+def do_GET(self):
+if self.path == '/store.json':
+with open(self.store_path) as fh:
+self.send_response(200)
+self.send_header('Content-type', 'text/json')
+self.end_headers()
+self.wfile.write(fh.read().encode())
 
-    def do_GET(self):
-    if self.path == '/store.json':
-    with open(self.store_path) as fh:
-    self.send_response(200)
-    self.send_header('Content-type', 'text/json')
-    self.end_headers()
-    self.wfile.write(fh.read().encode())
+def do_POST(self):
+if self.path == '/store.json':
+length = self.headers['content-length']
+data = self.rfile.read(int(length))
 
-    def do_POST(self):
-    if self.path == '/store.json':
-    length = self.headers['content-length']
-    data = self.rfile.read(int(length))
+with open(self.store_path, 'w') as fh:
+fh.write(data.decode())
 
-    with open(self.store_path, 'w') as fh:
-    fh.write(data.decode())
+self.send_response(200)
 
-    self.send_response(200)
-
-    server = HTTPServer(('', 8080), StoreHandler)
-    server.serve_forever()
+server = HTTPServer(('', 8080), StoreHandler)
+server.serve_forever()
+{% endhighlight %}   

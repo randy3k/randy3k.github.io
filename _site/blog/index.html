@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Blog - RTalks.net</title>
-    
-    <meta name="author" content="Randy Lai">
+<meta charset="utf-8">
+<title>Blog - RTalks.net</title>
 
-    <!-- Enable responsive viewport -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="author" content="Randy Lai">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,11 +33,9 @@
     s.parentNode.insertBefore(gcse, s);
   })();
 </script>
-
 </head>
-
 <body>   
-    <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
@@ -61,15 +59,17 @@
             </div>
         </div>
     </div>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+            <span class="fa fa-sign-in"></span> Blog 
+            </h1>
+            
+        </div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-9">
-                <div class="jumbotron">
-                    <h1>
-                    <span class="fa fa-sign-in"></span> Blog 
-                    </h1>
-                    
-                </div>
                 <div class="content">
                     <a class="btn btn-danger" href="/blog/categories/">By Categories</a>
 &nbsp;&nbsp;
@@ -87,7 +87,7 @@
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#git-ref">git <span class="tag-size">1</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#git-ref">git <span class="tag-size">1</span></a></li>
   
 
 </ul>
@@ -98,7 +98,7 @@
 
 <p>The code was originated from <a href="http://bytebaker.com/2012/01/09/show-git-information-in-your-prompt/">here</a> but I have made significant amount of changes, for example, adding color support and some bugs fixing.</p>
 
-<p><img src="/assets/images/git.png" style="border:1px solid grey" /></p>
+<p><img src="/assets/images/git.png" alt="" /></p>
 
 <p>To use this, add the following to your <code>.bashrc</code> and restart your terminal!</p>
 
@@ -118,7 +118,7 @@
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#osx-ref">osx <span class="tag-size">3</span></a></li>
   
 
 </ul>
@@ -144,7 +144,7 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#r-ref">r <span class="tag-size">3</span></a></li>
   
 
 </ul>
@@ -153,7 +153,7 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
       
     <p>This is my .Rprofile.</p>
 
-<script src="https://gist.github.com/9869879.js"> </script>
+<script src="https://gist.github.com/9948514.js"> </script>
 
 
     
@@ -169,9 +169,9 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#wordpress-ref">wordpress <span class="tag-size">1</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#wordpress-ref">wordpress <span class="tag-size">1</span></a></li>
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#php-ref">php <span class="tag-size">1</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#php-ref">php <span class="tag-size">1</span></a></li>
   
 
 </ul>
@@ -196,7 +196,7 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
    
-  	<li><a class="btn btn-success btn-xs" href="/blog/tags/#python-ref">python <span class="tag-size">1</span></a></li>
+  	<li><a class="label label-success" href="/blog/tags/#python-ref">python <span class="tag-size">1</span></a></li>
   
 
 </ul>
@@ -241,18 +241,20 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
 
                 </div>
             </div>         
-            <div class="col-xs-12 col-sm-6 col-md-3">
+            <div class="col-xs-12 col-sm-12 col-md-3">
                     <div class="reset-box-sizing search">
-                        <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
-                    </div>              
+    <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
+</div>
+        
             </div> 
         </div>        
-        <hr>
-        <footer>
-            <p>&copy; 2014 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
-            </p>
-        </footer>                  
-   </div>     
-
+        <hr>               
+   </div>
+   <div class="container"> 
+       <footer>
+           <p>&copy; 2014 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
+</p>
+       </footer>   
+   </div>
 </body>
 </html>

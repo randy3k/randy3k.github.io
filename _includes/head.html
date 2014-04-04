@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+{% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+<meta name="author" content="{{ site.author.name }}">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="{{ site.baseurl }}assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{ site.baseurl }}assets/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+<link href="{{ site.baseurl }}assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js"></script>  
+<script>
+  (function() {
+    var cx = '008225976323914720770:ha27dsnxije';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>

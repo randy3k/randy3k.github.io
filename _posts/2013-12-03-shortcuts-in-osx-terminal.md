@@ -21,6 +21,7 @@ them, but I bet you don't know all of them. I am providing a cheat sheet of thos
   | Ctrl + e    | Go to the end of the line (End)                                             | 
   | Alt + b     | Back (left) one word                                                        | 
   | Alt + f     | Forward (right) one word                                                    | 
+{: class="table table-striped"}
 
 ####Text
 
@@ -32,6 +33,7 @@ them, but I bet you don't know all of them. I am providing a cheat sheet of thos
   | Ctrl + k    | Cut the line after the cursor to the clipboard.                             | 
   | Ctrl + w    | Cut the word before the cursor to the clipboard.                            | 
   | Ctrl + y    | Paste the last thing to be cut (yank)                                       | 
+{: class="table table-striped"}
 
 ####Misc.
 
@@ -39,4 +41,5 @@ them, but I bet you don't know all of them. I am providing a cheat sheet of thos
   | ----------- | ------------                                                                | 
   | Ctrl + l    | Clear the screen, similar to the clear command                              | 
   | Alt + r     | Cancel the changes and put back the line as it was in the history (revert). | 
-  | Ctrl + _    | Undo                                                                        | 
+  | Ctrl + _    | Undo               
+{: class="table table-striped"}

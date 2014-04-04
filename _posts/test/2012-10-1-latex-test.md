@@ -6,13 +6,13 @@ published: 1
 tags : 
 ---
 
-{% include mathjax %}
+{% include mathjax.html %}
 
 \begin{equation}
 a+b=2
 \end{equation}
 
-$\alpha_3 + [\beta_1^2 = 1$ 
+$\alpha_3 + \beta_1^2 = 1$ 
 
 $$
 \alpha + \beta_1 = 2
