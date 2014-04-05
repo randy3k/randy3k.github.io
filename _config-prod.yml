@@ -1,4 +1,4 @@
-mode: dev
+mode: production
 permalink: /blog/:title/
 markdown: kramdown
 markdown_ext: foo
