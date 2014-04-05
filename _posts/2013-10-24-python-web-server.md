@@ -15,7 +15,7 @@ Index directory can be then accessed by http://\<ip address\>:8000.
 <!--more-->
 More complicated usages: [Only serve on localhost](http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python)
 
-{% highlight python %}
+```python
 import sys
 import BaseHTTPServer
 from SimpleHTTPServer import SimpleHTTPRequestHandler
@@ -36,11 +36,12 @@ httpd = ServerClass(server_address, HandlerClass)
 sa = httpd.socket.getsockname()
 print "Serving HTTP on", sa[0], "port", sa[1], "..."
 httpd.serve_forever()
-{% endhighlight %}    
+``` 
+
 
 and [Simple Python Webserver to save file](http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file)
 
-{% highlight python %}
+```python
 from os import curdir
 from os.path import join as pjoin
 
@@ -69,4 +70,4 @@ self.send_response(200)
 
 server = HTTPServer(('', 8080), StoreHandler)
 server.serve_forever()
-{% endhighlight %}   
+```

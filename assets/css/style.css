@@ -97,21 +97,25 @@ body footer {
 }
 
 .search{
-    height: 65px;
     max-width: 200px;
-    margin-right: 50px;
     margin-bottom: 30px;
 }
 @media (max-width: 991px) {
     .search {
          float: left;
+         margin-right: 50px;
          margin-bottom: 0px;
     }
 }
 
+.github{
+    max-width: 200px;
+}
+
+
 .maincontent {
-    border-style: dashed;
-    border-color: #bbb;
+    border-style: solid;
+    border-color: #ddd;
     border-width: 0px 1px 0px 0px;
 }
 @media (max-width: 991px) {
@@ -119,3 +123,4 @@ body footer {
          border-width: 0px;
     }
 }
+

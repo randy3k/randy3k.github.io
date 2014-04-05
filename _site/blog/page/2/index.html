@@ -69,7 +69,7 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-9 maincontent">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 maincontent">
                     <a class="btn btn-danger" href="/blog/categories/">By Categories</a>
 &nbsp;&nbsp;
 <a class="btn btn-success" href="/blog/tags/">By Tags</a>
@@ -97,36 +97,33 @@
   
 
       
-    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
-<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
+    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac&nbsp;<span class="caps">OSX.</span>
+<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and&nbsp;<code>open-mpi</code></p>
 
-<pre><code>brew install gfortran
-brew install open-mpi
-</code></pre>
+<pre><code class="language-bash">brew install gfortran
+brew install open-mpi</code></pre>
 
-<p>You will need a C complier. For OSX 10.9, see <a href="http://rtalks.net/blog/2013/10/23/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
+<p>You will need a C complier. For <span class="caps">OSX</span> <span class="caps">10.9</span>, see <a href="/blog/configuring-complier/">Configuring complier for R <span class="caps">3.0.1</span> on <span class="caps">OSX</span> <span class="caps">10.9</span> Mavericks</a>. For previous <span class="caps">OS</span>, the default llvm-gcc complier should work fine most of the&nbsp;time.</p>
 
-<p>Final step, either open R in terminal or R GUI, and run</p>
+<p>Final step, either open R in terminal or R <span class="caps">GUI</span>, and&nbsp;run</p>
 
 <pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
 
-<p>This should install <code>Rmpi</code>.</p>
+<p>This should install&nbsp;<code>Rmpi</code>.</p>
 
-<p>To test <code>Rmpi</code></p>
+<p>To test&nbsp;<code>Rmpi</code></p>
 
-<div class="highlight"><pre><code class="r">library<span class="p">(</span>Rmpi<span class="p">)</span>
+<pre><code class="language-r">library<span class="p">(</span>Rmpi<span class="p">)</span>
 mpi.spawn.Rslaves<span class="p">()</span>
 mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> mean<span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-mpi.close.Rslaves<span class="p">()</span>
-</code></pre></div>
+mpi.close.Rslaves<span class="p">()</span></code></pre>
 
-<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
+<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of&nbsp;salves.</p>
 
-<div class="highlight"><pre><code class="r">library<span class="p">(</span>Rmpi<span class="p">)</span>
+<pre><code class="language-r">library<span class="p">(</span>Rmpi<span class="p">)</span>
 mpi.spawn.Rslaves<span class="p">(</span>nslaves<span class="o">=</span><span class="m">3</span><span class="p">)</span>
 mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> mean<span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-mpi.close.Rslaves<span class="p">()</span>
-</code></pre></div>
+mpi.close.Rslaves<span class="p">()</span></code></pre>
 
 
     
@@ -153,45 +150,45 @@ mpi.close.Rslaves<span class="p">()</span>
   
 
       
-    <p class="alert alert-warning"><strong>Warning [2014-2-12]</strong>: Most packages are now compatible with <code>libc++</code>, changing to <code>libstdc++</code> may cause problems for some packages.</p>
+    <p class="alert alert-warning"><strong>Warning [2014-2-12]</strong>: Most packages are now compatible with <code>libc++</code>, changing to <code>libstdc++</code> may cause problems for some&nbsp;packages.</p>
 
-<p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
+<p>On <span class="caps">10.9</span>, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2&nbsp;solutions.</p>
 
 <pre><code>1. change the complier to GNU gcc complier.
 2. an easier solution, but it doesn't work for all packages
 </code></pre>
 
-<h3 id="gnc-gcc-complier">1. GNC gcc complier</h3>
+<h3 id="gnc-gcc-complier">1. <span class="caps">GNC</span> gcc&nbsp;complier</h3>
 
-<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
+<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and&nbsp;<code>gfortran</code>.</p>
 
 <pre><code>brew install gcc47
 brew install gfortran
 </code></pre>
 
-<p>Then edit <code>~/.R/Makevars</code></p>
+<p>Then edit&nbsp;<code>~/.R/Makevars</code></p>
 
 <pre><code>CC=/usr/local/bin/gcc-4.7
 CXX=/usr/local/bin/g++-4.7
 FC=/usr/local/bin/gfortran
 </code></pre>
 
-<h3 id="an-easier-solution">2. An easier solution</h3>
-<p>Edit <code>~/.R/Makevars</code> and add</p>
+<h3 id="an-easier-solution">2. An easier&nbsp;solution</h3>
+<p>Edit <code>~/.R/Makevars</code> and&nbsp;add</p>
 
 <pre><code>CXXFLAGS=-stdlib=libstdc++
 </code></pre>
 
-<p>But it doesn’t fix all problems.</p>
+<p>But it doesn’t fix all&nbsp;problems.</p>
 
-<h3 id="test-if-it-works">Test if it works&lt;</h3>
+<h3 id="test-if-it-works">Test if it&nbsp;works&lt;</h3>
 
-<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
+<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this&nbsp;package.</p>
 
 <pre><code>install.packages("SuppDists", type="source")
 </code></pre>
 
-<p>Happy R coding~</p>
+<p>Happy R&nbsp;coding~</p>
 
 
     
@@ -202,9 +199,7 @@ FC=/usr/local/bin/gfortran
     <p><span class="date">October 1 2012</span>  </p>
       
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-<script type="text/x-mathjax-config">
+</script>&nbsp;<script type="text/x-mathjax-config">
   MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
   MathJax.Hub.Config({
     tex2jax: {
@@ -214,17 +209,15 @@ FC=/usr/local/bin/gfortran
   });  
 </script>
 
-<p>\begin{equation}
-a+b=2
+<p>\begin{equation}<br />
+a+b=2<br />
 \end{equation}</p>
 
-<p>$\alpha_3 + \beta_1^2 = 1$ </p>
+<p>$\alpha_3 + \beta_1^2 =&nbsp;1$ </p>
 
 <script type="math/tex; mode=display">
 \alpha + \beta_1 = 2
-</script>
-
-<script type="math/tex; mode=display">\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}</script>
+</script>&nbsp;<script type="math/tex; mode=display">\sum_{n=1}^\infty 1/n^2 = \frac{\pi^2}{6}</script>
 
 
     
@@ -254,7 +247,7 @@ a+b=2
 </ul>
 
             </div>         
-            <div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 sidebar">
                     <hr class="visible-xs visible-sm">
 
 <div class="reset-box-sizing search">
@@ -269,9 +262,9 @@ Github <i class="fa fa-github-square"></i>:
 </div>        
             </div> 
         </div>        
-        <hr>               
    </div>
    <div class="container"> 
+        <hr>               
        <footer>
            <p>&copy; 2014 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
 </p>
