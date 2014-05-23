@@ -1,7 +1,7 @@
 require 'rubygems'
 require 'optparse'
 require 'yaml'
-require 'less'
+
 
 desc "Draft a post"
 task :draft do
@@ -89,6 +89,7 @@ CONFIG['output'] = "bootstrap.css"
 
 desc "Compile Less"
 task :lessc do
+  require 'less'
   less   = CONFIG['less']
 
   input  = File.join( less, CONFIG['input'] )

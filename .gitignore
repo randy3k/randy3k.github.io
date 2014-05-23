@@ -1,1 +1,4 @@
 rtalks.sublime-workspace
+bin
+.bundle
+_vendor
