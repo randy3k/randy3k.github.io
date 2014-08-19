@@ -4,7 +4,7 @@ title: 'Git aware prompt'
 tagline: 
 category: computing
 tags: [git]
-last_modified: 2014-3-29
+last_modified: 2014-8-19
 ---
 
 I love using git via commands. And it is very often that I have to run `git status` or `git branch` to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.
@@ -17,4 +17,4 @@ The code was originated from [here](http://bytebaker.com/2012/01/09/show-git-inf
 
 To use this, add the following to your `.bashrc` and restart your terminal!
 
-{% gist 9869949 %}
+{% gist 1ff38257f4aaff87f3c7 %}

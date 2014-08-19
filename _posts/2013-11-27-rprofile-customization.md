@@ -5,10 +5,10 @@ title: .Rprofile Customization
 tagline: ''
 category: 'computing'
 tags: [r]
-last_modified: 2014-3-29
+last_modified: 2014-8-19
 ---
 
 
 This is my .Rprofile.
 
-{% gist 9948514 %}
+{% gist 6aff0c5564dffe7aa9f4 %}
