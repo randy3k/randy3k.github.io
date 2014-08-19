@@ -107,16 +107,16 @@ brew install open-mpi</code></pre>
 
 <p>To test&nbsp;<code>Rmpi</code></p>
 
-<pre><code class="language-r">library<span class="p">(</span>Rmpi<span class="p">)</span>
+<pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
 mpi.spawn.Rslaves<span class="p">()</span>
-mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> mean<span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
+mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
 mpi.close.Rslaves<span class="p">()</span></code></pre>
 
 <p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of&nbsp;salves.</p>
 
-<pre><code class="language-r">library<span class="p">(</span>Rmpi<span class="p">)</span>
+<pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
 mpi.spawn.Rslaves<span class="p">(</span>nslaves<span class="o">=</span><span class="m">3</span><span class="p">)</span>
-mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> mean<span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
+mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
 mpi.close.Rslaves<span class="p">()</span></code></pre>
 
 
