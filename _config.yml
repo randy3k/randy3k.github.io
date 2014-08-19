@@ -6,8 +6,7 @@ kramdown:
   input: GFM
   coderay_line_numbers: nil
 
-exclude: ["README.md", "Rakefile", 'bootstrap', 'Rakefile',
-          "Gemfile*", "rtalks.sublime-workspace", "rtalks.sublime-project"]
+exclude: ["README.md", "Rakefile", 'bootstrap', "Gemfile*"]
 highligher: pygments
 paginate: 5
 paginate_path: "/blog/page/:num/"
