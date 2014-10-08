@@ -5,7 +5,7 @@ header: Welcome!
 tagline: Randy Talks Dot Net
 ---
 
-###About
+### About
 
 > I am Randy Lai, a PhD student in the Department of Statistics, University of California, Davis. Previously, I obtained my Master and Undergraduate degrees from CUHK, The Chinese University of Hong Kong. I was born in Hong Kong and I love my city.
 
@@ -14,7 +14,7 @@ You can contact me via
 - [randy.cs.lai@gmail.com](mailto:randy.cs.lai@gmail.com)
 - [rcslai@ucdavis.edu](mailto:rcslai@ucdavis.edu)
 
-###Computing
+### Computing
 
 > I learned writing webpages, `php`, `mysql` in secondary school.  While I am using `R` everyday, I also write `python`, `julia` and `c` codes. Moreover, I have great interests in web development such as `coffeescript` and `node.js`. 
 Currently, I fall in love with the amazing editor [Sublime Text](http://www.sublimetext.com). If I have more time, I would also like to learn `ruby`, `java`, `go` and many others... 
