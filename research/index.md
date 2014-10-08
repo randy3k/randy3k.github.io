@@ -17,48 +17,49 @@ My research interests span a number of fields in Statistics. Loosely speaking, t
 
 The origin of Fiducial inference can be traced back to R.A. Fisher (Fisher, 1935), who introduced the concept of a fiducial distribution of a parameter and proposed the use of this fiducial distribution, in place of the Bayesian posterior distribution, for interval estimation of the parameter. Since then, it has been a subject of many discussions and controversies for its non-exactness and non-uniqueness properties. Consequently, the fiducial approach fell into disfavor and became a topic of historical interest only. In 1990s, Tsui and Weerahandi (1989) and Weerahandi (1993) have presented a series of papers on generalized confidence intervals. Later, Hannig et al. (2006) pointed out that there was a connection between fiducial arguments and generalized confidence intervals. Evolving through a series of works in 2000s (e.g., Hannig, 2009; Hannig and Lee, 2009), the idea is now known as generalized fiducial inference (GFI), which is a general methodology for constructing a distribution on model parameter(s) without the use of any prior distribution. The resulting distribution is called the generalized fiducial distribution, which can be applied to form estimates and confidence intervals for the model parameter(s). Previous studies have shown that such estimates and confidence intervals possess excellent frequentist properties (e.g., Hannig, 2009; Hannig and Lee, 2009; Hannig et al., 2006).
 
-#### Computational issues of GFI
+#### *Computational issues of GFI*
 
 For some problems, the corresponding generalized fiducial distribution can be analytically derived, while for some other problems its exact form is unknown or algebraically hard to obtain. I and my collaborators (Hannig et al., 2013) proposed a new computational method for conducting generalized fiducial inference without the need to derive the exact closed form of the generalized fiducial distribution. It is shown that this computational method enjoys desirable theoretical and empirical properties. As a result, the proposed method widely enhances the applicability of generalized fiducial inference.
 
-#### Further research: higher order asymptotic properties of GFI
+#### *Further research: higher order asymptotic properties of GFI*
 
 Hannig (2009) has established that the validity of Bernstein-von Mises theorem for the GFI under certain regular conditions. Bernstein-von Mises theorem states that, as sample size increases, any well behaved Bayesian posterior converges to a normal distribution. However, there are still some theoretical properties of GFI are not yet known or have not been studied. I plan to investigate higher order asymptotic properties of GFI by means of Cornish-Fisher expansion and Edgeworth expansion. If successful, this will resolve an important open issue of GFI: the choice of so called data generating equation. It will also help understanding the similarities and differences between GFI and other related interval estimation methodologies such as Bootstrapping. More applications of GFI can be found in next section.
 
 
 
-###Analysis of massive and high dimensional data
+### Analysis of massive and high dimensional data
 
 
-#### GFI for Ultrahigh Dimensional Regression
+#### *GFI for Ultrahigh Dimensional Regression*
 
 The ultrahigh dimensional linear regression problem has attracted a lot of attentions from the research community in the last decade. Most of the published work are concerned with the selection and estimation of the significant variables under the sparsity assumption. I and my collaborators (Lai et al., 2013) have studied another important aspect of the ultrahigh dimensional regression problem, namely, uncertainty quantification. To be more specific, we proposed methods for deriving a probability density function on the set of all possible models, which allows us to construct confidence intervals for the corresponding parameters. These proposed methods are developed using GFI. We also studied the theoretical properties of the proposed methods, and in particular it is shown that statistical inference based on the proposed methods will have exact frequentist property for the ultrahigh dimensional regression problem. In terms of empirical performances, simulation experiments show that the proposed methods are capable of producing confidence intervals with correct nominated coverage.
 
-#### Variable selection for additive mixed models
+#### *Variable selection for additive mixed models*
 
 Additive mixed models (AMMs) are an extension of additive models that incorporates random effects. I and my collaborators (Lai et al., 2012) considered the problem of model selection in a nonparametric additive mixed modeling framework in the so-called “large p small n” context. Estimation and selection of such nonparametric fixed effects are simultaneously achieved by using the adaptive group lasso method (Meier et al., 2008), while the random effects are selected by a classical backward selection procedure. We applied Bayesian Information criterion (BIC) to facilitate the automatic selection of model dimension. It is shown that, theoretically this BIC model selection method possesses the so-called oracle property, while computationally a practical algorithm is developed for solving the optimization problem involved.
 
 
-#### Proposed research: GFI for massive data
+#### *Proposed research: GFI for massive data*
 
 Technology advances allow faster computation, as well as data collection with larger and larger sizes. For example, sequencing in genetics would easily produce terabytes of information in a single experiment. The so-called “Divide and conquer” strategy has made a huge success in analysis of massive datasets. Parallel computing is often employed to increase the efficiency of such strategy. GFI is particularly well suited for such divide and conquer strategy. I am investigating the use of GFI to develop a statistical consistent and computationally practical method for dividing the data and combining the information. Preliminary studies show that our proposed methodology is extremely promising. I also plan to study the theoretical properties for such strategy.
 
-#### Proposed research: Fiducial selector
+#### *Proposed research: Fiducial selector*
 
 LASSO type algorithms have been very popular in the last decade for its ability to select significant predictors. Some of these methods have been combined with Bayesian philosophy. However, a common issue for these approaches is that it is the point estimator, such as the posterior mode, that enjoys sparsity, while the posterior distribution is not sparse. I have done some initial investigation to modify generalized fiducial distribution so that it would produce a sparse distribution. Such a sparse distribution would allow us to assess the statistical evidence to the extent of belief in any one of the parameters is actually zero. I plan to develop a more refined solution and study its theoretical and practical properties.
 
 
-###Signal and image processing
+### Signal and image processing
 
 
-Nonparametric cepstrum estimation via optimal risk smoothing
+### *Nonparametric cepstrum estimation via optimal risk smoothing*
+
 I and my collaborators (Lai et al., 2010) proposed a nonparametric cepstrum estimation procedure that is capable of producing smoother and more accurate cepstrum estimates. The Steins unbiased risk estimation (SURE) approach is adopted to select the turning parameters. We showed that the use of this SURE selection method for this problem is asymptotically optimal under suitable regularity conditions.
 
-#### Signal segmentation
+#### *Signal segmentation*
 
 I and my collaborators (Wong et al., 2010) considered the problem of partitioning a non-stationary signal sequence into a set of stationary signal sub-sequences, which can be adequately modeled by a superposition of different sinusoids. We reformulated the problem as a statistical model selection problem, and the minimum description length principle to construct estimators of parameters. These estimators are optimizers of an objective function, which is non-convex and hard to be optimized. A genetic algorithm is developed for solving the difficult optimization problem.
 
-#### Further research: Functional data analysis of brain images
+#### *Further research: Functional data analysis of brain images*
 
 Functional magnetic resonance imaging (fMRI) is a well established technique for studying the brain. However, in many situations, such as when the data are acquired in a resting state, it is difficult to know whether the data are truly stationary or if structural breaks are present. In this project, I aim to develop an automatic procedure to detect those breaks by using functional principal component analysis. Due to the computational complexities for estimating the full covariance structure of the three dimensional images, suitable assumptions are required to make computations feasible. Parallel computing technique such as MPI is expected in the implementation of estimating the covariance structure.
 

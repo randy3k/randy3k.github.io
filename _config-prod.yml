@@ -26,8 +26,8 @@ url : http://rtalks.net
 nav:
   - text: Research
     url: /research/
-  - text: Apps
-    url: /apps/
+  - text: Software
+    url: /software/
   - text: Blog
     url: /blog/
 
