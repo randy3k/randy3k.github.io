@@ -12,7 +12,7 @@ http://rtalks.net/pages.html
 http://rtalks.net/sitemap.txt
 http://rtalks.net/blog/page/2/index.html
 
-http://rtalks.net/blog/switching-between-pythons-using-pyenv-/
+http://rtalks.net/blog/switching-between-pythons-using-pyenv/
 http://rtalks.net/blog/git-aware-prompt/
 http://rtalks.net/blog/shortcuts-in-osx-terminal/
 http://rtalks.net/blog/python-web-server/
