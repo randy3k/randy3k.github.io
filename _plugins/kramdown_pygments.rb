@@ -1,3 +1,5 @@
+# https://github.com/mvdbos/kramdown-with-pygments
+
 # We define the an additional option for the kramdown parser to look for
 module Kramdown
   module Options
