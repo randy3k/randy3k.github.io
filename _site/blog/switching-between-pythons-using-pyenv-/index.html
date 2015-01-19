@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>Blog - RTalks.net</title>
+<title>Switching between pythons using pyenv on OSX - RTalks.net</title>
 
 <meta name="author" content="Randy Lai">
 
@@ -53,8 +53,8 @@
                     <li ><a href="/research/">Research</a></li>
                       
                     <li ><a href="/software/">Software</a></li>
-                        
-                    <li class="active"><a href="/blog/">Blog</a></li>
+                      
+                    <li ><a href="/blog/">Blog</a></li>
                       
                 </ul>
             </div>
@@ -63,7 +63,7 @@
     <div class="jumbotron">
         <div class="container">
             <h1>
-            <span class="fa fa-code"></span> Blog 
+            <span class="fa fa-code"></span> Switching between pythons using pyenv on OSX 
             </h1>
             
         </div>
@@ -71,18 +71,12 @@
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 maincontent">
-                    <a class="btn btn-danger" href="/blog/categories/">By Categories</a>
-&nbsp;&nbsp;
-<a class="btn btn-success" href="/blog/tags/">By Tags</a>
+                    <p><span class="date">January 19 2015</span>
 
-<!-- This loops through the paginated posts -->
+</p>
 
-  <h1><a href="/blog/switching-between-pythons-using-pyenv-/">Switching between pythons using pyenv on OSX</a></h1>
-  <div class="content">
-    <p><span class="date">January 19 2015</span>  </p>
-    
-    
-    
+
+
 <ul class="tag-box inline list-unstyled">
   <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
 
@@ -95,8 +89,8 @@
 </ul>
   
 
-      
-    <h3 id="installation">Installation</h3>
+
+<h3 id="installation">Installation</h3>
 
 <p>From <a href="https://github.com/yyuu/pyenv">pyenv</a>,</p>
 
@@ -186,173 +180,34 @@ python -V
 <p>If you really don’t like <code>pyenv</code> and want to remove all traces of <code>pyenv</code> files. Just remove <code>pyenv</code> from homebrew and remove the <code>~/.pyenv</code> directory. It will do the job. Of course, you have to also undo the changes made to the <code>~/.bashrc_profile</code> or <code>~/.zshrc</code> files.</p>
 
 
-    
-  </div>
-
-  <h1><a href="/blog/git-aware-prompt/">Git aware prompt</a></h1>
-  <div class="content">
-    <p><span class="date">February 12 2014</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="label label-success" href="/blog/tags/#git-ref">git <span class="tag-size">1</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>I love using git via commands. And it is very often that I have to run <code>git status</code> or <code>git branch</code> to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.</p>
-
-<p>The code was originated from <a href="http://bytebaker.com/2012/01/09/show-git-information-in-your-prompt/">here</a> but I have made significant amount of changes, for example, adding color support and some bugs fixing.</p>
-
-<p><img src="/assets/images/git.png" alt="" /></p>
-
-<p>To use this, add the following to your <code>.bashrc</code> and restart your terminal!</p>
-
-<script src="https://gist.github.com/1ff38257f4aaff87f3c7.js"> </script>
-
-
-    
-  </div>
-
-  <h1><a href="/blog/shortcuts-in-osx-terminal/">Shortcuts in OSX-Terminal</a></h1>
-  <div class="content">
-    <p><span class="date">December 3 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="label label-success" href="/blog/tags/#osx-ref">osx <span class="tag-size">4</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>There are many useful shortcuts in OSX terminal. You may already know some of<br />
-them, but I bet you don’t know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think are useful, more can be found <a href="http://ss64.com/osx/syntax-bashkeyboard.html">here</a>. First of all, you may want to enable the meta key.</p>
-
-
-    
-    <p><a href="/blog/shortcuts-in-osx-terminal/">Read More... </a></p>
-    
-  </div>
-
-  <h1><a href="/blog/python-web-server/">A simple python webserver</a></h1>
-  <div class="content">
-    <p><span class="date">October 24 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="label label-success" href="/blog/tags/#python-ref">python <span class="tag-size">2</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p class="alert alert-warning">The command has been changed in Python 3: <code>python -m http.server</code>.</p>
-
-<p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
-
-<div class="highlight"><pre><code>python -m SimpleHTTPServer 8000
-</code></pre></div>
-
-<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.</p>
-
-
-    
-    <p><a href="/blog/python-web-server/">Read More... </a></p>
-    
-  </div>
-
-  <h1><a href="/blog/open-mpi/">Installating open-mpi on Mac</a></h1>
-  <div class="content">
-    <p><span class="date">October 24 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="label label-success" href="/blog/tags/#r-ref">r <span class="tag-size">2</span></a></li>
-   
-  	<li><a class="label label-success" href="/blog/tags/#osx-ref">osx <span class="tag-size">4</span></a></li>
-   
-  	<li><a class="label label-success" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
-<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
-
-<div class="highlight"><pre><code class="language-bash">brew install gfortran
-brew install open-mpi</code></pre></div>
-
-<p>You will need a C complier. For OSX 10.9, see <a href="/blog/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
-
-<p>Final step, either open R in terminal or R GUI, and run</p>
-
-<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
-
-<p>This should install <code>Rmpi</code>.</p>
-
-<p>To test <code>Rmpi</code></p>
-
-<div class="highlight"><pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
-mpi.spawn.Rslaves<span class="p">()</span>
-mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-mpi.close.Rslaves<span class="p">()</span></code></pre></div>
-
-<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
-
-<div class="highlight"><pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
-mpi.spawn.Rslaves<span class="p">(</span>nslaves<span class="o">=</span><span class="m">3</span><span class="p">)</span>
-mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-mpi.close.Rslaves<span class="p">()</span></code></pre></div>
-
-
-    
-  </div>
-
-
-<!-- Pagination links -->
-
 <ul class="pagination">
-  
-    <li class="disabled"><a>Prev</a></li>
-  
-
-  
     
-      <li class="active"><a href="#" >1</a></li>
+    <li class="prev"><a href="/blog/git-aware-prompt/" title="Git aware prompt">&larr; Previous</a></li>
     
-  
+    <li><a href="/blog/archive/">Archive</a></li>
     
-      <li><a href="/blog/page/2/">2</a></li>
+    <li class="next disabled"><a>Next &rarr;</a>
     
-  
-
-  
-    <li><a href="/blog/page/2/">Next</a></li>
-  
 </ul>
+
+<hr>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_developer = 1;
+    var disqus_shortname = 'randy3k'; // required: replace example with your forum shortname
+    
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
 
             </div>         
             <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 sidebar">
