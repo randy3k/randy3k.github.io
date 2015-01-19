@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Research - RTalks.net</title>
+
+<meta name="author" content="Randy Lai">
+
+<!-- Enable responsive viewport -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+<!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet"> -->
+<link href="/assets/css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<link href="/assets/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+<link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all">
+
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script>
+  (function() {
+    var cx = '008225976323914720770:ha27dsnxije';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+</head>
+<body>   
+        <div class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>         
+                <div><a href="/" class="navbar-brand">RTalks.net</a></div>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                       
+                    <li ><a href="/profile/">Profile</a></li>
+                      
+                    <li ><a href="/research/">Research</a></li>
+                      
+                    <li ><a href="/software/">Software</a></li>
+                      
+                    <li ><a href="/blog/">Blog</a></li>
+                      
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>
+            <span class="fa fa-code"></span> Research 
+            </h1>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 maincontent">
+                    <ul class="nav nav-tabs">
+  <li><a href="/research/">Publications</a></li>
+  <li class="active"><a href="#">Interests</a></li>
+</ul>
+
+<p><br /></p>
+
+<p>My research interests span a number of fields in Statistics. Loosely speaking, they can be divided into three categories: generalized fiducial inference, analysis of high dimensional and massive data, and signal and image processing.</p>
+
+<h3 id="generalized-fiducial-inference">Generalized Fiducial Inference</h3>
+
+<p>The origin of Fiducial inference can be traced back to R.A. Fisher (Fisher, 1935), who introduced the concept of a fiducial distribution of a parameter and proposed the use of this fiducial distribution, in place of the Bayesian posterior distribution, for interval estimation of the parameter. Since then, it has been a subject of many discussions and controversies for its non- exactness and non-uniqueness properties. Consequently, the fiducial approach fell into disfavor and became a topic of historical interest only. In 1990s, Tsui and Weerahandi (1989) and Weerahandi (1993) have presented a series of papers on generalized confidence intervals. Later, Hannig et al. (2006) pointed out that there was a connection between fiducial arguments and generalized confidence intervals. Evolving through a series of works in 2000s (e.g., Hannig, 2009; Hannig and Lee, 2009), the idea is now known as generalized fiducial inference (GFI), which is a general methodology for constructing a distribution on model parameter(s) without the use of any prior distribution. The resulting distribution is called the generalized fiducial distribution, which can be applied to form estimates and confidence intervals for the model parameter(s). Previous studies have shown that such estimates and confidence intervals possess excellent frequentist properties (e.g., Hannig et al., 2006; Hannig, 2009; Hannig and Lee, 2009).</p>
+
+<h3 id="analysis-of-massive-and-high-dimensional-data">Analysis of massive and high dimensional data</h3>
+
+<p>The ultrahigh dimensional linear regression problem has attracted a lot of recent attentions from the research community. Most of the published work are concerned with the selection and estimation of the significant variables under the sparsity assumption. I and my collaborators (Lai et al., 2014) have studied another important aspect of the ultrahigh dimensional regression problem, namely, uncertainty quantification. To be more specific, we proposed methods for deriving a probability density function on the set of all possible models, which allows us to construct confidence intervals for the corresponding parameters. These proposed methods are developed using GFI. We also stud- ied the theoretical properties of the proposed methods, and in particular it is shown that statistical inference based on the proposed methods will have exact frequentist property for the ultrahigh dimensional regression problem. In terms of empirical performances, simulation experiments show that the proposed methods are capable of producing confidence intervals with correct nominated coverage. This work has been accepted by JASA for publication.</p>
+
+<h3 id="signal-and-image-processing">Signal and image processing</h3>
+
+<h4 id="nonparametric-cepstrum-estimation-via-optimal-risk-smoothing">Nonparametric cepstrum estimation via optimal risk smoothing</h4>
+
+<p>I and my collaborators (Lai et al., 2010) proposed a nonparametric cepstrum estimation procedure that is capable of producing smoother and more accurate cepstrum estimates. The Steins unbiased risk estimation (SURE) approach is adopted to select the turning parameters. We showed that the use of this SURE selection method for this problem is asymptotically optimal under suitable regularity conditions.</p>
+
+<h4 id="signal-segmentation">Signal segmentation</h4>
+
+<p>I and my collaborators (Wong et al., 2010) considered the problem of partitioning a non-stationary signal sequence into a set of stationary signal sub-sequences, which can be adequately modeled by a superposition of different sinusoids. We reformulated the problem as a statistical model selection problem, and adopted the minimum description length principle to construct estimators of parameters. These estimators are optimizers of an objective function, which is non-convex and hard to be optimized. A genetic algorithm is developed for solving the difficult optimization problem.</p>
+
+<hr />
+
+<p>Conducting researches is always an excitement to me. I am ready to dedicate myself to be an active and effective researcher.</p>
+
+            </div>         
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3 sidebar">
+                    <hr class="visible-xs visible-sm">
+
+<div class="reset-box-sizing search">
+    <p>Site search by Google:</p> <gcse:searchbox-only></gcse:searchbox-only>
+</div>
+
+<div class="github">
+Github <i class="fa fa-github-square"></i>:
+<a href="http://www.github.com/randy3k" class="btn btn-success btn-xs" target="_blank">
+  <span class="glyphicon glyphicon-ok"></span> randy3k
+</a>
+</div>        
+            </div> 
+        </div>        
+   </div>
+   <div class="container"> 
+        <hr>               
+       <footer>
+           <p>&copy; 2015 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
+</p>
+       </footer>   
+   </div>
+</body>
+</html>

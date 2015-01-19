@@ -22,6 +22,8 @@ author :
 url : http://rtalks.net
 
 nav:
+  - text: Profile
+    url: /profile/
   - text: Research
     url: /research/
   - text: Software

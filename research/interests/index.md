@@ -5,8 +5,8 @@ title: Research
 
 
 <ul class="nav nav-tabs">
+  <li><a href="/research/">Publications</a></li>
   <li class="active"><a href="#">Interests</a></li>
-  <li><a href="publications/">Publications</a></li>
 </ul>
 
 <br>

@@ -3,9 +3,10 @@ http://rtalks.net/blog/archive/index.html
 http://rtalks.net/blog/categories/index.html
 http://rtalks.net/blog/index.html
 http://rtalks.net/blog/tags/index.html
-http://rtalks.net/research/publications/index.html
-http://rtalks.net/software/index.html
 http://rtalks.net/research/index.html
+http://rtalks.net/software/index.html
+http://rtalks.net/research/interests/index.html
+http://rtalks.net/profile/index.html
 http://rtalks.net/index.html
 http://rtalks.net/pages.html
 http://rtalks.net/sitemap.txt
