@@ -4,8 +4,11 @@ category : computing
 title: "A simple python webserver"
 tagline: ""
 tags : [python]
+last_modified: 2015-1-19
 ---
 
+{: .alert .alert-warning}
+The command has been changed in Python 3: `python -m http.server`.
 
 Python has a very simple web server which allows you to share a particular directory with a one line command.
     
@@ -36,7 +39,7 @@ httpd = ServerClass(server_address, HandlerClass)
 sa = httpd.socket.getsockname()
 print "Serving HTTP on", sa[0], "port", sa[1], "..."
 httpd.serve_forever()
-``` 
+```
 
 
 and [Simple Python Webserver to save file](http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file)
