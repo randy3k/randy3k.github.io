@@ -1,9 +1,7 @@
-/* container size */
-/*@media (min-width: 1200px) {
-  .container {
-    width: 970px;
-  }
-}*/
+/* jumbotron */
+.jumbotron {
+  padding: 20px 0;
+}
 
 /* font related */
 body {
@@ -123,4 +121,3 @@ body footer {
          border-width: 0px;
     }
 }
-
