@@ -1,7 +1,5 @@
-mode: dev
 permalink: /blog/:title/
 markdown: kramdown
-markdown_ext: foo
 kramdown:
   input: GFM
   coderay_line_numbers: nil

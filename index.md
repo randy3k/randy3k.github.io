@@ -32,3 +32,5 @@ Currently, I fall in love with the amazing editor [Sublime Text](http://www.subl
     </div>  
   {% endfor %}
 </div>
+
+{{ jekyll.environment }}

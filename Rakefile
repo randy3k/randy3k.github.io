@@ -76,7 +76,8 @@ desc "Build site"
 task :build => [:knit]
 task :build do
   puts "## Building site\n"
-  status = system("jekyll build --config _config-prod.yml")
+  ENV["JEKYLL_ENV"] = "production"
+  status = system("jekyll build")
   if status == false then exit 1 end
 end
 
