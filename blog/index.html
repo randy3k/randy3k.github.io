@@ -151,10 +151,12 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
   
 
       
-    <p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
+    <p class="alert alert-warning">The command has been changed in Python 3: <code>python -m http.server</code>.</p>
 
-<pre><code>python -m SimpleHTTPServer 8000
-</code></pre>
+<p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
+
+<div class="highlight"><pre><code>python -m SimpleHTTPServer 8000
+</code></pre></div>
 
 <p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.</p>
 
@@ -188,9 +190,8 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
     <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
 <code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
 
-<pre><code class="language-bash">brew install gfortran
-brew install open-mpi
-</code></pre>
+<div class="highlight"><pre><code class="language-bash">brew install gfortran
+brew install open-mpi</code></pre></div>
 
 <p>You will need a C complier. For OSX 10.9, see <a href="/blog/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
 
@@ -202,19 +203,17 @@ brew install open-mpi
 
 <p>To test <code>Rmpi</code></p>
 
-<pre><code class="language-r">library(Rmpi)
-mpi.spawn.Rslaves()
-mpi.iparReplicate(100, mean(rnorm(1000000)))
-mpi.close.Rslaves()
-</code></pre>
+<div class="highlight"><pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
+mpi.spawn.Rslaves<span class="p">()</span>
+mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
+mpi.close.Rslaves<span class="p">()</span></code></pre></div>
 
 <p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
 
-<pre><code class="language-r">library(Rmpi)
-mpi.spawn.Rslaves(nslaves=3)
-mpi.iparReplicate(100, mean(rnorm(1000000)))
-mpi.close.Rslaves()
-</code></pre>
+<div class="highlight"><pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
+mpi.spawn.Rslaves<span class="p">(</span>nslaves<span class="o">=</span><span class="m">3</span><span class="p">)</span>
+mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
+mpi.close.Rslaves<span class="p">()</span></code></pre></div>
 
 
     
@@ -245,30 +244,30 @@ mpi.close.Rslaves()
 
 <p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
 
-<pre><code>1. change the complier to GNU gcc complier.
+<div class="highlight"><pre><code>1. change the complier to GNU gcc complier.
 2. an easier solution, but it doesn't work for all packages
-</code></pre>
+</code></pre></div>
 
 <h3 id="gnc-gcc-complier">1. GNC gcc complier</h3>
 
 <p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
 
-<pre><code>brew install gcc47
+<div class="highlight"><pre><code>brew install gcc47
 brew install gfortran
-</code></pre>
+</code></pre></div>
 
 <p>Then edit <code>~/.R/Makevars</code></p>
 
-<pre><code>CC=/usr/local/bin/gcc-4.7
+<div class="highlight"><pre><code>CC=/usr/local/bin/gcc-4.7
 CXX=/usr/local/bin/g++-4.7
 FC=/usr/local/bin/gfortran
-</code></pre>
+</code></pre></div>
 
 <h3 id="an-easier-solution">2. An easier solution</h3>
 <p>Edit <code>~/.R/Makevars</code> and add</p>
 
-<pre><code>CXXFLAGS=-stdlib=libstdc++
-</code></pre>
+<div class="highlight"><pre><code>CXXFLAGS=-stdlib=libstdc++
+</code></pre></div>
 
 <p>But it doesn’t fix all problems.</p>
 
@@ -276,8 +275,8 @@ FC=/usr/local/bin/gfortran
 
 <p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
 
-<pre><code>install.packages("SuppDists", type="source")
-</code></pre>
+<div class="highlight"><pre><code>install.packages("SuppDists", type="source")
+</code></pre></div>
 
 <p>Happy R coding~</p>
 
