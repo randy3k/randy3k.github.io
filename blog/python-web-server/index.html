@@ -87,66 +87,68 @@
   
 
 
-<p>Python has a very simple web server which allows you to share a particular directory with a one line&nbsp;command.</p>
+<p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
 
 <pre><code>python -m SimpleHTTPServer 8000
 </code></pre>
 
-<p>Index directory can be then accessed by http://&lt;ip&nbsp;address&gt;:8000.
+<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.
 <!--more--><br />
-More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on&nbsp;localhost</a></p>
+More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on localhost</a></p>
 
-<pre><code class="language-python"><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">import</span> <span class="nn">BaseHTTPServer</span>
-<span class="kn">from</span> <span class="nn">SimpleHTTPServer</span> <span class="kn">import</span> <span class="n">SimpleHTTPRequestHandler</span>
+<pre><code class="language-python">import sys
+import BaseHTTPServer
+from SimpleHTTPServer import SimpleHTTPRequestHandler
 
-<span class="n">HandlerClass</span> <span class="o">=</span> <span class="n">SimpleHTTPRequestHandler</span>
-<span class="n">ServerClass</span> <span class="o">=</span> <span class="n">BaseHTTPServer</span><span class="o">.</span><span class="n">HTTPServer</span>
-<span class="n">Protocol</span> <span class="o">=</span> <span class="s">&quot;HTTP/1.0&quot;</span>
+HandlerClass = SimpleHTTPRequestHandler
+ServerClass = BaseHTTPServer.HTTPServer
+Protocol = "HTTP/1.0"
 
-<span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
-<span class="n">port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="k">else</span><span class="p">:</span>
-<span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>
-<span class="n">server_address</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+if sys.argv[1:]:
+port = int(sys.argv[1])
+else:
+port = 8000
+server_address = ('127.0.0.1', port)
 
-<span class="n">HandlerClass</span><span class="o">.</span><span class="n">protocol_version</span> <span class="o">=</span> <span class="n">Protocol</span>
-<span class="n">httpd</span> <span class="o">=</span> <span class="n">ServerClass</span><span class="p">(</span><span class="n">server_address</span><span class="p">,</span> <span class="n">HandlerClass</span><span class="p">)</span>
+HandlerClass.protocol_version = Protocol
+httpd = ServerClass(server_address, HandlerClass)
 
-<span class="n">sa</span> <span class="o">=</span> <span class="n">httpd</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">getsockname</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">&quot;Serving HTTP on&quot;</span><span class="p">,</span> <span class="n">sa</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;port&quot;</span><span class="p">,</span> <span class="n">sa</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&quot;...&quot;</span>
-<span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span></code></pre>
+sa = httpd.socket.getsockname()
+print "Serving HTTP on", sa[0], "port", sa[1], "..."
+httpd.serve_forever()
+</code></pre>
 
-<p>and <a href="http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file">Simple Python Webserver to save&nbsp;file</a></p>
+<p>and <a href="http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file">Simple Python Webserver to save file</a></p>
 
-<pre><code class="language-python"><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">curdir</span>
-<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
+<pre><code class="language-python">from os import curdir
+from os.path import join as pjoin
 
-<span class="kn">from</span> <span class="nn">http.server</span> <span class="kn">import</span> <span class="n">BaseHTTPRequestHandler</span><span class="p">,</span> <span class="n">HTTPServer</span>
+from http.server import BaseHTTPRequestHandler, HTTPServer
 
-<span class="k">class</span> <span class="nc">StoreHandler</span><span class="p">(</span><span class="n">BaseHTTPReque</span> <span class="n">stHandler</span><span class="p">):</span>
-<span class="n">store_path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">curdir</span><span class="p">,</span> <span class="s">&#39;store.json&#39;</span><span class="p">)</span>
+class StoreHandler(BaseHTTPReque stHandler):
+store_path = pjoin(curdir, 'store.json')
 
-<span class="k">def</span> <span class="nf">do_GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s">&#39;/store.json&#39;</span><span class="p">:</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s">&#39;Content-type&#39;</span><span class="p">,</span> <span class="s">&#39;text/json&#39;</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">end_headers</span><span class="p">()</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
+def do_GET(self):
+if self.path == '/store.json':
+with open(self.store_path) as fh:
+self.send_response(200)
+self.send_header('Content-type', 'text/json')
+self.end_headers()
+self.wfile.write(fh.read().encode())
 
-<span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s">&#39;/store.json&#39;</span><span class="p">:</span>
-<span class="n">length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">&#39;content-length&#39;</span><span class="p">]</span>
-<span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
+def do_POST(self):
+if self.path == '/store.json':
+length = self.headers['content-length']
+data = self.rfile.read(int(length))
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store_path</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
-<span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+with open(self.store_path, 'w') as fh:
+fh.write(data.decode())
 
-<span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
+self.send_response(200)
 
-<span class="n">server</span> <span class="o">=</span> <span class="n">HTTPServer</span><span class="p">((</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">),</span> <span class="n">StoreHandler</span><span class="p">)</span>
-<span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span></code></pre>
+server = HTTPServer(('', 8080), StoreHandler)
+server.serve_forever()
+</code></pre>
 
 
 <ul class="pagination">
@@ -198,7 +200,7 @@ Github <i class="fa fa-github-square"></i>:
    <div class="container"> 
         <hr>               
        <footer>
-           <p>&copy; 2014 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
+           <p>&copy; 2015 Randy Lai. Hosted on <a href="//github.com/randy3k">Github</a>, generated by <a href="//jekyllrb.com">Jekyll</a> and themed by <a href="//getbootstrap.com">Bootstrap 3</a>.
 </p>
        </footer>   
    </div>
