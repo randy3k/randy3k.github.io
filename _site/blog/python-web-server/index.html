@@ -93,68 +93,73 @@
   
 
 
-<p class="alert alert-warning">The command has been changed in Python 3: <code>python -m http.server</code>.</p>
+<p class="alert alert-warning">The command has been changed in Python 3: <code class="highlighter-rouge">python -m http.server</code>.</p>
 
 <p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
 
-<div class="highlight"><pre><code>python -m SimpleHTTPServer 8000
-</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>python -m SimpleHTTPServer 8000
+</code></pre>
+</div>
 
-<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.
+<p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.<br />
 <!--more--><br />
 More complicated usages: <a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python">Only serve on localhost</a></p>
 
-<div class="highlight"><pre><code class="language-python"><span class="kn">import</span> <span class="nn">sys</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">sys</span>
 <span class="kn">import</span> <span class="nn">BaseHTTPServer</span>
 <span class="kn">from</span> <span class="nn">SimpleHTTPServer</span> <span class="kn">import</span> <span class="n">SimpleHTTPRequestHandler</span>
 
 <span class="n">HandlerClass</span> <span class="o">=</span> <span class="n">SimpleHTTPRequestHandler</span>
 <span class="n">ServerClass</span> <span class="o">=</span> <span class="n">BaseHTTPServer</span><span class="o">.</span><span class="n">HTTPServer</span>
-<span class="n">Protocol</span> <span class="o">=</span> <span class="s">&quot;HTTP/1.0&quot;</span>
+<span class="n">Protocol</span> <span class="o">=</span> <span class="s">"HTTP/1.0"</span>
 
 <span class="k">if</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]:</span>
 <span class="n">port</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
 <span class="k">else</span><span class="p">:</span>
 <span class="n">port</span> <span class="o">=</span> <span class="mi">8000</span>
-<span class="n">server_address</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
+<span class="n">server_address</span> <span class="o">=</span> <span class="p">(</span><span class="s">'127.0.0.1'</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
 
 <span class="n">HandlerClass</span><span class="o">.</span><span class="n">protocol_version</span> <span class="o">=</span> <span class="n">Protocol</span>
 <span class="n">httpd</span> <span class="o">=</span> <span class="n">ServerClass</span><span class="p">(</span><span class="n">server_address</span><span class="p">,</span> <span class="n">HandlerClass</span><span class="p">)</span>
 
 <span class="n">sa</span> <span class="o">=</span> <span class="n">httpd</span><span class="o">.</span><span class="n">socket</span><span class="o">.</span><span class="n">getsockname</span><span class="p">()</span>
-<span class="k">print</span> <span class="s">&quot;Serving HTTP on&quot;</span><span class="p">,</span> <span class="n">sa</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">&quot;port&quot;</span><span class="p">,</span> <span class="n">sa</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">&quot;...&quot;</span>
-<span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span></code></pre></div>
+<span class="k">print</span> <span class="s">"Serving HTTP on"</span><span class="p">,</span> <span class="n">sa</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s">"port"</span><span class="p">,</span> <span class="n">sa</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s">"..."</span>
+<span class="n">httpd</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</code></pre>
+</div>
 
 <p>and <a href="http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file">Simple Python Webserver to save file</a></p>
 
-<div class="highlight"><pre><code class="language-python"><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">curdir</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">os</span> <span class="kn">import</span> <span class="n">curdir</span>
 <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span> <span class="k">as</span> <span class="n">pjoin</span>
 
 <span class="kn">from</span> <span class="nn">http.server</span> <span class="kn">import</span> <span class="n">BaseHTTPRequestHandler</span><span class="p">,</span> <span class="n">HTTPServer</span>
 
 <span class="k">class</span> <span class="nc">StoreHandler</span><span class="p">(</span><span class="n">BaseHTTPReque</span> <span class="n">stHandler</span><span class="p">):</span>
-<span class="n">store_path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">curdir</span><span class="p">,</span> <span class="s">&#39;store.json&#39;</span><span class="p">)</span>
+<span class="n">store_path</span> <span class="o">=</span> <span class="n">pjoin</span><span class="p">(</span><span class="n">curdir</span><span class="p">,</span> <span class="s">'store.json'</span><span class="p">)</span>
 
 <span class="k">def</span> <span class="nf">do_GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s">&#39;/store.json&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s">'/store.json'</span><span class="p">:</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
-<span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s">&#39;Content-type&#39;</span><span class="p">,</span> <span class="s">&#39;text/json&#39;</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">send_header</span><span class="p">(</span><span class="s">'Content-type'</span><span class="p">,</span> <span class="s">'text/json'</span><span class="p">)</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">end_headers</span><span class="p">()</span>
 <span class="bp">self</span><span class="o">.</span><span class="n">wfile</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">fh</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">())</span>
 
 <span class="k">def</span> <span class="nf">do_POST</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s">&#39;/store.json&#39;</span><span class="p">:</span>
-<span class="n">length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">&#39;content-length&#39;</span><span class="p">]</span>
+<span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">==</span> <span class="s">'/store.json'</span><span class="p">:</span>
+<span class="n">length</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s">'content-length'</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">rfile</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">length</span><span class="p">))</span>
 
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store_path</span><span class="p">,</span> <span class="s">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">store_path</span><span class="p">,</span> <span class="s">'w'</span><span class="p">)</span> <span class="k">as</span> <span class="n">fh</span><span class="p">:</span>
 <span class="n">fh</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
 
 <span class="bp">self</span><span class="o">.</span><span class="n">send_response</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span>
 
-<span class="n">server</span> <span class="o">=</span> <span class="n">HTTPServer</span><span class="p">((</span><span class="s">&#39;&#39;</span><span class="p">,</span> <span class="mi">8080</span><span class="p">),</span> <span class="n">StoreHandler</span><span class="p">)</span>
-<span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span></code></pre></div>
+<span class="n">server</span> <span class="o">=</span> <span class="n">HTTPServer</span><span class="p">((</span><span class="s">''</span><span class="p">,</span> <span class="mi">8080</span><span class="p">),</span> <span class="n">StoreHandler</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">serve_forever</span><span class="p">()</span>
+</code></pre>
+</div>
 
 
 <ul class="pagination">

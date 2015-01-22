@@ -28,4 +28,3 @@ You can contact me via
     </div>  
   {% endfor %}
 </div>
-
