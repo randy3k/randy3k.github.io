@@ -95,11 +95,13 @@
   
 
 
-<p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
+<p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.<br />
 <code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
 
-<div class="highlight"><pre><code class="language-bash">brew install gfortran
-brew install open-mpi</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install gfortran
+brew install open-mpi
+</code></pre>
+</div>
 
 <p>You will need a C complier. For OSX 10.9, see <a href="/blog/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
 
@@ -111,17 +113,21 @@ brew install open-mpi</code></pre></div>
 
 <p>To test <code>Rmpi</code></p>
 
-<div class="highlight"><pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
-mpi.spawn.Rslaves<span class="p">()</span>
-mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-mpi.close.Rslaves<span class="p">()</span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">Rmpi</span><span class="p">)</span>
+<span class="n">mpi.spawn.Rslaves</span><span class="p">()</span>
+<span class="n">mpi.iparReplicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">rnorm</span><span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
+<span class="n">mpi.close.Rslaves</span><span class="p">()</span>
+</code></pre>
+</div>
 
 <p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
 
-<div class="highlight"><pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
-mpi.spawn.Rslaves<span class="p">(</span>nslaves<span class="o">=</span><span class="m">3</span><span class="p">)</span>
-mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-mpi.close.Rslaves<span class="p">()</span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">Rmpi</span><span class="p">)</span>
+<span class="n">mpi.spawn.Rslaves</span><span class="p">(</span><span class="n">nslaves</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<span class="n">mpi.iparReplicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">rnorm</span><span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
+<span class="n">mpi.close.Rslaves</span><span class="p">()</span>
+</code></pre>
+</div>
 
 
 

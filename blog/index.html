@@ -107,86 +107,102 @@
   <p>pyenv lets you easily switch between multiple versions of Python</p>
 </blockquote>
 
-<p>As always, I recommend to use <a href="http://brew.sh">homebrew</a> to install <code>pyenv</code>.<br />
-Assuming that you have already installed homebrew, to install <code>pyenv</code>, you need</p>
+<p>As always, I recommend to use <a href="http://brew.sh">homebrew</a> to install <code class="highlighter-rouge">pyenv</code>.<br />
+Assuming that you have already installed homebrew, to install <code class="highlighter-rouge">pyenv</code>, you need</p>
 
-<div class="highlight"><pre><code class="language-bash">brew update
-brew install pyenv</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>brew update
+brew install pyenv
+</code></pre>
+</div>
 
-<p>This will also create a hidden folder under your user directory <code>~/.pyenv</code>. In most cases,<br />
+<p>This will also create a hidden folder under your user directory <code class="highlighter-rouge">~/.pyenv</code>. In most cases,<br />
 you don’t have look at this directory.</p>
 
-<p>To enable <code>pyenv</code>, put the following into your <code>~/.bash_profile</code> or <code>~/.zshrc</code> if you are using <a href="http://www.zsh.org">zsh</a>. I strongly recommend zsh. Try to install it via homebrew and give it a try.</p>
+<p>To enable <code class="highlighter-rouge">pyenv</code>, put the following into your <code class="highlighter-rouge">~/.bash_profile</code> or <code class="highlighter-rouge">~/.zshrc</code> if you are using <a href="http://www.zsh.org">zsh</a>. I strongly recommend zsh. Try to install it via homebrew and give it a try.</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">&quot;$HOME/.pyenv&quot;</span>
-<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;$PYENV_ROOT/bin:$PATH&quot;</span>
-<span class="nb">eval</span> <span class="s2">&quot;$(pyenv init -)&quot;</span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PYENV_ROOT</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.pyenv"</span>
+<span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$PYENV_ROOT</span><span class="s2">/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+<span class="nb">eval</span> <span class="s2">"</span><span class="k">$(</span>pyenv init -<span class="k">)</span><span class="s2">"</span>
+</code></pre>
+</div>
 
 <p>To enable shell completions, also add this to your shell config file</p>
 
-<div class="highlight"><pre><code class="language-bash"><span class="c"># for bash shell</span>
-<span class="k">if</span> <span class="o">[[</span> -f /usr/local/opt/pyenv/completions/pyenv.bash <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">source</span> /usr/local/opt/pyenv/completions/pyenv.bash
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># for bash shell</span>
+<span class="k">if</span> <span class="o">[[</span> -f /usr/local/opt/pyenv/completions/pyenv.bash <span class="o">]]</span>; <span class="k">then
+    </span><span class="nb">source</span> /usr/local/opt/pyenv/completions/pyenv.bash
 <span class="k">fi</span>
 
 <span class="c"># for zsh shell</span>
-<span class="k">if</span> <span class="o">[[</span> -f /usr/local/opt/pyenv/completions/pyenv.zsh <span class="o">]]</span><span class="p">;</span> <span class="k">then</span>
-    <span class="nb">source</span> /usr/local/opt/pyenv/completions/pyenv.zsh
-<span class="k">fi</span></code></pre></div>
+<span class="k">if</span> <span class="o">[[</span> -f /usr/local/opt/pyenv/completions/pyenv.zsh <span class="o">]]</span>; <span class="k">then
+    </span><span class="nb">source</span> /usr/local/opt/pyenv/completions/pyenv.zsh
+<span class="k">fi</span>
+</code></pre>
+</div>
 
-<p>Resetting your shell terminal, and check if <code>pyenv</code> runs. To list supported versions of python</p>
+<p>Resetting your shell terminal, and check if <code class="highlighter-rouge">pyenv</code> runs. To list supported versions of python</p>
 
-<div class="highlight"><pre><code class="language-bash">pyenv install --list</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>pyenv install --list
+</code></pre>
+</div>
 
-<p>For academic use, I strongly recommend <code>anaconda3</code>, e.g., <code>anaconda3-2.1.0</code>. (Also, give a try to <code>pypy3</code>)<br />
+<p>For academic use, I strongly recommend <code class="highlighter-rouge">anaconda3</code>, e.g., <code class="highlighter-rouge">anaconda3-2.1.0</code>. (Also, give a try to <code class="highlighter-rouge">pypy3</code>)<br />
 Installation is a piece of cake.</p>
 
-<div class="highlight"><pre><code class="language-bash">pyenv install anaconda3-2.1.0</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>pyenv install anaconda3-2.1.0
+</code></pre>
+</div>
 
 <p>It may take some time for the installation process to finish.</p>
 
 <p>To show available versions of python</p>
 
-<div class="highlight"><pre><code class="language-bash">pyenv versions</code></pre></div>
-<p>You should see <code>system</code> and  <code>anaconda3-2.1.0</code>. System python is the version of python first found along the <code>PATH</code> variable.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>pyenv versions
+</code></pre>
+</div>
+<p>You should see <code class="highlighter-rouge">system</code> and  <code class="highlighter-rouge">anaconda3-2.1.0</code>. System python is the version of python first found along the <code class="highlighter-rouge">PATH</code> variable.</p>
 
 <hr />
 
 <h3 id="switch-between">Switch between</h3>
 
 <ul>
-  <li>To activate <code>anaconda3-2.1.0</code> in the current terminal session.</li>
+  <li>To activate <code class="highlighter-rouge">anaconda3-2.1.0</code> in the current terminal session.</li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash">pyenv shell anaconda3-2.1.0
+<div class="highlighter-rouge"><pre class="highlight"><code>pyenv shell anaconda3-2.1.0
 <span class="c"># check python version</span>
 python -V
-<span class="c"># Python 3.4.1 :: Anaconda 2.1.0 (x86_64)</span></code></pre></div>
+<span class="c"># Python 3.4.1 :: Anaconda 2.1.0 (x86_64)</span>
+</code></pre>
+</div>
 
 <ul>
-  <li>If you want to use <code>anaconda3-2.1.0</code> every time you visit a particular project directory, say <code>~/project</code>. </li>
+  <li>If you want to use <code class="highlighter-rouge">anaconda3-2.1.0</code> every time you visit a particular project directory, say <code class="highlighter-rouge">~/project</code>. </li>
 </ul>
 
-<div class="highlight"><pre><code class="language-bash"><span class="c"># unset the shell specific version</span>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="c"># unset the shell specific version</span>
 pyenv shell --unset
 <span class="c"># go to the project directory</span>
 <span class="nb">cd</span> ~/project
 pyenv <span class="nb">local </span>anaconda3-2.1.0
 <span class="c"># check python version</span>
 python -V
-<span class="c"># Python 3.4.1 :: Anaconda 2.1.0 (x86_64)</span></code></pre></div>
+<span class="c"># Python 3.4.1 :: Anaconda 2.1.0 (x86_64)</span>
+</code></pre>
+</div>
 
-<p>Note: you run <code>python -V</code> outside <code>project</code>, you will see the system python.</p>
+<p>Note: you run <code class="highlighter-rouge">python -V</code> outside <code class="highlighter-rouge">project</code>, you will see the system python.</p>
 
 <ul>
-  <li>To use <code>anaconda3-2.1.0</code> globally, run <code>pyenv global anaconda3-2.1.0</code>. But I don’t recommend this.</li>
+  <li>To use <code class="highlighter-rouge">anaconda3-2.1.0</code> globally, run <code class="highlighter-rouge">pyenv global anaconda3-2.1.0</code>. But I don’t recommend this.</li>
 </ul>
 
 <hr />
 
 <h3 id="remove-pyenv">Remove pyenv</h3>
 
-<p>If you really don’t like <code>pyenv</code> and want to remove all traces of <code>pyenv</code> files. Just remove <code>pyenv</code> from homebrew and remove the <code>~/.pyenv</code> directory. It will do the job. Of course, you have to also undo the changes made to the <code>~/.bashrc_profile</code> or <code>~/.zshrc</code> files.</p>
+<p>If you really don’t like <code class="highlighter-rouge">pyenv</code> and want to remove all traces of <code class="highlighter-rouge">pyenv</code> files. Just remove <code class="highlighter-rouge">pyenv</code> from homebrew and remove the <code class="highlighter-rouge">~/.pyenv</code> directory. It will do the job. Of course, you have to also undo the changes made to the <code class="highlighter-rouge">~/.bashrc_profile</code> or <code class="highlighter-rouge">~/.zshrc</code> files.</p>
 
 
     
@@ -209,13 +225,13 @@ python -V
   
 
       
-    <p>I love using git via commands. And it is very often that I have to run <code>git status</code> or <code>git branch</code> to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.</p>
+    <p>I love using git via commands. And it is very often that I have to run <code class="highlighter-rouge">git status</code> or <code class="highlighter-rouge">git branch</code> to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.</p>
 
 <p>The code was originated from <a href="http://bytebaker.com/2012/01/09/show-git-information-in-your-prompt/">here</a> but I have made significant amount of changes, for example, adding color support and some bugs fixing.</p>
 
 <p><img src="/assets/images/git.png" alt="" /></p>
 
-<p>To use this, add the following to your <code>.bashrc</code> and restart your terminal!</p>
+<p>To use this, add the following to your <code class="highlighter-rouge">.bashrc</code> and restart your terminal!</p>
 
 <script src="https://gist.github.com/1ff38257f4aaff87f3c7.js"> </script>
 
@@ -266,12 +282,13 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
   
 
       
-    <p class="alert alert-warning">The command has been changed in Python 3: <code>python -m http.server</code>.</p>
+    <p class="alert alert-warning">The command has been changed in Python 3: <code class="highlighter-rouge">python -m http.server</code>.</p>
 
 <p>Python has a very simple web server which allows you to share a particular directory with a one line command.</p>
 
-<div class="highlight"><pre><code>python -m SimpleHTTPServer 8000
-</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>python -m SimpleHTTPServer 8000
+</code></pre>
+</div>
 
 <p>Index directory can be then accessed by http://&lt;ip address&gt;:8000.</p>
 
@@ -302,11 +319,13 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
   
 
       
-    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.
+    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.<br />
 <code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
 
-<div class="highlight"><pre><code class="language-bash">brew install gfortran
-brew install open-mpi</code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code>brew install gfortran
+brew install open-mpi
+</code></pre>
+</div>
 
 <p>You will need a C complier. For OSX 10.9, see <a href="/blog/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
 
@@ -318,17 +337,21 @@ brew install open-mpi</code></pre></div>
 
 <p>To test <code>Rmpi</code></p>
 
-<div class="highlight"><pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
-mpi.spawn.Rslaves<span class="p">()</span>
-mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-mpi.close.Rslaves<span class="p">()</span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">Rmpi</span><span class="p">)</span>
+<span class="n">mpi.spawn.Rslaves</span><span class="p">()</span>
+<span class="n">mpi.iparReplicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">rnorm</span><span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
+<span class="n">mpi.close.Rslaves</span><span class="p">()</span>
+</code></pre>
+</div>
 
 <p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
 
-<div class="highlight"><pre><code class="language-r"><span class="kn">library</span><span class="p">(</span>Rmpi<span class="p">)</span>
-mpi.spawn.Rslaves<span class="p">(</span>nslaves<span class="o">=</span><span class="m">3</span><span class="p">)</span>
-mpi.iparReplicate<span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="kp">mean</span><span class="p">(</span>rnorm<span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-mpi.close.Rslaves<span class="p">()</span></code></pre></div>
+<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">Rmpi</span><span class="p">)</span>
+<span class="n">mpi.spawn.Rslaves</span><span class="p">(</span><span class="n">nslaves</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<span class="n">mpi.iparReplicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">rnorm</span><span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
+<span class="n">mpi.close.Rslaves</span><span class="p">()</span>
+</code></pre>
+</div>
 
 
     
