@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'optparse'
 require 'yaml'
+require "stringex"
 
 
 desc "Draft a post"
@@ -10,9 +11,9 @@ task :draft do
   title = ARGV.join(' ')
   if title.empty?
     print "title: "
-    title = $stdin.gets
+    title = $stdin.gets.strip
   end
-  path = "_posts/#{Date.today}-#{title.downcase.gsub(/[^[:alnum:]]+/, '-')}.md"
+  path = "_posts/#{Date.today}-#{title.to_url}.md"
 
   if File.exist?(path)
     puts "[WARN] File exists - skipping create"
@@ -28,16 +29,15 @@ task :draft do
 end
 
 desc "Draft a post"
-task :draftr do
+task :draft do
   OptionParser.new.parse!
   ARGV.shift
   title = ARGV.join(' ')
   if title.empty?
     print "title: "
-    title = $stdin.gets
+    title = $stdin.gets.strip
   end
-
-  path = "_R/#{Date.today}-#{title.downcase.gsub(/[^[:alnum:]]+/, '-')}.md"
+  path = "_posts/#{Date.today}-#{title.to_url}.md"
 
   if File.exist?(path)
     puts "[WARN] File exists - skipping create"
@@ -81,29 +81,6 @@ task :build do
   if status == false then exit 1 end
 end
 
-
-CONFIG = Hash.new
-CONFIG['less'] = "bootstrap/less"
-CONFIG['css'] = File.join("assets", "css")
-CONFIG['input'] = "bootstrap.less"
-CONFIG['output'] = "bootstrap.css"
-
-desc "Compile Less"
-task :lessc do
-  require 'less'
-  less   = CONFIG['less']
-
-  input  = File.join( less, CONFIG['input'] )
-  output = File.join( CONFIG['css'], CONFIG['output'] )
-
-  source = File.open( input, "r" ).read
-  parser = Less::Parser.new( :paths => [less] )
-  tree = parser.parse( source )
-
-  File.open( output, "w+" ) do |f|
-    f.puts tree.to_css( :compress => true )
-  end
-end
 
 desc "Knit Rmd"
 task :knit do

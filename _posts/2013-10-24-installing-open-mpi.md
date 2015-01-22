@@ -1,7 +1,7 @@
 ---
 layout: post
 category : computing
-title: "Installating open-mpi on Mac"
+title: "Installing open-mpi on Mac"
 tagline: ""
 tags : [r, osx, mavericks]
 ---
