@@ -60,16 +60,10 @@ task :deploy do
   puts "## Committing a site build at #{Time.now.utc}\n"
   message = "Build site at #{Time.now.utc}"
   status = system("git commit -m \"#{message}\"")
-  puts "## Deleting master branch\n"
-  status = system("git branch -D master")
-  puts "## Creating new master branch and switching to it\n"
-  status = system("git checkout -b master")
-  puts "## Forcing the _site subdirectory to be project root\n"
-  status = system("git filter-branch --subdirectory-filter _site/ -f")
-  puts "## Switching back to source branch\n"
-  status = system("git checkout source")
-  puts "## Pushing all branches to origin\n"
-  status = system("git push --all origin")
+  puts "## Pushing master to origin\n"
+  status = system("git subtree push --prefix=_site origin master")
+  puts "## Pushing source to origin\n"
+  status = system("git push")
 end
 
 desc "Build site"
