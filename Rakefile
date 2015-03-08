@@ -28,30 +28,6 @@ task :draft do
   exit 0
 end
 
-desc "Draft a post"
-task :draft do
-  OptionParser.new.parse!
-  ARGV.shift
-  title = ARGV.join(' ')
-  if title.empty?
-    print "title: "
-    title = $stdin.gets.strip
-  end
-  path = "_posts/#{Date.today}-#{title.to_url}.md"
-
-  if File.exist?(path)
-    puts "[WARN] File exists - skipping create"
-  else
-    File.open(path, "w") do |file|
-      file.puts YAML.dump({'layout' => 'post', 'title' => title, 'tagline'=> nil,
-                          'category' => nil, 'tags' => [ ], 'last_modified' => nil})
-      file.puts "---"
-    end
-  end
-  `subl #{path}`
-  exit 0
-end
-
 desc "Deploy _site/"
 task :deploy => [:build]
 task :deploy do
