@@ -10,7 +10,7 @@ paginate: 5
 paginate_path: "/blog/page/:num/"
 excerpt_separator: <!--more-->
 
-title : Randy Lai - ME!
+title : Randy City
 tagline: Site Tagline
 author :
   name : Randy Lai

@@ -2,7 +2,7 @@
 layout: page
 title:
 header: Welcome!
-tagline: Randy Lai - ME!
+tagline: 
 ---
 
 ### About
