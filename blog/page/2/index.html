@@ -101,48 +101,43 @@
   
 
       
-    <p class="alert alert-warning"><strong>Warning [2014-2-12]</strong>: Most packages are now compatible with <code class="highlighter-rouge">libc++</code>, changing to <code class="highlighter-rouge">libstdc++</code> may cause problems for some packages.</p>
+    <p class="alert alert-warning"><strong>Warning [2014-2-12]</strong>: Most packages are now compatible with <code>libc++</code>, changing to <code>libstdc++</code> may cause problems for some packages.</p>
 
-<p>On 10.9, the default complier is <code class="highlighter-rouge">clang</code> with <code class="highlighter-rouge">libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
+<p>On 10.9, the default complier is <code>clang</code> with <code>libc++</code> library. Many old c++ files may not be compatible with it. Hence some R packages cannot be complied from source. There are 2 solutions.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>1. change the complier to GNU gcc complier.
+<pre><code>1. change the complier to GNU gcc complier.
 2. an easier solution, but it doesn't work for all packages
 </code></pre>
-</div>
 
 <h3 id="gnc-gcc-complier">1. GNC gcc complier</h3>
 
-<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code class="highlighter-rouge">gcc47</code> and <code class="highlighter-rouge">gfortran</code>.</p>
+<p>First of all, install <a href="http://brew.sh">Homebrew</a>, then install <code>gcc47</code> and <code>gfortran</code>.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>brew install gcc47
+<pre><code>brew install gcc47
 brew install gfortran
 </code></pre>
-</div>
 
-<p>Then edit <code class="highlighter-rouge">~/.R/Makevars</code></p>
+<p>Then edit <code>~/.R/Makevars</code></p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>CC=/usr/local/bin/gcc-4.7
+<pre><code>CC=/usr/local/bin/gcc-4.7
 CXX=/usr/local/bin/g++-4.7
 FC=/usr/local/bin/gfortran
 </code></pre>
-</div>
 
 <h3 id="an-easier-solution">2. An easier solution</h3>
-<p>Edit <code class="highlighter-rouge">~/.R/Makevars</code> and add</p>
+<p>Edit <code>~/.R/Makevars</code> and add</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>CXXFLAGS=-stdlib=libstdc++
+<pre><code>CXXFLAGS=-stdlib=libstdc++
 </code></pre>
-</div>
 
 <p>But it doesn’t fix all problems.</p>
 
 <p>###Test if it works&lt;</p>
 
-<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code class="highlighter-rouge">clang</code> with <code class="highlighter-rouge">libc++</code> fails to compile this package.</p>
+<p>You should be able to compile R packages from source now. If the package is installed, it means that you have already changed your complier. As <code>clang</code> with <code>libc++</code> fails to compile this package.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>install.packages("SuppDists", type="source")
+<pre><code>install.packages("SuppDists", type="source")
 </code></pre>
-</div>
 
 <p>Happy R coding~</p>
 
