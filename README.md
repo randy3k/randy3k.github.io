@@ -1,1 +1,1 @@
-It is the source repo of rtalks.net. All post and page files are copyrighted.
+It is the source repo of [randy.city](http://randy.city). All post and page files are copyrighted.
