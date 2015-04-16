@@ -2,7 +2,7 @@
 layout: page
 title:
 header: Welcome!
-tagline: Randy Talks Dot Net
+tagline: Randy Lai - ME!
 ---
 
 ### About
