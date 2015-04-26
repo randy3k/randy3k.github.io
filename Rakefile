@@ -33,8 +33,8 @@ task :deploy => [:build]
 task :deploy do
   puts "## Staging modified files\n"
   status = system("git add -A")
-  puts "## Committing a site build at #{Time.now.utc}\n"
-  message = "Build site at #{Time.now.utc}"
+  puts "## Committing a site build at #{Time.now.strftime "%a %b %d %H:%M:%S %Z %Y"}\n"
+  message = "Build site at #{Time.now.strftime "%a %b %d %H:%M:%S %Z %Y"}"
   status = system("git commit -m \"#{message}\"")
   puts "## Pushing master to origin\n"
   status = system("git subtree push --prefix=_site origin master")
