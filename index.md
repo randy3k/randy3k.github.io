@@ -7,12 +7,12 @@ tagline:
 
 ### About
 
-> I am Randy Lai, a PhD student in the Department of Statistics, University of California, Davis. Previously, I obtained my Master and Undergraduate degrees from CUHK, The Chinese University of Hong Kong.
+> I am Randy Lai, an Asistant professor at the University of Maine, the Department of Mathematics and Statsitics. Previously obatined a PhD in Statistics from University of California, Davis in 2015, also M.Phil and Undergraduate degrees from The Chinese University of Hong Kong.
 
 You can contact me via
 
 - [randy.cs.lai@gmail.com](mailto:randy.cs.lai@gmail.com)
-- [rcslai@ucdavis.edu](mailto:rcslai@ucdavis.edu)
+- [chushing.lai@maine.edu](mailto:chushing.lai@maine.edu)
 
 
 ### Recent Posts
