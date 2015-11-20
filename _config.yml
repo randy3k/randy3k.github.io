@@ -4,6 +4,8 @@ kramdown:
   input: GFM
   syntax_highlighter: rouge
 
+gems: ["jekyll-paginate", "jekyll-gist"]
+
 exclude: ["README.md", "Rakefile"]
 highligher: rouge
 paginate: 5

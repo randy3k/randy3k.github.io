@@ -1,16 +1,16 @@
 
-http://randy.city/blog/archive/index.html
-http://randy.city/blog/categories/index.html
-http://randy.city/blog/index.html
-http://randy.city/blog/tags/index.html
-http://randy.city/research/index.html
-http://randy.city/software/index.html
-http://randy.city/research/interests/index.html
-http://randy.city/profile/index.html
-http://randy.city/index.html
-http://randy.city/pages.html
+http://randy.city/blog/archive/
+http://randy.city/blog/categories/
+http://randy.city/blog/tags/
+http://randy.city/blog/
+http://randy.city/research/
+http://randy.city/software/
+http://randy.city/
+http://randy.city/profile/
+http://randy.city/research/interests/
+http://randy.city/pages/
 http://randy.city/sitemap.txt
-http://randy.city/blog/page/2/index.html
+http://randy.city/blog/page/2/
 
 http://randy.city/blog/switching-between-pythons-using-pyenv/
 http://randy.city/blog/git-aware-prompt/
