@@ -47,7 +47,15 @@ task :build => [:knit]
 task :build do
   puts "## Building site\n"
   ENV["JEKYLL_ENV"] = "production"
-  status = system("jekyll build")
+  status = system("bundle exec jekyll build")
+  if status == false then exit 1 end
+end
+
+desc "Serve site"
+task :serve => [:knit]
+task :serve do
+  puts "## Serving site\n"
+  status = system("bundle exec jekyll serve --watch")
   if status == false then exit 1 end
 end
 

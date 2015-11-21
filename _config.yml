@@ -6,7 +6,7 @@ kramdown:
 
 gems: ["jekyll-paginate", "jekyll-gist"]
 
-exclude: ["README.md", "Rakefile"]
+exclude: ["README.md", "Rakefile", "Gemfile", "Gemfile.lock"]
 highligher: rouge
 paginate: 5
 paginate_path: "/blog/page/:num/"
