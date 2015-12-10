@@ -7,7 +7,7 @@ tagline:
 
 ### About
 
-> I am Randy Lai, an Assistant professor at the University of Maine, the Department of Mathematics and Statsitics. Previously obatined a PhD in Statistics from University of California, Davis in 2015, also a M.Phil degree and a B.Sc degree from the Chinese University of Hong Kong.
+> Welcome. I am Randy Lai, an Assistant professor at the University of Maine, the Department of Mathematics and Statsitics. Previously obatined a PhD degree in Statistics from University of California, Davis. I am from Hong Kong.
 
 You can contact me via
 
