@@ -4,7 +4,7 @@ http://randy.city/blog/categories/
 http://randy.city/blog/tags/
 http://randy.city/blog/
 http://randy.city/research/
-http://randy.city/software/
+http://randy.city/stuffs/
 http://randy.city/
 http://randy.city/profile/
 http://randy.city/research/interests/
