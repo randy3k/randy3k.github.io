@@ -1,1 +1,1 @@
-It is the source repo of [randy.city](http://randy3k.github.io). All post and page files are copyrighted.
+It is the source repo of [randy3k.github.io](http://randy3k.github.io). All post and page files are copyrighted.
