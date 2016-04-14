@@ -80,6 +80,44 @@
 
 <!-- This loops through the paginated posts -->
 
+  <h1><a href="/blog/two-cool-things-about-dice/">Two Cool things about dice!</a></h1>
+  <div class="content">
+    <p><span class="date">April 14 2016</span>  </p>
+    
+    
+    
+<ul class="tag-box inline list-unstyled">
+  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
+
+   
+  	<li><a class="label label-success" href="/blog/tags/#Dice-ref">Dice <span class="tag-size">1</span></a></li>
+  
+
+</ul>
+  
+
+      
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ TeX: { equationNumbers: {autoNumber: "AMS"} } });
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [['$','$'], ['\\(','\\)']],
+      processEscapes: true
+    }
+  });  
+</script>
+
+<p>Just discover two cool things about dice,<br />
+Suppose we have two (fair) 6-sided dice, let $Y$ be the reminder of the product of the two numbers divided by 7, i.e., $Y = X1 \times X2 (\text{ mod } 7)$, guess what the distribution of $Y$ is? Uniform 1,…, 6</p>
+
+<p>If it doesn’t surprise you, now consider two n-sided dice and repeat the above with $Y = X_1 \times X_2 (\text{ mod } n+1)$. Guess what values of $n$ will yield a uniform distribution? It turns out that the values of $n$ are prime numbers minus 1. (As 6 = 7-1 and 7 is a prime number, a regular 6-sided dice has this property).</p>
+
+    
+  </div>
+
   <h1><a href="/blog/switching-between-pythons-using-pyenv/">Switching between pythons using pyenv on OSX</a></h1>
   <div class="content">
     <p><span class="date">January 19 2015</span>  </p>
@@ -296,65 +334,6 @@ them, but I bet you don’t know all of them. I am providing a cheat sheet of th
 
     
     <p><a href="/blog/python-web-server/">Read More... </a></p>
-    
-  </div>
-
-  <h1><a href="/blog/installing-open-mpi/">Installing open-mpi on Mac</a></h1>
-  <div class="content">
-    <p><span class="date">October 24 2013</span>  </p>
-    
-    
-    
-<ul class="tag-box inline list-unstyled">
-  <li class="tag-icon"><span class="glyphicon glyphicon-tags"></span></li>
-
-   
-  	<li><a class="label label-success" href="/blog/tags/#r-ref">r <span class="tag-size">2</span></a></li>
-   
-  	<li><a class="label label-success" href="/blog/tags/#osx-ref">osx <span class="tag-size">4</span></a></li>
-   
-  	<li><a class="label label-success" href="/blog/tags/#mavericks-ref">mavericks <span class="tag-size">2</span></a></li>
-  
-
-</ul>
-  
-
-      
-    <p>This is a guide for installing <code>open-mpi</code> and <code>Rmpi</code> on Mac OSX.<br />
-<code>Open-mpi</code> is open source mpi library such allows scalable and parallel processing. To install <code>open-mpi</code>, you will need to install <a href="http://brew.sh">Homebrew</a> first. Then install <code>gfortran</code> and <code>open-mpi</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>brew install gfortran
-brew install open-mpi
-</code></pre>
-</div>
-
-<p>You will need a C complier. For OSX 10.9, see <a href="/blog/configuring-complier/">Configuring complier for R 3.0.1 on OSX 10.9 Mavericks</a>. For previous OS, the default llvm-gcc complier should work fine most of the time.</p>
-
-<p>Final step, either open R in terminal or R GUI, and run</p>
-
-<pre class="lang:r decode:true ">install.packages("Rmpi", type="source")</pre>
-
-<p>This should install <code>Rmpi</code>.</p>
-
-<p>To test <code>Rmpi</code></p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">Rmpi</span><span class="p">)</span>
-<span class="n">mpi.spawn.Rslaves</span><span class="p">()</span>
-<span class="n">mpi.iparReplicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">rnorm</span><span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-<span class="n">mpi.close.Rslaves</span><span class="p">()</span>
-</code></pre>
-</div>
-
-<p>Note: If you compile your own R, or install R via Homebrew or macport, it is more likely that Rmpi will fail to detect number of cores via <code>mpi.universe.size()</code>. In this case, you may need to specify the number of salves.</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">Rmpi</span><span class="p">)</span>
-<span class="n">mpi.spawn.Rslaves</span><span class="p">(</span><span class="n">nslaves</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
-<span class="n">mpi.iparReplicate</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="n">mean</span><span class="p">(</span><span class="n">rnorm</span><span class="p">(</span><span class="m">1000000</span><span class="p">)))</span>
-<span class="n">mpi.close.Rslaves</span><span class="p">()</span>
-</code></pre>
-</div>
-
-
     
   </div>
 
