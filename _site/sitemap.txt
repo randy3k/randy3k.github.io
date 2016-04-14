@@ -12,6 +12,7 @@ http://randy3k.github.io/pages/
 http://randy3k.github.io/sitemap.txt
 http://randy3k.github.io/blog/page/2/
 
+http://randy3k.github.io/blog/two-cool-things-about-dice/
 http://randy3k.github.io/blog/switching-between-pythons-using-pyenv/
 http://randy3k.github.io/blog/git-aware-prompt/
 http://randy3k.github.io/blog/shortcuts-in-osx-terminal/
