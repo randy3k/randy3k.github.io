@@ -1,13 +1,13 @@
 
-http://randy3k.github.io/blog/archive/
-http://randy3k.github.io/blog/categories/
-http://randy3k.github.io/blog/tags/
-http://randy3k.github.io/blog/
 http://randy3k.github.io/research/
 http://randy3k.github.io/stuffs/
-http://randy3k.github.io/
-http://randy3k.github.io/profile/
+http://randy3k.github.io/blog/tags/
+http://randy3k.github.io/blog/
+http://randy3k.github.io/blog/categories/
+http://randy3k.github.io/blog/archive/
 http://randy3k.github.io/research/interests/
+http://randy3k.github.io/profile/
+http://randy3k.github.io/
 http://randy3k.github.io/pages/
 http://randy3k.github.io/sitemap.txt
 http://randy3k.github.io/blog/page/2/
