@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>Tags - Randy City</title>
+    <title>Search - Randy City
+</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -51,9 +52,6 @@ Randy City            </a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
-                         <li><a href="http://randy3k.github.io/about.html">
-                             About
-                          </a></li>
                          <li><a href="http://randy3k.github.io/research.html">
                              Research
                           </a></li>
@@ -83,60 +81,7 @@ Randy City            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-    <section id="tags">
-        <h1>Tags for Randy City</h1>
-        <div class="panel-group" id="accordion">            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-dice">[Dice] <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-dice" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2016-04-14T00:00:00-05:00">Thu 14 April 2016</time></span> <a href="http://randy3k.github.io/blog/two-cool-things-about-dice.html">Two Cool things about dice!</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-git">[git] <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-git" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2014-02-12T00:00:00-05:00">Wed 12 February 2014</time></span> <a href="http://randy3k.github.io/blog/git-aware-prompt.html">'Git aware prompt'</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-osx">osx] <span class="badge pull-right">2</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-osx" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-01-19T00:00:00-05:00">Mon 19 January 2015</time></span> <a href="http://randy3k.github.io/blog/switching-between-pythons-using-pyenv-on-osx.html">Switching between pythons using pyenv on OSX</a></p>
-                        <p><span class="categories-timestamp"><time datetime="2013-12-03T00:00:00-05:00">Tue 03 December 2013</time></span> <a href="http://randy3k.github.io/blog/shortcuts-in-osx-terminal.html">'Shortcuts in OSX-Terminal'</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h4 class="panel-title">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#collapse-python">[python <span class="badge pull-right">1</span></a>
-                    </h4>
-                </div>
-                <div id="collapse-python" class="panel-collapse collapse">
-                    <div class="panel-body">
-                        <p><span class="categories-timestamp"><time datetime="2015-01-19T00:00:00-05:00">Mon 19 January 2015</time></span> <a href="http://randy3k.github.io/blog/switching-between-pythons-using-pyenv-on-osx.html">Switching between pythons using pyenv on OSX</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </section>
+<div id="tipue_search_content"></div>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -158,6 +103,7 @@ Randy City            </a>
         <div id="gh_repos">
             <p class="list-group-item">Status updating...</p>
         </div>
+            <a href="https://github.com/randy3k">@randy3k</a> on GitHub
     </li>
     </ul>
 </section>            </aside>
@@ -197,8 +143,8 @@ Randy City            </a>
 
             github.showRepos({
                 user: 'randy3k',
-                count: 5,
-                skip_forks: false,
+                count: 3,
+                skip_forks: true,
                 target: '#gh_repos'
             });
         });
@@ -221,5 +167,17 @@ Randy City            </a>
     </script>
     <!-- End Disqus Code -->
 
+    <script type="text/javascript" src="http://randy3k.github.io/theme/tipuesearch/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="http://randy3k.github.io/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('#tipue_search_input').tipuesearch({
+        'mode' : 'json',
+        'show': 10,
+        'newWindow': false,
+        'contentLocation': 'tipuesearch_content.json'
+      });
+    });
+    </script>
 </body>
 </html>
