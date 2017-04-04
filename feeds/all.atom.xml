@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Randy City</title><link href="http://randy3k.github.io/" rel="alternate"></link><link href="http://randy3k.github.io/feeds/all.atom.xml" rel="self"></link><id>http://randy3k.github.io/</id><updated>2016-04-14T00:00:00-05:00</updated><entry><title>Two Cool things about dice!</title><link href="http://randy3k.github.io/blog/two-cool-things-about-dice.html" rel="alternate"></link><published>2016-04-14T00:00:00-05:00</published><updated>2016-04-14T00:00:00-05:00</updated><author><name>Randy Lai</name></author><id>tag:randy3k.github.io,2016-04-14:/blog/two-cool-things-about-dice.html</id><summary type="html">&lt;p&gt;Just discover two cool things about dice,
+Suppose we have two (fair) 6-sided dice, let &lt;span class="math"&gt;\(Y\)&lt;/span&gt; be the reminder of the product of the two numbers divided by 7, i.e., &lt;span class="math"&gt;\(Y = X1 \times X2 (\text{ mod } 7)\)&lt;/span&gt;, guess what the distribution of &lt;span class="math"&gt;\(Y\)&lt;/span&gt; is? Uniform 1,..., 6&lt;/p&gt;
+&lt;p&gt;If it …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Just discover two cool things about dice,
+Suppose we have two (fair) 6-sided dice, let &lt;span class="math"&gt;\(Y\)&lt;/span&gt; be the reminder of the product of the two numbers divided by 7, i.e., &lt;span class="math"&gt;\(Y = X1 \times X2 (\text{ mod } 7)\)&lt;/span&gt;, guess what the distribution of &lt;span class="math"&gt;\(Y\)&lt;/span&gt; is? Uniform 1,..., 6&lt;/p&gt;
+&lt;p&gt;If it doesn't surprise you, now consider two n-sided dice and repeat the above with &lt;span class="math"&gt;\(Y = X_1 \times X_2 (\text{ mod } n+1)\)&lt;/span&gt;. Guess what values of &lt;span class="math"&gt;\(n\)&lt;/span&gt; will yield a uniform distribution? It turns out that the values of &lt;span class="math"&gt;\(n\)&lt;/span&gt; are prime numbers minus 1. (As 6 = 7-1 and 7 is a prime number, a regular 6-sided dice has this property).&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</content><category term="[Dice]"></category></entry><entry><title>Switching between pythons using pyenv on OSX</title><link href="http://randy3k.github.io/blog/switching-between-pythons-using-pyenv-on-osx.html" rel="alternate"></link><published>2015-01-19T00:00:00-05:00</published><updated>2015-01-19T00:00:00-05:00</updated><author><name>Randy Lai</name></author><id>tag:randy3k.github.io,2015-01-19:/blog/switching-between-pythons-using-pyenv-on-osx.html</id><summary type="html">&lt;h3&gt;Installation&lt;/h3&gt;
+&lt;p&gt;From &lt;a href="https://github.com/yyuu/pyenv"&gt;pyenv&lt;/a&gt;,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pyenv lets you easily switch between multiple versions of Python&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As always, I recommend to use &lt;a href="http://brew.sh"&gt;homebrew&lt;/a&gt; to install &lt;code&gt;pyenv&lt;/code&gt;.
+Assuming that you have already installed homebrew, to install &lt;code&gt;pyenv&lt;/code&gt;, you need&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew update
+brew install pyenv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will also create a hidden folder under your user …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Installation&lt;/h3&gt;
+&lt;p&gt;From &lt;a href="https://github.com/yyuu/pyenv"&gt;pyenv&lt;/a&gt;,&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;pyenv lets you easily switch between multiple versions of Python&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;As always, I recommend to use &lt;a href="http://brew.sh"&gt;homebrew&lt;/a&gt; to install &lt;code&gt;pyenv&lt;/code&gt;.
+Assuming that you have already installed homebrew, to install &lt;code&gt;pyenv&lt;/code&gt;, you need&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;brew update
+brew install pyenv
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This will also create a hidden folder under your user directory &lt;code&gt;~/.pyenv&lt;/code&gt;. In most cases,
+you don't have look at this directory.&lt;/p&gt;
+&lt;p&gt;To enable &lt;code&gt;pyenv&lt;/code&gt;, put the following into your &lt;code&gt;~/.bash_profile&lt;/code&gt; or &lt;code&gt;~/.zshrc&lt;/code&gt; if you are using &lt;a href="http://www.zsh.org"&gt;zsh&lt;/a&gt;. I strongly recommend zsh. Try to install it via homebrew and give it a try.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PYENV_ROOT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$HOME&lt;/span&gt;&lt;span class="s2"&gt;/.pyenv&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;export&lt;/span&gt; &lt;span class="nv"&gt;PATH&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="nv"&gt;$PYENV_ROOT&lt;/span&gt;&lt;span class="s2"&gt;/bin:&lt;/span&gt;&lt;span class="nv"&gt;$PATH&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;pyenv init -&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;&amp;quot;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;To enable shell completions, also add this to your shell config file&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# for bash shell&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -f /usr/local/opt/pyenv/completions/pyenv.bash &lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/opt/pyenv/completions/pyenv.bash
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c1"&gt;# for zsh shell&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[[&lt;/span&gt; -f /usr/local/opt/pyenv/completions/pyenv.zsh &lt;span class="o"&gt;]]&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="k"&gt;then&lt;/span&gt;
+    &lt;span class="nb"&gt;source&lt;/span&gt; /usr/local/opt/pyenv/completions/pyenv.zsh
+&lt;span class="k"&gt;fi&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Resetting your shell terminal, and check if &lt;code&gt;pyenv&lt;/code&gt; runs. To list supported versions of python&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pyenv install --list
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;For academic use, I strongly recommend &lt;code&gt;anaconda3&lt;/code&gt;, e.g., &lt;code&gt;anaconda3-2.1.0&lt;/code&gt;. (Also, give a try to &lt;code&gt;pypy3&lt;/code&gt;)
+Installation is a piece of cake.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pyenv install anaconda3-2.1.0
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;It may take some time for the installation process to finish.&lt;/p&gt;
+&lt;p&gt;To show available versions of python&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pyenv versions
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;You should see &lt;code&gt;system&lt;/code&gt; and  &lt;code&gt;anaconda3-2.1.0&lt;/code&gt;. System python is the version of python first found along the &lt;code&gt;PATH&lt;/code&gt; variable.&lt;/p&gt;
+&lt;hr&gt;
+
+&lt;h3&gt;Switch between&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;To activate &lt;code&gt;anaconda3-2.1.0&lt;/code&gt; in the current terminal session.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;pyenv shell anaconda3-2.1.0
+&lt;span class="c1"&gt;# check python version&lt;/span&gt;
+python -V
+&lt;span class="c1"&gt;# Python 3.4.1 :: Anaconda 2.1.0 (x86_64)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;ul&gt;
+&lt;li&gt;If you want to use &lt;code&gt;anaconda3-2.1.0&lt;/code&gt; every time you visit a particular project directory, say &lt;code&gt;~/project&lt;/code&gt;. &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="c1"&gt;# unset the shell specific version&lt;/span&gt;
+pyenv shell --unset
+&lt;span class="c1"&gt;# go to the project directory&lt;/span&gt;
+&lt;span class="nb"&gt;cd&lt;/span&gt; ~/project
+pyenv &lt;span class="nb"&gt;local&lt;/span&gt; anaconda3-2.1.0
+&lt;span class="c1"&gt;# check python version&lt;/span&gt;
+python -V
+&lt;span class="c1"&gt;# Python 3.4.1 :: Anaconda 2.1.0 (x86_64)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Note: you run &lt;code&gt;python -V&lt;/code&gt; outside &lt;code&gt;project&lt;/code&gt;, you will see the system python.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;To use &lt;code&gt;anaconda3-2.1.0&lt;/code&gt; globally, run &lt;code&gt;pyenv global anaconda3-2.1.0&lt;/code&gt;. But I don't recommend this.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;h3&gt;Remove pyenv&lt;/h3&gt;
+&lt;p&gt;If you really don't like &lt;code&gt;pyenv&lt;/code&gt; and want to remove all traces of &lt;code&gt;pyenv&lt;/code&gt; files. Just remove &lt;code&gt;pyenv&lt;/code&gt; from homebrew and remove the &lt;code&gt;~/.pyenv&lt;/code&gt; directory. It will do the job. Of course, you have to also undo the changes made to the &lt;code&gt;~/.bashrc_profile&lt;/code&gt; or &lt;code&gt;~/.zshrc&lt;/code&gt; files.&lt;/p&gt;</content><category term="[python"></category><category term="osx]"></category></entry><entry><title>'Git aware prompt'</title><link href="http://randy3k.github.io/blog/git-aware-prompt.html" rel="alternate"></link><published>2014-02-12T00:00:00-05:00</published><updated>2014-08-19T00:00:00-05:00</updated><author><name>Randy Lai</name></author><id>tag:randy3k.github.io,2014-02-12:/blog/git-aware-prompt.html</id><summary type="html">&lt;p&gt;I love using git via commands. And it is very often that I have to run &lt;code&gt;git status&lt;/code&gt; or &lt;code&gt;git branch&lt;/code&gt; to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.&lt;/p&gt;
+&lt;p&gt;The …&lt;/p&gt;</summary><content type="html">&lt;p&gt;I love using git via commands. And it is very often that I have to run &lt;code&gt;git status&lt;/code&gt; or &lt;code&gt;git branch&lt;/code&gt; to check if I am on the right branch or I am doing anything correct. Git aware prompt displays the current branch and status of the current directory.&lt;/p&gt;
+&lt;p&gt;The code was originated from &lt;a href="http://bytebaker.com/2012/01/09/show-git-information-in-your-prompt/"&gt;here&lt;/a&gt; but I have made significant amount of changes, for example, adding color support and some bugs fixing.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="/assets/images/git.png"&gt;&lt;/p&gt;
+&lt;p&gt;To use this, add the following to your &lt;code&gt;.bashrc&lt;/code&gt; and restart your terminal!&lt;/p&gt;
+&lt;p&gt;{% gist 1ff38257f4aaff87f3c7 %}&lt;/p&gt;</content><category term="[git]"></category></entry><entry><title>'Shortcuts in OSX-Terminal'</title><link href="http://randy3k.github.io/blog/shortcuts-in-osx-terminal.html" rel="alternate"></link><published>2013-12-03T00:00:00-05:00</published><updated>2013-12-03T00:00:00-05:00</updated><author><name>Randy Lai</name></author><id>tag:randy3k.github.io,2013-12-03:/blog/shortcuts-in-osx-terminal.html</id><summary type="html">&lt;p&gt;There are many useful shortcuts in OSX terminal. You may already know some of
+them, but I bet you don't know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think are useful, more can be found &lt;a href="http://ss64.com/osx/syntax-bashkeyboard.html"&gt;here&lt;/a&gt;. First of all …&lt;/p&gt;</summary><content type="html">&lt;p&gt;There are many useful shortcuts in OSX terminal. You may already know some of
+them, but I bet you don't know all of them. I am providing a cheat sheet of those keyboard shortcuts. I only list those I think are useful, more can be found &lt;a href="http://ss64.com/osx/syntax-bashkeyboard.html"&gt;here&lt;/a&gt;. First of all, you may want to enable the meta key.
+&lt;!--more--&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="terminal" src="/assets/images/osx-terminal.png"&gt;&lt;/p&gt;
+&lt;h4&gt;Movement&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Descriptions&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + a&lt;/td&gt;
+&lt;td&gt;Go to the beginning of the line (Home)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + e&lt;/td&gt;
+&lt;td&gt;Go to the end of the line (End)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Alt + b&lt;/td&gt;
+&lt;td&gt;Back (left) one word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Alt + f&lt;/td&gt;
+&lt;td&gt;Forward (right) one word&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="table table-striped"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;Text&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Descriptions&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Alt + del&lt;/td&gt;
+&lt;td&gt;Delete the word before the cursor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Alt + d&lt;/td&gt;
+&lt;td&gt;Delete the word after the cursor.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + u&lt;/td&gt;
+&lt;td&gt;Cut/delete the line before the cursor position.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + k&lt;/td&gt;
+&lt;td&gt;Cut the line after the cursor to the clipboard.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + w&lt;/td&gt;
+&lt;td&gt;Cut the word before the cursor to the clipboard.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + y&lt;/td&gt;
+&lt;td&gt;Paste the last thing to be cut (yank)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="table table-striped"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h4&gt;Misc.&lt;/h4&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Command&lt;/th&gt;
+&lt;th&gt;Descriptions&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + l&lt;/td&gt;
+&lt;td&gt;Clear the screen, similar to the clear command&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Alt + r&lt;/td&gt;
+&lt;td&gt;Cancel the changes and put back the line as it was in the history (revert).&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Ctrl + _&lt;/td&gt;
+&lt;td&gt;Undo&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td class="table table-striped"&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</content><category term="[osx]"></category></entry><entry><title>A simple python webserver</title><link href="http://randy3k.github.io/blog/a-simple-python-webserver.html" rel="alternate"></link><published>2013-10-24T00:00:00-05:00</published><updated>2013-10-24T00:00:00-05:00</updated><author><name>Randy Lai</name></author><id>tag:randy3k.github.io,2013-10-24:/blog/a-simple-python-webserver.html</id><summary type="html">&lt;h2&gt;tags : [python]&lt;/h2&gt;
+&lt;p&gt;The command has been changed in Python 3: &lt;code&gt;python -m http.server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Python has a very simple web server which allows you to share a particular directory with a one line command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python -m SimpleHTTPServer 8000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Index directory can be then accessed by http://\&lt;ip address\&gt;:8000.
+&lt;!--more--&gt;
+More complicated usages …&lt;/ip&gt;&lt;/p&gt;</summary><content type="html">&lt;h2&gt;tags : [python]&lt;/h2&gt;
+&lt;p&gt;The command has been changed in Python 3: &lt;code&gt;python -m http.server&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;Python has a very simple web server which allows you to share a particular directory with a one line command.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;python -m SimpleHTTPServer 8000
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Index directory can be then accessed by http://\&lt;ip address\&gt;:8000.
+&lt;!--more--&gt;
+More complicated usages: &lt;a href="http://www.linuxjournal.com/content/tech-tip-really-simple-http-server-python"&gt;Only serve on localhost&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;sys&lt;/span&gt;
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;BaseHTTPServer&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;SimpleHTTPServer&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;SimpleHTTPRequestHandler&lt;/span&gt;
+
+&lt;span class="n"&gt;HandlerClass&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;SimpleHTTPRequestHandler&lt;/span&gt;
+&lt;span class="n"&gt;ServerClass&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;BaseHTTPServer&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;HTTPServer&lt;/span&gt;
+&lt;span class="n"&gt;Protocol&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;HTTP/1.0&amp;quot;&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;:]:&lt;/span&gt;
+&lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;sys&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;argv&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;])&lt;/span&gt;
+&lt;span class="k"&gt;else&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;port&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;8000&lt;/span&gt;
+&lt;span class="n"&gt;server_address&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;127.0.0.1&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;HandlerClass&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;protocol_version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;Protocol&lt;/span&gt;
+&lt;span class="n"&gt;httpd&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;ServerClass&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server_address&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HandlerClass&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;sa&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;socket&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;getsockname&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="k"&gt;print&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;Serving HTTP on&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sa&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;port&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;sa&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;],&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;...&amp;quot;&lt;/span&gt;
+&lt;span class="n"&gt;httpd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;serve_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;and &lt;a href="http://stackoverflow.com/questions/13146064/simple-python-webserver-to-save-file"&gt;Simple Python Webserver to save file&lt;/a&gt;&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;os&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;curdir&lt;/span&gt;
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;os.path&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;join&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;pjoin&lt;/span&gt;
+
+&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;http.server&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;BaseHTTPRequestHandler&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;HTTPServer&lt;/span&gt;
+
+&lt;span class="k"&gt;class&lt;/span&gt; &lt;span class="nc"&gt;StoreHandler&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;BaseHTTPReque&lt;/span&gt; &lt;span class="n"&gt;stHandler&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="n"&gt;store_path&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pjoin&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;curdir&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;store.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;do_GET&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/store.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;store_path&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;fh&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;Content-type&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;text/json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;end_headers&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;wfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;fh&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;encode&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;do_POST&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;path&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;/store.json&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;length&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;headers&lt;/span&gt;&lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;content-length&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;span class="n"&gt;data&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rfile&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;int&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;length&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="k"&gt;with&lt;/span&gt; &lt;span class="nb"&gt;open&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;store_path&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s1"&gt;&amp;#39;w&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="n"&gt;fh&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+&lt;span class="n"&gt;fh&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;write&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;data&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;decode&lt;/span&gt;&lt;span class="p"&gt;())&lt;/span&gt;
+
+&lt;span class="bp"&gt;self&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;send_response&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;server&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;HTTPServer&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="mi"&gt;8080&lt;/span&gt;&lt;span class="p"&gt;),&lt;/span&gt; &lt;span class="n"&gt;StoreHandler&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;serve_forever&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</content></entry></feed>
